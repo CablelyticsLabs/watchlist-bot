@@ -1,1 +1,0 @@
-# WatchlistBot source package
