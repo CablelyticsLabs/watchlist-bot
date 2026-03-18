@@ -64,6 +64,7 @@ jobs:
       - name: Run WatchlistBot
         env:
           DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          PYTHONPATH: ${{ github.workspace }}
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             python bot.py --now --dry-run
