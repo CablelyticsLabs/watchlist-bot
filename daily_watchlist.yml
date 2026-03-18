@@ -1,0 +1,100 @@
+name: 📈 Daily Watchlist Bot
+
+on:
+  schedule:
+    # 1:00 PM UTC = 9:00 AM ET (gives 30 min to analyze before 9:30 AM post)
+    - cron: "0 13 * * 1-5"   # Mon–Fri only
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — analyze but skip Discord post"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  run-watchlist-bot:
+    name: Analyze & Post
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Write secrets into config
+        env:
+          DISCORD_WEBHOOK:      ${{ secrets.DISCORD_WEBHOOK }}
+          ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
+          NEWS_API_KEY:         ${{ secrets.NEWS_API_KEY }}
+          REDDIT_CLIENT_ID:     ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          FRAMEWORK_URL:        ${{ secrets.FRAMEWORK_URL }}
+        run: |
+          python - <<'EOF'
+          import yaml, os
+          with open("config.yaml") as f:
+              cfg = yaml.safe_load(f)
+          cfg["discord"]["webhook_url"]           = os.environ.get("DISCORD_WEBHOOK", "")
+          cfg["api_keys"]["anthropic_api_key"]    = os.environ.get("ANTHROPIC_API_KEY", "")
+          cfg["api_keys"]["news_api_key"]         = os.environ.get("NEWS_API_KEY", "")
+          cfg["api_keys"]["reddit_client_id"]     = os.environ.get("REDDIT_CLIENT_ID", "")
+          cfg["api_keys"]["reddit_client_secret"] = os.environ.get("REDDIT_CLIENT_SECRET", "")
+          framework_url = os.environ.get("FRAMEWORK_URL", "")
+          if framework_url:
+              cfg["framework"]["url"] = framework_url
+          with open("config.yaml", "w") as f:
+              yaml.dump(cfg, f)
+          print("Config secrets injected")
+          EOF
+
+      - name: Run WatchlistBot
+        env:
+          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python bot.py --now --dry-run
+          else
+            python bot.py --now
+          fi
+
+      - name: Commit output JSON to repo
+        run: |
+          git config user.name  "WatchlistBot"
+          git config user.email "bot@watchlistbot"
+          git add output/latest.json output/picks_*.json || true
+          git diff --staged --quiet || git commit -m "chore: picks $(date -u '+%Y-%m-%d')"
+          git push
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: watchlist-run-${{ github.run_id }}
+          path: output/
+          retention-days: 30
+
+      - name: Notify Discord on failure
+        if: failure()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          python - <<'EOF'
+          import requests, os
+          w = os.environ.get("DISCORD_WEBHOOK", "")
+          if w and len(w) > 10:
+              requests.post(w, json={"username":"WatchlistBot","embeds":[{"title":"Bot Run Failed","description":"Check GitHub Actions for logs.","color":0xFF3333}]}, timeout=10)
+          EOF

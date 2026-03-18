@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WatchlistBot Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --bg2: #111827;
+    --bg3: #1a2235;
+    --card: #151d2e;
+    --border: rgba(255,255,255,0.07);
+    --text: #e8eaf0;
+    --text2: #8b93a7;
+    --text3: #5a6377;
+    --green: #00e5a0;
+    --green2: #00b37d;
+    --red: #ff4d6a;
+    --amber: #ffa94d;
+    --blue: #4da6ff;
+    --purple: #b07ffc;
+    --accent: #00e5a0;
+    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #00e5a0, #4da6ff);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .logo-text { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
+  .logo-sub { font-size: 11px; color: var(--text3); font-family: var(--font); }
+  .header-right { display: flex; align-items: center; gap: 16px; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .status-text { font-size: 12px; color: var(--text2); }
+  .run-btn {
+    background: var(--green);
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .run-btn:hover { background: var(--green2); transform: translateY(-1px); }
+
+  /* ── Layout ── */
+  .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .grid-3 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 24px; }
+
+  /* ── Cards ── */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .card-sm { padding: 16px; }
+  .card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 8px;
+  }
+  .card-value {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text);
+  }
+  .card-delta {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .up { color: var(--green); }
+  .down { color: var(--red); }
+  .neutral { color: var(--text2); }
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text2);
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  /* ── Picks Table ── */
+  .picks-table { width: 100%; border-collapse: collapse; }
+  .picks-table th {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--text3);
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .picks-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    vertical-align: middle;
+  }
+  .picks-table tr:last-child td { border-bottom: none; }
+  .picks-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .rank { font-family: var(--font); font-size: 13px; color: var(--text3); }
+  .ticker-cell { display: flex; align-items: center; gap: 10px; }
+  .ticker-logo {
+    width: 34px; height: 34px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; font-family: var(--font);
+    flex-shrink: 0;
+  }
+  .ticker-name { font-weight: 600; font-size: 14px; }
+  .ticker-sub { font-size: 11px; color: var(--text3); margin-top: 1px; }
+  .score-bar-wrap { display: flex; align-items: center; gap: 10px; }
+  .score-bar {
+    flex: 1; height: 6px; background: rgba(255,255,255,0.06);
+    border-radius: 3px; overflow: hidden; max-width: 80px;
+  }
+  .score-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+  .score-num { font-family: var(--font); font-size: 13px; font-weight: 600; min-width: 28px; }
+  .rating-badge {
+    font-size: 11px; font-weight: 600;
+    padding: 3px 8px; border-radius: 4px;
+    white-space: nowrap;
+  }
+  .rating-strong-buy { background: rgba(0,229,160,0.15); color: var(--green); }
+  .rating-buy { background: rgba(0,229,160,0.08); color: var(--green2); }
+  .rating-watch { background: rgba(255,169,77,0.12); color: var(--amber); }
+  .rating-spec { background: rgba(255,77,106,0.1); color: var(--red); }
+  .grade-badge {
+    font-family: var(--font); font-size: 12px; font-weight: 700;
+    padding: 2px 7px; border-radius: 4px;
+    background: rgba(255,255,255,0.06);
+  }
+  .grade-a { color: var(--green); }
+  .grade-b { color: var(--blue); }
+  .grade-c { color: var(--amber); }
+  .grade-d { color: var(--red); }
+  .price-cell { font-family: var(--font); font-size: 14px; font-weight: 600; }
+  .target-cell { font-size: 12px; color: var(--text2); }
+
+  /* ── Expand Bullets ── */
+  .bullets-row td {
+    background: rgba(0,229,160,0.03);
+    border-left: 2px solid var(--green);
+    padding: 12px 16px 12px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .bullet-list { list-style: none; }
+  .bullet-list li {
+    font-size: 12px;
+    color: var(--text2);
+    padding: 3px 0;
+    display: flex; gap: 8px;
+  }
+  .bullet-list li::before { content: '›'; color: var(--accent); font-weight: 700; }
+
+  /* ── Macro Panel ── */
+  .macro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .macro-item {
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px; padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .macro-label { font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+  .macro-val { font-size: 18px; font-weight: 700; font-family: var(--font); }
+  .macro-sub { font-size: 10px; color: var(--text3); margin-top: 2px; }
+  .regime-banner {
+    background: rgba(0,229,160,0.06);
+    border: 1px solid rgba(0,229,160,0.15);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+
+  /* ── Sector Weights ── */
+  .sector-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .sector-name { font-size: 12px; min-width: 140px; color: var(--text2); }
+  .sector-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; }
+  .sector-bar-fill { height: 5px; border-radius: 3px; background: var(--blue); }
+  .sector-pct { font-size: 11px; font-family: var(--font); color: var(--text3); min-width: 32px; text-align: right; }
+
+  /* ── Log ── */
+  .log-panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    font-family: var(--font);
+    font-size: 11px;
+    color: var(--text3);
+    height: 200px;
+    overflow-y: auto;
+    line-height: 1.8;
+  }
+  .log-line .ts { color: var(--text3); }
+  .log-line .info { color: var(--blue); }
+  .log-line .ok { color: var(--green); }
+  .log-line .warn { color: var(--amber); }
+  .log-line .msg { color: var(--text2); }
+
+  /* ── Next run ── */
+  .next-run {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--text3);
+    margin-top: 12px;
+  }
+  .countdown { font-family: var(--font); color: var(--accent); font-size: 13px; font-weight: 600; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .macro-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="logo">
+    <div class="logo-icon">📈</div>
+    <div>
+      <div class="logo-text">WatchlistBot</div>
+      <div class="logo-sub">AI-POWERED DAILY PICKS</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div style="display:flex;align-items:center;gap:6px">
+      <div class="status-dot" id="statusDot"></div>
+      <div class="status-text" id="statusText">Live — Last run: <span id="lastRunTime">loading…</span></div>
+    </div>
+    <button class="run-btn" onclick="triggerRun()">▶ Run Now</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- Stat Cards -->
+  <div class="grid-4" id="statCards">
+    <div class="card card-sm">
+      <div class="card-label">Top Score Today</div>
+      <div class="card-value up" id="topScore">—</div>
+      <div class="card-delta" id="topScoreTicker">Loading…</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-label">Avg Score (Top 5)</div>
+      <div class="card-value" id="avgScore">—</div>
+      <div class="card-delta neutral">framework composite</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-label">Tickers Analyzed</div>
+      <div class="card-value" id="tickersAnalyzed">—</div>
+      <div class="card-delta neutral" id="analysisDuration">—</div>
+    </div>
+    <div class="card card-sm">
+      <div class="card-label">Market Regime</div>
+      <div class="card-value" id="marketRegime" style="font-size:20px">—</div>
+      <div class="card-delta" id="vixVal">VIX —</div>
+    </div>
+  </div>
+
+  <!-- Picks + Side Panel -->
+  <div class="grid-3">
+
+    <!-- Picks Table -->
+    <div class="card" style="padding:20px 0">
+      <div style="padding:0 20px 12px">
+        <div class="section-title"><div class="section-dot"></div>Today's Top Picks</div>
+      </div>
+      <table class="picks-table" id="picksTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ticker</th>
+            <th>Score</th>
+            <th>Rating</th>
+            <th>Tech Grade</th>
+            <th>Price</th>
+            <th>1yr Target</th>
+          </tr>
+        </thead>
+        <tbody id="picksBody">
+          <tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text3)">Loading picks…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Side: Macro + Log -->
+    <div>
+      <!-- Macro -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="section-title"><div class="section-dot"></div>Macro Environment</div>
+        <div class="macro-grid">
+          <div class="macro-item">
+            <div class="macro-label">10yr Yield</div>
+            <div class="macro-val" id="yield10">—%</div>
+            <div class="macro-sub" id="yieldCurve">—</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-label">VIX</div>
+            <div class="macro-val" id="vix">—</div>
+            <div class="macro-sub" id="vixRegime">—</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-label">USD Index</div>
+            <div class="macro-val" id="dxy">—</div>
+            <div class="macro-sub" id="dxyTrend">—</div>
+          </div>
+        </div>
+        <div class="regime-banner" id="regimeBanner">Fetching macro context…</div>
+      </div>
+
+      <!-- Sector Rotation -->
+      <div class="card" style="margin-bottom:16px">
+        <div class="section-title"><div class="section-dot"></div>Sector Weights in Picks</div>
+        <div id="sectorBars">Loading…</div>
+      </div>
+
+      <!-- Log -->
+      <div class="section-title" style="margin-bottom:8px"><div class="section-dot"></div>Activity Log</div>
+      <div class="log-panel" id="logPanel">
+        <div class="log-line"><span class="ts">[--:--:--]</span> <span class="info">INFO</span> <span class="msg">WatchlistBot dashboard initialized</span></div>
+      </div>
+      <div class="next-run">
+        Next scheduled run: <span class="countdown" id="countdown">09:30 ET</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Score Distribution Chart -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="section-title"><div class="section-dot"></div>Score Distribution — All Tickers</div>
+      <div style="position:relative;height:220px"><canvas id="scoreChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="section-title"><div class="section-dot"></div>Category Breakdown — Top Pick</div>
+      <div style="position:relative;height:220px"><canvas id="radarChart"></canvas></div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+// ── Color palette for picks (cycles through top 5) ──────────────────────────
+const PICK_COLORS = ['#00e5a0', '#4da6ff', '#b07ffc', '#ffa94d', '#ff4d6a'];
+
+// ── Live data state ───────────────────────────────────────────────────────────
+let LIVE_PICKS = [];
+let LIVE_ALL_SCORES = [];
+let LIVE_MACRO = null;
+let LIVE_META = null;
+
+// ── Load data from JSON files written by the bot ──────────────────────────────
+async function loadData() {
+  const today = new Date().toISOString().slice(0, 10);
+
+  // Try today's file first, then fall back to the latest available
+  const filesToTry = [
+    `output/picks_${today}.json`,
+    `output/latest.json`,
+  ];
+
+  let picksRaw = null;
+  for (const file of filesToTry) {
+    try {
+      const resp = await fetch(file);
+      if (resp.ok) {
+        picksRaw = await resp.json();
+        addLog('OK', `Loaded picks from ${file}`);
+        break;
+      }
+    } catch (e) { /* try next */ }
+  }
+
+  if (!picksRaw) {
+    showNoDataState();
+    addLog('WARN', 'No picks file found yet — bot has not run today');
+    return;
+  }
+
+  // Support both formats: array of picks, or {picks, macro, meta, all_scores}
+  const picks = Array.isArray(picksRaw) ? picksRaw : (picksRaw.picks || []);
+  const macroData = Array.isArray(picksRaw) ? null : picksRaw.macro;
+  const metaData = Array.isArray(picksRaw) ? null : picksRaw.meta;
+  const allScores = Array.isArray(picksRaw) ? picks : (picksRaw.all_scores || picks);
+
+  // Attach display colors and rank
+  LIVE_PICKS = picks.map((p, i) => ({
+    ...p,
+    rank: i + 1,
+    color: PICK_COLORS[i] || '#8b93a7',
+    // Normalise field names from bot output
+    rating: (p.investment_rating || p.rating || 'WATCH').replace(/[🔥✅👀⚠️❌]\s*/g, '').trim(),
+    techGrade: p.technical_grade || p.techGrade || 'B',
+    sentGrade: p.sentiment_grade || p.sentGrade || 'Neutral',
+    target1y: p.target_1y || p.target1y || '—',
+    target3y: p.target_3y || p.target3y || '—',
+    entry: p.entry_zone || p.entry || '—',
+    bullets: p.rationale || p.rationale_bullets || p.bullets || [],
+    catScores: p.category_scores
+      ? Object.fromEntries(p.category_scores.map(c => [c.category, c.score]))
+      : (p.catScores || { leadership: 0.5, product: 0.5, macro: 0.5, financial: 0.5, narrative: 0.5, technical: 0.5, governance: 0.5 }),
+  }));
+
+  LIVE_ALL_SCORES = allScores.map(p => ({
+    ticker: p.ticker,
+    score: Math.round(p.composite_score || p.score || 0),
+  })).sort((a, b) => b.score - a.score);
+
+  LIVE_MACRO = macroData || {
+    yield10: 0, yieldCurve: 'N/A', vix: 0, vixRegime: 'N/A',
+    dxy: 0, dxyTrend: 'N/A', regime: 'Macro data not available in this run',
+  };
+
+  LIVE_META = metaData || {
+    topScore: LIVE_PICKS[0]?.composite_score || LIVE_PICKS[0]?.score || 0,
+    topTicker: LIVE_PICKS[0]?.ticker || '—',
+    avgScore: Math.round(LIVE_PICKS.reduce((s, p) => s + (p.composite_score || p.score || 0), 0) / (LIVE_PICKS.length || 1)),
+    tickers: LIVE_ALL_SCORES.length,
+    regime: '—',
+    vix: LIVE_MACRO?.vix || '—',
+    runDate: picksRaw.run_date || today,
+    duration: picksRaw.duration || '—',
+  };
+
+  renderAll();
+}
+
+function showNoDataState() {
+  document.getElementById('picksBody').innerHTML = `
+    <tr><td colspan="7" style="text-align:center;padding:48px 20px">
+      <div style="color:var(--amber);font-size:13px;margin-bottom:8px">⏳ Waiting for first bot run</div>
+      <div style="color:var(--text3);font-size:12px">The bot runs daily at 9:30 AM ET.<br>After the first run, picks will appear here automatically.</div>
+    </td></tr>`;
+  document.getElementById('topScore').textContent = '—';
+  document.getElementById('avgScore').textContent = '—';
+  document.getElementById('tickersAnalyzed').textContent = '—';
+  document.getElementById('marketRegime').textContent = '—';
+}
+
+function renderAll() {
+  if (!LIVE_PICKS.length) { showNoDataState(); return; }
+  renderPicks(LIVE_PICKS);
+  if (LIVE_MACRO) renderMacro(LIVE_MACRO);
+  renderStats(LIVE_META);
+  renderSectors(buildSectors(LIVE_PICKS));
+  if (LIVE_ALL_SCORES.length) {
+    if (scoreChart) { scoreChart.destroy(); }
+    initScoreChart(LIVE_ALL_SCORES);
+  }
+  if (radarChart) { radarChart.destroy(); }
+  initRadarChart(LIVE_PICKS[0]);
+  document.getElementById('lastRunTime').textContent = LIVE_META.runDate || new Date().toLocaleDateString();
+}
+
+function buildSectors(picks) {
+  const counts = {};
+  picks.forEach(p => { counts[p.sector || 'Unknown'] = (counts[p.sector || 'Unknown'] || 0) + 1; });
+  const total = picks.length || 1;
+  return Object.entries(counts)
+    .map(([name, n]) => ({ name, pct: Math.round(n / total * 100) }))
+    .sort((a, b) => b.pct - a.pct);
+}
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+
+function getRatingClass(r) {
+  if (r.includes('STRONG')) return 'rating-strong-buy';
+  if (r === 'BUY') return 'rating-buy';
+  if (r === 'WATCH') return 'rating-watch';
+  return 'rating-spec';
+}
+
+function getGradeClass(g) {
+  if (g.startsWith('A')) return 'grade-a';
+  if (g.startsWith('B')) return 'grade-b';
+  if (g.startsWith('C')) return 'grade-c';
+  return 'grade-d';
+}
+
+function getScoreColor(s) {
+  if (s >= 80) return '#00e5a0';
+  if (s >= 65) return '#4da6ff';
+  if (s >= 50) return '#ffa94d';
+  return '#ff4d6a';
+}
+
+function tickerInitials(t) { return t.slice(0, 3); }
+
+function tickerBg(color) {
+  const map = { '#00e5a0': 'rgba(0,229,160,0.12)', '#4da6ff': 'rgba(77,166,255,0.12)',
+    '#b07ffc': 'rgba(176,127,252,0.12)', '#ffa94d': 'rgba(255,169,77,0.12)',
+    '#ff4d6a': 'rgba(255,77,106,0.12)' };
+  return map[color] || 'rgba(255,255,255,0.06)';
+}
+
+// ── Render Picks ──────────────────────────────────────────────────────────
+
+function renderPicks(picks) {
+  const tbody = document.getElementById('picksBody');
+  tbody.innerHTML = '';
+  picks.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.style.cursor = 'pointer';
+    tr.onclick = () => toggleBullets(p);
+    tr.innerHTML = `
+      <td><span class="rank">${p.rank}</span></td>
+      <td>
+        <div class="ticker-cell">
+          <div class="ticker-logo" style="background:${tickerBg(p.color)};color:${p.color}">${tickerInitials(p.ticker)}</div>
+          <div>
+            <div class="ticker-name">${p.ticker}</div>
+            <div class="ticker-sub">${p.name.split(' ').slice(0,3).join(' ')}</div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="score-bar-wrap">
+          <div class="score-bar"><div class="score-fill" style="width:${p.score}%;background:${getScoreColor(p.score)}"></div></div>
+          <span class="score-num" style="color:${getScoreColor(p.score)}">${p.score}</span>
+        </div>
+      </td>
+      <td><span class="rating-badge ${getRatingClass(p.rating)}">${p.rating}</span></td>
+      <td><span class="grade-badge ${getGradeClass(p.techGrade)}">${p.techGrade}</span></td>
+      <td class="price-cell">$${p.price.toFixed(2)}</td>
+      <td class="target-cell">${p.target1y}</td>
+    `;
+    tbody.appendChild(tr);
+    // bullets row (hidden by default)
+    const btr = document.createElement('tr');
+    btr.className = 'bullets-row';
+    btr.id = `bullets-${p.ticker}`;
+    btr.style.display = 'none';
+    btr.innerHTML = `<td colspan="7">
+      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">Entry: ${p.entry}</div>
+      <ul class="bullet-list">${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+    </td>`;
+    tbody.appendChild(btr);
+  });
+}
+
+let openTicker = null;
+function toggleBullets(p) {
+  const row = document.getElementById(`bullets-${p.ticker}`);
+  if (openTicker && openTicker !== p.ticker) {
+    document.getElementById(`bullets-${openTicker}`).style.display = 'none';
+  }
+  if (openTicker === p.ticker) {
+    row.style.display = 'none';
+    openTicker = null;
+    if (LIVE_PICKS[0]) updateRadar(LIVE_PICKS[0]);
+  } else {
+    row.style.display = '';
+    openTicker = p.ticker;
+    updateRadar(p);
+  }
+}
+
+// ── Macro Panel ───────────────────────────────────────────────────────────
+
+function renderMacro(m) {
+  document.getElementById('yield10').textContent = m.yield10.toFixed(2) + '%';
+  document.getElementById('yieldCurve').textContent = m.yieldCurve;
+  document.getElementById('vix').textContent = m.vix.toFixed(1);
+  document.getElementById('vixRegime').textContent = m.vixRegime;
+  document.getElementById('dxy').textContent = m.dxy.toFixed(1);
+  document.getElementById('dxyTrend').textContent = m.dxyTrend;
+  document.getElementById('regimeBanner').textContent = m.regime;
+  document.getElementById('vixVal').textContent = 'VIX ' + m.vix.toFixed(1) + ' — ' + m.vixRegime;
+}
+
+// ── Sector Bars ───────────────────────────────────────────────────────────
+
+function renderSectors(sectors) {
+  const el = document.getElementById('sectorBars');
+  const max = Math.max(...sectors.map(s => s.pct), 1);
+  el.innerHTML = sectors.map(s => `
+    <div class="sector-row">
+      <div class="sector-name">${s.name}</div>
+      <div class="sector-bar-track"><div class="sector-bar-fill" style="width:${(s.pct/max*100).toFixed(0)}%"></div></div>
+      <div class="sector-pct">${s.pct}%</div>
+    </div>
+  `).join('');
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────
+
+function renderStats(s) {
+  document.getElementById('topScore').textContent = s.topScore + '/100';
+  document.getElementById('topScoreTicker').innerHTML = `<span class="up">#1 ${s.topTicker}</span>`;
+  document.getElementById('avgScore').textContent = s.avgScore + '/100';
+  document.getElementById('tickersAnalyzed').textContent = s.tickers;
+  document.getElementById('analysisDuration').textContent = s.duration;
+  document.getElementById('marketRegime').textContent = s.regime;
+  document.getElementById('vixVal').textContent = 'VIX ' + s.vix;
+  document.getElementById('lastRunTime').textContent = new Date().toLocaleTimeString();
+}
+
+// ── Chart: Score Distribution ─────────────────────────────────────────────
+
+let scoreChart, radarChart;
+
+function initScoreChart(scores) {
+  const ctx = document.getElementById('scoreChart').getContext('2d');
+  scoreChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: scores.map(s => s.ticker),
+      datasets: [{
+        data: scores.map(s => s.score),
+        backgroundColor: scores.map(s => getScoreColor(s.score) + '88'),
+        borderColor: scores.map(s => getScoreColor(s.score)),
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { label: ctx => ' Score: ' + ctx.parsed.y + '/100' }
+      }},
+      scales: {
+        x: { ticks: { color: '#5a6377', font: { size: 10, family: 'monospace' } }, grid: { display: false } },
+        y: { min: 0, max: 100, ticks: { color: '#5a6377', font: { size: 10 }, stepSize: 20 },
+          grid: { color: 'rgba(255,255,255,0.04)' } }
+      }
+    }
+  });
+}
+
+function initRadarChart(pick) {
+  const ctx = document.getElementById('radarChart').getContext('2d');
+  const cats = ['Leadership', 'Product', 'Macro', 'Financial', 'Narrative', 'Technical', 'Governance'];
+  const vals = Object.values(pick.catScores).map(v => Math.round(v * 100));
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: cats,
+      datasets: [{
+        label: pick.ticker,
+        data: vals,
+        backgroundColor: pick.color + '22',
+        borderColor: pick.color,
+        borderWidth: 1.5,
+        pointBackgroundColor: pick.color,
+        pointRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { r: {
+        min: 0, max: 100,
+        ticks: { display: false },
+        grid: { color: 'rgba(255,255,255,0.06)' },
+        angleLines: { color: 'rgba(255,255,255,0.06)' },
+        pointLabels: { color: '#8b93a7', font: { size: 10 } }
+      }}
+    }
+  });
+}
+
+function updateRadar(pick) {
+  if (!radarChart) return;
+  const vals = Object.values(pick.catScores).map(v => Math.round(v * 100));
+  radarChart.data.datasets[0].data = vals;
+  radarChart.data.datasets[0].label = pick.ticker;
+  radarChart.data.datasets[0].borderColor = pick.color;
+  radarChart.data.datasets[0].backgroundColor = pick.color + '22';
+  radarChart.data.datasets[0].pointBackgroundColor = pick.color;
+  radarChart.update();
+}
+
+// ── Log ───────────────────────────────────────────────────────────────────
+
+function addLog(level, msg) {
+  const panel = document.getElementById('logPanel');
+  const ts = new Date().toLocaleTimeString('en-US', { hour12: false });
+  const cls = { INFO: 'info', OK: 'ok', WARN: 'warn' }[level] || 'info';
+  const line = document.createElement('div');
+  line.className = 'log-line';
+  line.innerHTML = `<span class="ts">[${ts}]</span> <span class="${cls}">${level}</span> <span class="msg">${msg}</span>`;
+  panel.appendChild(line);
+  panel.scrollTop = panel.scrollHeight;
+}
+
+// ── Countdown ─────────────────────────────────────────────────────────────
+
+function updateCountdown() {
+  const now = new Date();
+  const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+  let next = new Date(et);
+  next.setHours(9, 30, 0, 0);
+  if (et >= next) {
+    next.setDate(next.getDate() + 1);
+    if (next.getDay() === 0) next.setDate(next.getDate() + 1);
+    if (next.getDay() === 6) next.setDate(next.getDate() + 2);
+  }
+  const diff = next - et;
+  const h = Math.floor(diff / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('countdown').textContent =
+    `in ${h}h ${m}m ${s}s`;
+}
+
+// ── Trigger Run (calls GitHub Actions API or shows instructions) ─────────────
+function triggerRun() {
+  addLog('INFO', 'To trigger a manual run, go to your GitHub repo');
+  addLog('INFO', '→ Actions tab → "Daily Watchlist Bot" → "Run workflow"');
+  addLog('INFO', 'Or push any commit to the main branch to trigger it');
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+loadData();
+setInterval(updateCountdown, 1000);
+updateCountdown();
+// Reload data every 5 minutes in case a new run just finished
+setInterval(loadData, 5 * 60 * 1000);
+</script>
+</body>
+</html>

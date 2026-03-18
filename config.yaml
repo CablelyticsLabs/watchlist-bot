@@ -1,0 +1,121 @@
+# ============================================================
+#  WATCHLIST BOT - CONFIGURATION FILE
+#  Edit this file to customize all bot behavior.
+# ============================================================
+
+# ── DISCORD ──────────────────────────────────────────────────
+discord:
+  webhook_url: "YOUR_DISCORD_WEBHOOK_URL_HERE"
+  # Optional: tag a role or user on delivery (e.g. "<@&ROLE_ID>" or "<@USER_ID>")
+  mention: ""
+  username: "📈 WatchlistBot"
+  avatar_url: "https://i.imgur.com/4M34hi2.png"
+
+# ── FRAMEWORK SOURCE ─────────────────────────────────────────
+framework:
+  # Google Sheets published-CSV URL  (File → Share → Publish to web → CSV)
+  # OR any raw CSV / JSON URL that contains the scoring questions
+  url: "https://docs.google.com/spreadsheets/d/1n1LjAo48v_s6aFLTNfqey3ZEXnxgC5Pz/export?format=csv&gid=0"
+
+# ── SCHEDULE ─────────────────────────────────────────────────
+schedule:
+  # Time to POST results to Discord (24-hr, Eastern Time)
+  post_time: "09:30"
+  timezone: "America/New_York"
+  # How many hours before post_time to start the full analysis pass
+  analysis_window_hours: 12
+
+# ── CANDIDATE UNIVERSE ───────────────────────────────────────
+# The bot evaluates these tickers plus dynamically discovered ones.
+# You can add/remove symbols freely.
+universe:
+  watchlist:
+    - NVDA
+    - MSFT
+    - GOOGL
+    - AMZN
+    - META
+    - AAPL
+    - TSM
+    - AVGO
+    - AMD
+    - PLTR
+    - CRWD
+    - SNOW
+    - DDOG
+    - NET
+    - SMCI
+    - ARM
+    - ASTS
+    - IONQ
+    - RXRX
+    - RKLB
+  # Pull additional high-momentum tickers from screener automatically
+  auto_discover: true
+  auto_discover_count: 10
+  # Min average daily volume (shares) to be considered
+  min_avg_volume: 500000
+  # Min market cap in USD
+  min_market_cap: 500000000
+
+# ── SCORING WEIGHTS ──────────────────────────────────────────
+# Each framework category weight (must sum to 1.0).
+# Tune these to reflect your own conviction.
+weights:
+  leadership_team: 0.12
+  product_market_fit: 0.18
+  macro_environment: 0.12
+  financial_health: 0.16
+  narrative_adoption: 0.14
+  technicals_entry: 0.20
+  governance_stability: 0.08
+
+# ── TECHNICAL ANALYSIS PARAMETERS ───────────────────────────
+technicals:
+  ema_periods: [20, 50, 200]
+  rsi_period: 14
+  rsi_oversold: 40          # more lenient for growth stocks
+  rsi_overbought: 75
+  volume_surge_ratio: 1.5   # current vol vs 20-day avg
+  atr_multiplier: 2.0       # for stop-loss calc
+  max_pct_from_52w_high: 0.35   # skip if price > 65% of 52w high
+  min_pct_from_52w_high: 0.05   # skip if within 5% of all-time high
+
+# ── SENTIMENT SOURCES ────────────────────────────────────────
+sentiment:
+  enabled: true
+  sources:
+    - reddit_wsb       # r/wallstreetbets
+    - reddit_stocks    # r/stocks
+    - reddit_investing # r/investing
+    - news_headlines   # via free RSS / Yahoo Finance
+  lookback_hours: 24
+  min_mentions_threshold: 3
+
+# ── FUNDAMENTAL FILTERS ──────────────────────────────────────
+fundamentals:
+  max_pe_ratio: 120          # skip sky-high speculative PE (unless growth)
+  min_revenue_growth_yoy: 0.05   # 5% YoY minimum
+  max_debt_to_equity: 3.0
+  min_gross_margin: 0.20
+
+# ── OUTPUT ───────────────────────────────────────────────────
+output:
+  top_n: 5                   # number of picks to surface
+  save_json: true            # save results to output/
+  save_markdown: true
+  log_level: "INFO"          # DEBUG | INFO | WARNING | ERROR
+
+# ── API KEYS (leave blank if using free tiers) ───────────────
+api_keys:
+  # yfinance is free – no key needed
+  # Alpha Vantage free tier: 25 calls/day
+  alpha_vantage: "YOUR_ALPHA_VANTAGE_KEY_HERE"
+  # Reddit API (create app at https://www.reddit.com/prefs/apps)
+  reddit_client_id: "YOUR_REDDIT_CLIENT_ID"
+  reddit_client_secret: "YOUR_REDDIT_CLIENT_SECRET"
+  reddit_user_agent: "WatchlistBot/1.0"
+  # Optional: NewsAPI.org free tier
+  news_api_key: "YOUR_NEWSAPI_KEY_HERE"
+  # Anthropic Claude API for AI-powered analysis
+  anthropic_api_key: "YOUR_ANTHROPIC_API_KEY_HERE"

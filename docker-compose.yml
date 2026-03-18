@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  watchlistbot:
+    build: .
+    container_name: watchlistbot
+    restart: unless-stopped
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - ./output:/app/output
+      - ./logs:/app/logs
+    environment:
+      - TZ=America/New_York
+    # Override CMD to run immediately:
+    # command: python bot.py --now
