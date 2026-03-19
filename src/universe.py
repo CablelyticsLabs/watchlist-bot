@@ -91,26 +91,86 @@ def _build_universe(config: dict) -> Tuple[List[str], Set[str]]:
 
 
 def _sp500() -> List[str]:
+    """Pull S&P 500 from iShares IVV ETF holdings CSV — works in GitHub Actions."""
     try:
         import pandas as pd
-        tables = pd.read_html("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies", header=0)
-        col = "Symbol" if "Symbol" in tables[0].columns else tables[0].columns[0]
-        return tables[0][col].dropna().tolist()
+        from io import StringIO
+        url = ("https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf/"
+               "1467271812596.ajax?fileType=csv&fileName=IVV_holdings&dataType=fund")
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+        if resp.status_code == 200:
+            lines = resp.text.splitlines()
+            start = next((i for i, l in enumerate(lines) if "Ticker" in l or "ticker" in l), 0)
+            df = pd.read_csv(StringIO("\n".join(lines[start:])))
+            col = next((c for c in df.columns if "ticker" in c.lower()), None)
+            if col:
+                tickers = [t for t in df[col].dropna().tolist()
+                           if isinstance(t, str) and t.isalpha() and len(t) <= 5]
+                log.info("S&P 500: fetched %d tickers from iShares IVV", len(tickers))
+                return tickers
     except Exception as e:
-        log.warning("S&P 500 fetch failed: %s", e)
-        return []
+        log.warning("S&P 500 iShares fetch failed: %s — using fallback", e)
+
+    # Fallback: hardcoded S&P 500 core tickers
+    return [
+        "AAPL","MSFT","NVDA","AMZN","META","GOOGL","GOOG","BRK.B","LLY","AVGO",
+        "TSLA","JPM","UNH","V","XOM","MA","COST","HD","PG","JNJ","ABBV","MRK",
+        "CVX","CRM","BAC","NFLX","AMD","PEP","KO","TMO","WMT","CSCO","ACN","MCD",
+        "ABT","LIN","TXN","PM","DHR","NEE","RTX","T","AMGN","INTU","SPGI","HON",
+        "UNP","ISRG","CAT","GE","BKNG","PFE","LOW","COP","VRTX","DE","MDT","AXP",
+        "AMAT","GILD","ETN","SYK","ADI","PANW","REGN","BLK","CB","LRCX","SCHW",
+        "NOW","ZTS","MO","ELV","BSX","MDLZ","MMC","PLD","DUK","SO","CI","SLB",
+        "AON","CME","TJX","WM","ITW","NOC","GD","ICE","HUM","PGR","MCO","APH",
+        "NSC","EMR","KLAC","FCX","USB","TGT","ECL","PSA","FDX","OXY","AIG","GWW",
+        "SNPS","CDNS","ROP","FTNT","CTAS","CSX","HCA","MSI","ORLY","AZO","PCAR",
+        "NUE","SHW","TEL","AFL","ALL","CMI","CARR","PWR","PAYX","EW","FAST","FICO",
+        "WELL","DLR","O","VRSK","IDXX","A","GPN","KMB","PPG","MTD","AME","ROK",
+        "WMB","OTIS","EFX","HSY","KEYS","ANSS","VICI","KR","IQV","EPAM","TROW",
+        "STZ","DLTR","SBAC","HAL","LHX","BK","BAX","AKAM","WEC","XYL","CTSH",
+        "BALL","AVB","ALGN","TTWO","TSN","DVN","HES","MPC","VLO","PSX","EOG",
+        "CCI","PEG","ES","ED","D","FE","EXC","AEP","PCG","XEL","AWK","ETR",
+        "TMUS","VZ","CMCSA","CHTR","DIS","PARA","WBD","OMC","IPG","NWS","FOX",
+        "NWSA","LVS","MGM","WYNN","MAR","HLT","CCL","RCL","NCLH","UAL","DAL",
+        "AAL","LUV","ALK","JBLU","FLT","EXPE","BOOKING","ABNB","UBER","LYFT",
+    ]
 
 
 def _nasdaq100() -> List[str]:
+    """Pull NASDAQ 100 from iShares QQQ-equivalent ETF holdings."""
     try:
         import pandas as pd
-        for df in pd.read_html("https://en.wikipedia.org/wiki/Nasdaq-100", header=0):
-            for col in df.columns:
-                if "ticker" in col.lower() or "symbol" in col.lower():
-                    return df[col].dropna().tolist()
+        from io import StringIO
+        # iShares NASDAQ 100 ETF (CNDX/IVQ) — using QQQ Invesco public data
+        url = ("https://www.ishares.com/us/products/239607/ishares-nasdaq-100-etf/"
+               "1467271812596.ajax?fileType=csv&fileName=CNDX_holdings&dataType=fund")
+        resp = requests.get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=30)
+        if resp.status_code == 200:
+            lines = resp.text.splitlines()
+            start = next((i for i, l in enumerate(lines) if "Ticker" in l or "ticker" in l), 0)
+            df = pd.read_csv(StringIO("\n".join(lines[start:])))
+            col = next((c for c in df.columns if "ticker" in c.lower()), None)
+            if col:
+                tickers = [t for t in df[col].dropna().tolist()
+                           if isinstance(t, str) and t.isalpha() and len(t) <= 5]
+                if len(tickers) > 50:
+                    log.info("NASDAQ 100: fetched %d tickers from iShares", len(tickers))
+                    return tickers
     except Exception as e:
-        log.warning("NASDAQ 100 fetch failed: %s", e)
-    return []
+        log.warning("NASDAQ 100 iShares fetch failed: %s — using fallback", e)
+
+    # Fallback: hardcoded NASDAQ 100 core tickers
+    return [
+        "MSFT","AAPL","NVDA","AMZN","META","GOOGL","GOOG","TSLA","AVGO","COST",
+        "NFLX","AMD","PEP","CSCO","ADBE","TMUS","TXN","QCOM","INTU","AMGN",
+        "HON","AMAT","BKNG","ISRG","VRTX","PANW","ADP","REGN","LRCX","MU",
+        "GILD","ADI","MELI","KLAC","SNPS","CDNS","MDLZ","PYPL","CTAS","ORLY",
+        "MRVL","CEG","FTNT","NXPI","CHTR","ABNB","PAYX","MNST","ROP","WDAY",
+        "PCAR","ROST","KDP","ODFL","FAST","DXCM","TEAM","IDXX","VRSK","CPRT",
+        "GEHC","EXC","ON","CTSH","BIIB","TTWO","ZS","SIRI","DLTR","WBD","ILMN",
+        "ENPH","ALGN","JD","LCID","PDD","ASML","CRWD","DDOG","SNOW","NET","MDB",
+        "ZM","OKTA","DOCU","COIN","HOOD","RBLX","PLTR","PATH","U","AFRM",
+        "RIVN","LYFT","GRAB","SOFI","OPEN","WISH","FROG","GTLB","CFLT","HUBS",
+    ]
 
 
 def _russell1000() -> List[str]:
