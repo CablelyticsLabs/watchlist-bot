@@ -465,9 +465,9 @@ async function loadData() {
   };
 
   LIVE_META = metaData || {
-    topScore: LIVE_PICKS[0]?.composite_score || LIVE_PICKS[0]?.score || 0,
+    topScore: LIVE_PICKS[0]?.score || 0,
     topTicker: LIVE_PICKS[0]?.ticker || '—',
-    avgScore: Math.round(LIVE_PICKS.reduce((s, p) => s + (p.composite_score || p.score || 0), 0) / (LIVE_PICKS.length || 1)),
+    avgScore: Math.round(LIVE_PICKS.reduce((s, p) => s + p.score, 0) / (LIVE_PICKS.length || 1)),
     tickers: LIVE_ALL_SCORES.length,
     regime: '—',
     vix: LIVE_MACRO?.vix || '—',
