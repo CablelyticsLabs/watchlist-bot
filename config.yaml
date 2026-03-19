@@ -10,7 +10,7 @@ discord:
   avatar_url: ""
 
 framework:
-  url: "https://docs.google.com/spreadsheets/d/1n1LjAo48v_s6aFLTNfqey3ZEXnxgC5Pz/export?format=csv&gid=0"
+  url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZfT-zalg1VjkCuyBz95Hw7k1FafUDmP7dwVe3ME3wnL9jKK-C6ZWgbqTD89Otqg/pub?output=csv"
 
 schedule:
   post_time: "09:30"
