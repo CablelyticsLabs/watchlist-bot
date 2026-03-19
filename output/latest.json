@@ -1,35 +1,39 @@
 {
   "run_date": "2026-03-19",
-  "generated_at": "2026-03-19T22:26:35.460840",
+  "generated_at": "2026-03-19T22:34:23.530411",
   "mainstream_picks": [
     {
-      "ticker": "NVO",
-      "name": "Novo Nordisk A/S",
-      "composite_score": 68.5,
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "composite_score": 62.5,
       "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 37.08000183105469,
-      "sector": "Healthcare",
+      "price": 245.99000549316406,
+      "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$35-$38 current levels with stop below $34",
-      "target_1y": "$48-$52 based on 14x forward PE multiple expansion as growth stabilizes",
-      "target_3y": "$65-$75 assuming successful pipeline execution and market share stabilization in core franchises",
+      "entry_zone": "$235-245 on volume confirmation or $260-265 on break above 20 EMA with momentum shift",
+      "target_1y": "$320 - recovery to analyst targets as macro stabilizes and AI features drive subscription growth",
+      "target_3y": "$450 - premium valuation return as AI-enhanced creative tools expand TAM and enterprise digital transformation accelerates",
       "rationale_bullets": [
-        "\ud83d\udd35 [Valuation]: Forward PE of 11.1x represents significant discount for a quality pharma company with 82.4% gross margins",
-        "\ud83d\udd35 [Technicals]: Trading near 52-week lows with 53.7% decline from highs creates compelling risk/reward at current levels",
-        "\ud83d\udd35 [Fundamentals]: Exceptional ROE of 60.7% and strong operating margins of 44.5% demonstrate operational excellence despite recent headwinds",
-        "\ud83d\udd35 [Market Position]: Dominant position in diabetes/obesity care with GLP-1 franchise, but facing increased competition from Eli Lilly",
-        "\ud83d\udd35 [Momentum]: Revenue decline of -7.6% YoY signals cyclical challenges, but analyst target of $47.43 suggests 28% upside potential",
-        "\ud83d\udd35 [Capital Structure]: Conservative D/E ratio of 0.67 and positive FCF provide financial stability during downturn",
-        "\ud83d\udd35 [Governance]: Perfect governance score of 1.0 reflects strong Danish corporate standards and transparent management"
+        "\ud83d\udd35 Valuation: Forward PE of 9.3 and 41.5% drawdown from highs creates compelling risk/reward at 14.2x for quality SaaS leader",
+        "\ud83d\udd35 Financial Health: Exceptional margins (89.4% gross, 37.8% operating) with $9.29B FCF and strong 58.8% ROE demonstrate operational excellence",
+        "\ud83d\udd35 Growth Profile: 12% revenue growth with stable 11.1% earnings growth shows resilience despite macro headwinds in creative/enterprise spending",
+        "\ud83d\udd35 Technical Setup: Currently at 52-week lows with bearish momentum, trading below all EMAs - signals capitulation but requires confirmation of reversal",
+        "\ud83d\udd35 Market Position: Dominant moats in creative software (Photoshop/Illustrator) and growing PDF/digital document workflows provide pricing power",
+        "\ud83d\udd35 AI Catalyst: Adobe's integration of generative AI into Creative Cloud positions well for next growth cycle as enterprise adoption accelerates",
+        "\ud83d\udd35 Analyst Conviction: $328 consensus target implies 33% upside with strong buy ratings despite current technical weakness"
       ],
       "risks": [
-        "\u26a0\ufe0f Intensifying competition in GLP-1 obesity market from Eli Lilly's Mounjaro potentially eroding market share",
-        "\u26a0\ufe0f Revenue and earnings declining YoY with stock in clear downtrend below all major EMAs",
-        "\u26a0\ufe0f Limited pipeline visibility and potential pricing pressure from healthcare cost containment globally"
+        "\u26a0\ufe0f Economic slowdown reducing enterprise software spending and SMB creative subscriptions",
+        "\u26a0\ufe0f AI disruption risk as competitors like Canva and open-source AI tools challenge Adobe's creative monopoly",
+        "\u26a0\ufe0f Technical breakdown below $245 support could trigger further selling toward $200-220 range"
       ],
       "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
         {
           "category": "product_market_fit",
           "score": 0.429
@@ -40,7 +44,11 @@
         },
         {
           "category": "financial_health",
-          "score": 0.6
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
         },
         {
           "category": "technicals_entry",
@@ -53,36 +61,210 @@
       ]
     },
     {
-      "ticker": "FSM",
-      "name": "Fortuna Mining Corp.",
-      "composite_score": 65.5,
+      "ticker": "EOG",
+      "name": "EOG Resources, Inc.",
+      "composite_score": 59.5,
       "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
+      "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 9.0,
-      "sector": "Basic Materials",
+      "price": 138.82000732421875,
+      "sector": "Energy",
       "pool": "mainstream",
-      "entry_zone": "$8.50-$9.20 on further weakness or break above $10 with volume confirmation",
-      "target_1y": "$12.50 - Reversion to mean valuation as oversold conditions normalize and strong fundamentals recognized",
-      "target_3y": "$16.00 - Expansion multiple on sustained operational excellence and potential gold cycle recovery",
+      "entry_zone": "$121-$125 on pullback to 50 EMA support with RSI below 60",
+      "target_1y": "$145-$150 assuming stable oil prices and operational improvements",
+      "target_3y": "$160-$175 if company successfully navigates energy transition while maintaining cash generation",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 987% earnings growth, 49% gross margins, and minimal debt (0.12 D/E)",
-        "\ud83d\udd35 Valuation: Extremely attractive at 5.6x forward PE trading 34% below 52-week highs with $14 analyst target",
-        "\ud83d\udd35 Technicals: Severely oversold RSI of 6.5 suggests capitulation, though bearish MACD and below 200 EMA remain concerning",
-        "\ud83d\udd35 Operations: Strong operational performance with 38% revenue growth and diversified geographic portfolio across 5 countries",
-        "\ud83d\udd35 Cash Generation: Solid $300M free cash flow provides flexibility for growth investments and potential shareholder returns",
-        "\ud83d\udd35 Macro Headwinds: Gold mining facing pressure from potential Fed policy shifts and strong dollar environment",
-        "\ud83d\udd35 Leadership Risk: Below-average leadership scores (0.4) and product-market fit concerns in competitive mining space"
+        "\ud83d\udd35 Financial Health: Strong balance sheet with 0.31 D/E ratio and $2.33B free cash flow generation demonstrates capital discipline",
+        "\ud83d\udd35 Valuation: Forward PE of 12.3x appears reasonable for energy sector, though PEG ratio concerns given earnings decline",
+        "\ud83d\udd35 Technical Position: At 52-week highs with RSI at 80.8 indicating overbought conditions and poor risk/reward setup",
+        "\ud83d\udd35 Operational Efficiency: Impressive 62% gross margins showcase low-cost production capabilities in current environment",
+        "\ud83d\udd35 Growth Trajectory: Flat revenue growth and -41.7% earnings decline signal challenging operational headwinds",
+        "\ud83d\udd35 Market Position: Strong ROE of 16.8% indicates efficient capital allocation despite sector cyclicality",
+        "\ud83d\udd35 Macro Exposure: Vulnerable to oil price volatility and energy transition risks over 3-5 year horizon"
       ],
       "risks": [
-        "\u26a0\ufe0f Geopolitical exposure across emerging markets (Argentina, C\u00f4te d'Ivoire, Peru, Senegal) increases operational risk",
-        "\u26a0\ufe0f Commodity price volatility could rapidly erode margins despite current strong performance",
-        "\u26a0\ufe0f Technical breakdown below $9 support with no social sentiment cushion creates downside momentum risk"
+        "\u26a0\ufe0f Extremely overbought at 52-week highs with 80+ RSI creating significant downside risk",
+        "\u26a0\ufe0f Earnings declining 41.7% YoY despite strong margins suggests underlying operational challenges",
+        "\u26a0\ufe0f Energy sector faces long-term headwinds from ESG concerns and renewable energy transition"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
           "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "RNR",
+      "name": "RenaissanceRe Holdings Ltd.",
+      "composite_score": 59.4,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 291.67999267578125,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$270-$280 on pullback to 50 EMA support with RSI below 30",
+      "target_1y": "$335 based on 9.5x forward PE expansion as earnings recover and hard market continues",
+      "target_3y": "$380 assuming 8% annual appreciation driven by normalized underwriting cycles and investment income growth",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Forward PE of 7.0 suggests significant undervaluation for a profitable reinsurer with 19.7% ROE",
+        "\ud83d\udd35 Financial Health: Strong balance sheet with minimal debt (0.13 D/E) but concerning negative $14.7B free cash flow reflects claims payouts",
+        "\ud83d\udd35 Technical Setup: Oversold RSI at 34.4 with golden cross intact, sitting 6% below 52w high in healthy correction",
+        "\ud83d\udd35 Revenue Growth: Impressive 27.6% YoY revenue growth driven by hard insurance pricing environment and catastrophe exposure",
+        "\ud83d\udd35 Profitability: Solid 43.7% operating margin but flat earnings growth indicates margin compression pressure",
+        "\ud83d\udd35 Leadership Concerns: Below-average leadership score (0.4) raises questions about strategic execution in competitive market",
+        "\ud83d\udd35 Market Position: Limited product-market fit score (0.29) suggests challenges in differentiation within commoditized reinsurance space"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Catastrophe exposure could lead to significant quarterly volatility and capital impairment during severe weather events",
+        "\u26a0\ufe0f Insurance pricing cycle may turn softer, compressing premiums and reducing profitability after current hard market ends",
+        "\u26a0\ufe0f Rising interest rates create mark-to-market losses on investment portfolio while increasing competitive pressure"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "VOYA",
+      "name": "Voya Financial, Inc.",
+      "composite_score": 59.3,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "C",
+      "sentiment_grade": "Neutral",
+      "price": 66.80999755859375,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$58-62 on break below 52-week low support with volume confirmation",
+      "target_1y": "$78 - reversion to 52-week high as valuation attracts institutional buyers",
+      "target_3y": "$95 - compound growth from retirement market expansion and operational improvements",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Extremely cheap at 5.9x forward PE with 48% earnings growth - potential value trap or deep value opportunity",
+        "\ud83d\udd35 Technicals: Below all major EMAs in downtrend, but RSI neutral at 49.8 suggests oversold condition may be stabilizing",
+        "\ud83d\udd35 Financial Health: Strong FCF of $1.51B and manageable 0.69 D/E ratio provide financial stability in volatile markets",
+        "\ud83d\udd35 Macro Environment: Interest rate sensitivity cuts both ways - higher rates boost investment income but pressure valuations",
+        "\ud83d\udd35 Leadership: Weak leadership score (0.4) raises concerns about strategic execution in competitive benefits market",
+        "\ud83d\udd35 Market Position: Limited product-market fit score (0.14) suggests challenges in differentiating workplace benefits offerings",
+        "\ud83d\udd35 Analyst Sentiment: Strong upside to $84.70 target (+27%) but zero social mentions indicate lack of retail interest"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Technical breakdown below 200 EMA with no golden cross signal indicates continued selling pressure",
+        "\u26a0\ufe0f Low product-market fit and leadership scores suggest structural competitive disadvantages",
+        "\u26a0\ufe0f Financial services face regulatory headwinds and potential economic slowdown impact on corporate benefits demand"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.143
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "SEIC",
+      "name": "SEI Investments Company",
+      "composite_score": 55.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "D",
+      "sentiment_grade": "Neutral",
+      "price": 77.87000274658203,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$68-$72 near 52-week lows with oversold bounce confirmation",
+      "target_1y": "$88-$92 (reversal to 50 EMA resistance on fundamental strength)",
+      "target_3y": "$110-$120 (analyst target achieved through margin expansion and market recovery)",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Outstanding metrics with 78.4% gross margins, 29% ROE, and minimal debt (0.01 D/E)",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 12.2x with 16.9% earnings growth suggests undervaluation",
+        "\ud83d\udd35 Technicals: Oversold RSI (32.9) but trading below all EMAs in confirmed downtrend",
+        "\ud83d\udd35 Macro Headwinds: Asset management sector faces fee compression and potential AUM outflows in uncertain markets",
+        "\ud83d\udd35 Market Position: Weak product-market fit score (0.29) suggests competitive challenges in wealth management space",
+        "\ud83d\udd35 Governance: Strong stability score (1.0) indicates solid management execution capabilities",
+        "\ud83d\udd35 Sentiment Void: Zero market mentions and neutral sentiment suggests institutional neglect"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Fee compression pressures in asset management industry eroding margins",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA signals potential further downside to $65-70 range",
+        "\u26a0\ufe0f Rising interest rates creating headwinds for AUM growth and client retention"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.6
         },
         {
           "category": "product_market_fit",
@@ -102,174 +284,6 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "RTX",
-      "name": "RTX Corporation",
-      "composite_score": 64.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 200.72999572753906,
-      "sector": "Industrials",
-      "pool": "mainstream",
-      "entry_zone": "$185-$195 on pullback to 50 EMA support with volume confirmation",
-      "target_1y": "$230 - analyst targets achievable with continued aerospace recovery and margin expansion",
-      "target_3y": "$275 - defense modernization cycle and commercial fleet renewal drive 8-10% annual growth",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Strong FCF generation at $6.46B with moderate 0.60 D/E ratio shows solid balance sheet management in capital-intensive aerospace sector",
-        "\ud83d\udd35 Fundamentals: 12.1% revenue growth demonstrates robust demand recovery, though 26.7x forward PE suggests premium valuation relative to industrial peers",
-        "\ud83d\udd35 Technicals: Trading above all key EMAs with golden cross intact, but bearish MACD and low volume signal potential near-term consolidation",
-        "\ud83d\udd35 Market Position: Diversified aerospace/defense portfolio with Collins, Pratt & Whitney, and Raytheon segments provides multiple revenue streams and cycle resilience",
-        "\ud83d\udd35 Macro Environment: Defense spending tailwinds and commercial aviation recovery support growth, but elevated valuation leaves limited margin for execution missteps",
-        "\ud83d\udd35 Governance: Perfect stability score reflects mature management structure, though leadership effectiveness scores suggest room for operational improvements"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Premium valuation at 26.7x forward PE vulnerable to multiple compression if growth disappoints or rates remain elevated",
-        "\u26a0\ufe0f Cyclical aerospace exposure to potential commercial aviation downturn or defense budget cuts in changing geopolitical environment",
-        "\u26a0\ufe0f Technical deterioration with bearish MACD divergence and declining volume suggesting momentum loss near 52-week highs"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 0.4
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "SYK",
-      "name": "Stryker Corporation",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 339.760009765625,
-      "sector": "Healthcare",
-      "pool": "mainstream",
-      "entry_zone": "$320-$335 on further weakness or break above $370 with volume confirmation of trend reversal",
-      "target_1y": "$400-$420 as margins normalize and growth momentum attracts institutional buyers back to quality healthcare names",
-      "target_3y": "$480-$520 driven by aging demographics tailwinds, innovation pipeline execution, and margin expansion in core segments",
-      "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Exceptional earnings growth (55.9% YoY) and strong margins (65% gross, 27.2% operating) demonstrate operational excellence",
-        "\ud83d\udd35 Financial Health: Solid balance sheet with 0.73 D/E ratio, $4.17B FCF, and healthy 15.1% ROE supporting dividend sustainability",
-        "\ud83d\udd35 Valuation: Forward PE of 20.3x appears reasonable for quality medical device leader, though premium to historical averages",
-        "\ud83d\udd35 Technicals: Severely oversold with RSI at 18.6, presenting contrarian opportunity but downtrend remains intact below all EMAs",
-        "\ud83d\udd35 Market Position: Dominant player in orthopedics and medical devices with durable competitive moats and pricing power",
-        "\ud83d\udd35 Sentiment: Complete absence of market attention (0 mentions) creates information asymmetry opportunity for patient investors",
-        "\ud83d\udd35 Risk/Reward: Attractive 3.6x risk/reward ratio with analyst target at $424 (+24.8% upside) vs technical support levels"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Technical breakdown below 200 EMA with bearish MACD signals potential further downside to $320-310 range",
-        "\u26a0\ufe0f Healthcare sector facing regulatory pressures and potential Medicare reimbursement cuts impacting device pricing",
-        "\u26a0\ufe0f High valuation multiple vulnerable to multiple compression in rising rate environment despite growth quality"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "QCOM",
-      "name": "QUALCOMM Incorporated",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 131.27999877929688,
-      "sector": "Technology",
-      "pool": "mainstream",
-      "entry_zone": "$125\u2013$135 on any further weakness below current levels with RSI remaining oversold",
-      "target_1y": "$165 - Multiple expansion to 14x P/E as cycle turns and 5G/AI adoption accelerates",
-      "target_3y": "$200 - Beneficiary of automotive/IoT growth with licensing model scaling, targeting 16x P/E on normalized earnings",
-      "rationale_bullets": [
-        "\ud83d\udd35 [Valuation]: Trading at 11.8x forward P/E with strong fundamentals - significant discount to historical multiples suggests oversold condition",
-        "\ud83d\udd35 [Financial Health]: Exceptional cash generation with $10.4B FCF, healthy 0.64 D/E ratio, and strong 21.5% ROE indicating robust capital efficiency",
-        "\ud83d\udd35 [Technical Setup]: Severely oversold with RSI at 28.6, trading 29% below 52w highs - risk/reward ratio of 8.3x suggests potential mean reversion opportunity",
-        "\ud83d\udd35 [Market Position]: Dominant moat in 5G/mobile chipsets with high-margin licensing business (QTL) providing recurring revenue streams",
-        "\ud83d\udd35 [Cyclical Headwinds]: Smartphone market weakness and inventory destocking weighing on near-term growth, but positioning for AI/automotive recovery",
-        "\ud83d\udd35 [Margin Quality]: Maintaining strong 55.1% gross margins despite headwinds, demonstrating pricing power and operational resilience"
-      ],
-      "risks": [
-        "\u26a0\ufe0f China exposure remains significant geopolitical risk given trade tensions and regulatory scrutiny",
-        "\u26a0\ufe0f Smartphone market saturation continuing longer than expected, delaying cyclical recovery",
-        "\u26a0\ufe0f Competition from Apple's in-house chips and potential customer diversification away from QCOM solutions"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
           "score": 0.4
         },
         {
@@ -279,327 +293,40 @@
       ]
     }
   ],
-  "hidden_gem_picks": [
-    {
-      "ticker": "ALAB",
-      "name": "Astera Labs, Inc.",
-      "composite_score": 72.3,
-      "investment_rating": "\u2705 BUY",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 126.16000366210938,
-      "sector": "Technology",
-      "pool": "hidden_gem",
-      "entry_zone": "$115-$125 on break below current support or bounce off 200 EMA around $142",
-      "target_1y": "$180-$200 as AI infrastructure buildout accelerates and technical repair occurs",
-      "target_3y": "$280-$320 assuming continued AI adoption and market expansion with margin sustainability",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 92% revenue growth, 76% gross margins, and minimal debt (0.02 D/E)",
-        "\ud83d\udd35 Market Position: Well-positioned in AI infrastructure connectivity with semiconductor solutions for cloud/AI data centers",
-        "\ud83d\udd35 Valuation Reset: Trading 50% below 52w highs creates attractive entry despite premium Forward PE of 35.8x",
-        "\ud83d\udd35 Technical Setup: Below all major EMAs in downtrend but RSI at neutral 56.7 suggests oversold bounce potential",
-        "\ud83d\udd35 Growth Quality: 84% earnings growth with 25% operating margins demonstrates operational leverage scaling",
-        "\ud83d\udd35 Analyst Confidence: Strong buy rating with $206.75 target implies 64% upside from current levels",
-        "\ud83d\udd35 Balance Sheet: $210M free cash flow and 18.8% ROE indicate efficient capital allocation and profitability"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Semiconductor cyclicality could pressure margins and growth rates in economic downturn",
-        "\u26a0\ufe0f Heavy concentration in AI/cloud infrastructure creates single-point-of-failure exposure",
-        "\u26a0\ufe0f Technical downtrend below 200 EMA suggests institutional distribution may continue"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "GOOGL",
-      "name": "Alphabet Inc.",
-      "composite_score": 71.2,
-      "investment_rating": "\u2705 BUY",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 307.1300048828125,
-      "sector": "Communication Services",
-      "pool": "hidden_gem",
-      "entry_zone": "$290-$305 on any pullback to 50 EMA support or current levels for long-term holders",
-      "target_1y": "$380 - driven by AI monetization, cloud growth acceleration, and multiple re-rating",
-      "target_3y": "$450 - benefiting from AI platform dominance, cloud market share gains, and secular digital transformation tailwinds",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 59.7% gross margin, $38B FCF, and minimal 0.16 D/E ratio - fortress balance sheet",
-        "\ud83d\udd35 Growth Momentum: Strong 18% revenue growth accelerating to 31.1% earnings growth driven by AI monetization and cloud expansion",
-        "\ud83d\udd35 Valuation: Trading at reasonable 22.9x forward PE despite premium quality - 23% upside to analyst target of $377",
-        "\ud83d\udd35 Market Position: Dominant search moat with expanding AI capabilities through Gemini/Bard positioning for next computing paradigm",
-        "\ud83d\udd35 Technicals: Consolidating above 200 EMA with golden cross intact - building base for next leg higher",
-        "\ud83d\udd35 Cloud Acceleration: Google Cloud momentum gaining on hyperscale trends and enterprise AI adoption",
-        "\ud83d\udd35 Capital Allocation: Disciplined buyback program with ROE of 35.7% demonstrating efficient capital deployment"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Regulatory overhang from DOJ antitrust case and potential search monopoly breakup risks",
-        "\u26a0\ufe0f AI disruption threat to core search business model from ChatGPT and emerging AI interfaces",
-        "\u26a0\ufe0f Macro headwinds pressuring digital advertising spend amid economic uncertainty and rising rates"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "NBIX",
-      "name": "Neurocrine Biosciences, Inc.",
-      "composite_score": 68.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
-      "sentiment_grade": "Neutral",
-      "price": 129.6999969482422,
-      "sector": "Healthcare",
-      "pool": "hidden_gem",
-      "entry_zone": "$115\u2013$125 on break below current support or bounce off 200 EMA with volume confirmation",
-      "target_1y": "$165 - multiple expansion as growth sustainability proven and technical oversold conditions reverse",
-      "target_3y": "$220 - pipeline development success and market expansion drive premium valuation for best-in-class CNS franchise",
-      "rationale_bullets": [
-        "\ud83d\udd35 [Financials]: Exceptional growth metrics with 28% revenue and 48% earnings growth, pristine balance sheet (0.14 D/E), and strong margins (63% gross, 28% operating)",
-        "\ud83d\udd35 [Valuation]: Trading at attractive 13.3x forward P/E despite strong fundamentals, with analyst consensus at $178 (+37% upside)",
-        "\ud83d\udd35 [Product Portfolio]: INGREZZA franchise dominates tardive dyskinesia market with expanding indications, women's health products (Orilissa, Oriahnn) provide diversification",
-        "\ud83d\udd35 [Technical Setup]: Below all major EMAs in downtrend, but RSI at 42 suggests oversold conditions with bullish MACD divergence emerging",
-        "\ud83d\udd35 [Market Position]: Specialized focus in CNS and women's health creates defensible moats, but limited pipeline visibility beyond current products",
-        "\ud83d\udd35 [Capital Allocation]: Strong FCF generation ($400M) with conservative debt management, though R&D intensity typical for specialty pharma",
-        "\ud83d\udd35 [Macro Headwinds]: Healthcare sector faces pricing pressure and regulatory uncertainty, though specialty neurological drugs less vulnerable"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Heavy dependence on INGREZZA franchise creates single-point-of-failure risk for revenue growth",
-        "\u26a0\ufe0f Technical breakdown below 200 EMA with weak momentum suggests further downside possible to $110-115 support",
-        "\u26a0\ufe0f Zero social sentiment and mentions indicate lack of retail/institutional interest, limiting near-term catalyst potential"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "VEEV",
-      "name": "Veeva Systems Inc.",
-      "composite_score": 68.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 185.58999633789062,
-      "sector": "Healthcare",
-      "pool": "hidden_gem",
-      "entry_zone": "$170-$180 on test of 52w low support or break above $200 with volume confirmation",
-      "target_1y": "$240 - Return to historical valuation multiples as growth story regains momentum",
-      "target_3y": "$320 - Compound growth at 15%+ CAGR driven by healthcare digitization mega-trend",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 75.5% gross margins, 29.4% operating margins, and minimal debt (0.01 D/E ratio)",
-        "\ud83d\udd35 Growth Profile: Strong 16% revenue growth and 23.5% earnings growth in defensive healthcare IT sector with sticky SaaS model",
-        "\ud83d\udd35 Valuation: Forward PE of 18.8x appears reasonable for quality growth, down 39% from 52w high creating potential value opportunity",
-        "\ud83d\udd35 Market Position: Dominant niche player in life sciences software with high switching costs and recurring revenue model",
-        "\ud83d\udd35 Technical Setup: Trading below all major EMAs in downtrend, RSI neutral at 54, MACD showing early bullish divergence",
-        "\ud83d\udd35 Macro Tailwinds: Healthcare digitization and regulatory compliance driving long-term demand for specialized software solutions",
-        "\ud83d\udd35 Cash Generation: $1.05B free cash flow demonstrates strong cash conversion and ability to self-fund growth"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Technical breakdown below 200 EMA suggests institutional selling pressure may continue",
-        "\u26a0\ufe0f Zero social sentiment and analyst coverage gaps could indicate waning institutional interest",
-        "\u26a0\ufe0f Concentrated exposure to pharma/biotech spending cycles and potential healthcare budget cuts"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "GRMN",
-      "name": "Garmin Ltd.",
-      "composite_score": 67.2,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 235.11000061035156,
-      "sector": "Technology",
-      "pool": "hidden_gem",
-      "entry_zone": "$220-$230 on further RSI oversold conditions or test of 50 EMA support",
-      "target_1y": "$270 - Premium valuation justified by consistent execution and market share defense",
-      "target_3y": "$320 - Expansion into new verticals (automotive, aviation) and international growth driving multiple expansion",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional metrics with 58.7% gross margin, 28.9% operating margin, and minimal debt (0.02 D/E)",
-        "\ud83d\udd35 Growth Trajectory: Strong momentum with 16.6% revenue growth and 21.2% earnings growth YoY",
-        "\ud83d\udd35 Technical Position: Oversold RSI (28.6) above 200 EMA with golden cross intact suggests potential bounce opportunity",
-        "\ud83d\udd35 Market Position: Dominant in GPS/wearables with strong moat, but facing intensifying competition from Apple/Samsung",
-        "\ud83d\udd35 Valuation: Forward PE of 23.1x reasonable for growth profile, trading 8.8% below 52-week high",
-        "\ud83d\udd35 Cash Generation: Solid $0.79B free cash flow provides flexibility for R&D investment and shareholder returns",
-        "\ud83d\udd35 Leadership Concerns: Below-average leadership scoring suggests execution risks in competitive landscape"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Intensifying competition from Apple Watch and Samsung in smartwatch/fitness tracker segments",
-        "\u26a0\ufe0f Consumer discretionary exposure vulnerable to economic slowdown reducing demand for premium wearables",
-        "\u26a0\ufe0f Limited social media buzz and narrative adoption may signal waning brand momentum vs. competitors"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    }
-  ],
+  "hidden_gem_picks": [],
   "picks": [
     {
-      "ticker": "NVO",
-      "name": "Novo Nordisk A/S",
-      "composite_score": 68.5,
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "composite_score": 62.5,
       "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 37.08000183105469,
-      "sector": "Healthcare",
+      "price": 245.99000549316406,
+      "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$35-$38 current levels with stop below $34",
-      "target_1y": "$48-$52 based on 14x forward PE multiple expansion as growth stabilizes",
-      "target_3y": "$65-$75 assuming successful pipeline execution and market share stabilization in core franchises",
+      "entry_zone": "$235-245 on volume confirmation or $260-265 on break above 20 EMA with momentum shift",
+      "target_1y": "$320 - recovery to analyst targets as macro stabilizes and AI features drive subscription growth",
+      "target_3y": "$450 - premium valuation return as AI-enhanced creative tools expand TAM and enterprise digital transformation accelerates",
       "rationale_bullets": [
-        "\ud83d\udd35 [Valuation]: Forward PE of 11.1x represents significant discount for a quality pharma company with 82.4% gross margins",
-        "\ud83d\udd35 [Technicals]: Trading near 52-week lows with 53.7% decline from highs creates compelling risk/reward at current levels",
-        "\ud83d\udd35 [Fundamentals]: Exceptional ROE of 60.7% and strong operating margins of 44.5% demonstrate operational excellence despite recent headwinds",
-        "\ud83d\udd35 [Market Position]: Dominant position in diabetes/obesity care with GLP-1 franchise, but facing increased competition from Eli Lilly",
-        "\ud83d\udd35 [Momentum]: Revenue decline of -7.6% YoY signals cyclical challenges, but analyst target of $47.43 suggests 28% upside potential",
-        "\ud83d\udd35 [Capital Structure]: Conservative D/E ratio of 0.67 and positive FCF provide financial stability during downturn",
-        "\ud83d\udd35 [Governance]: Perfect governance score of 1.0 reflects strong Danish corporate standards and transparent management"
+        "\ud83d\udd35 Valuation: Forward PE of 9.3 and 41.5% drawdown from highs creates compelling risk/reward at 14.2x for quality SaaS leader",
+        "\ud83d\udd35 Financial Health: Exceptional margins (89.4% gross, 37.8% operating) with $9.29B FCF and strong 58.8% ROE demonstrate operational excellence",
+        "\ud83d\udd35 Growth Profile: 12% revenue growth with stable 11.1% earnings growth shows resilience despite macro headwinds in creative/enterprise spending",
+        "\ud83d\udd35 Technical Setup: Currently at 52-week lows with bearish momentum, trading below all EMAs - signals capitulation but requires confirmation of reversal",
+        "\ud83d\udd35 Market Position: Dominant moats in creative software (Photoshop/Illustrator) and growing PDF/digital document workflows provide pricing power",
+        "\ud83d\udd35 AI Catalyst: Adobe's integration of generative AI into Creative Cloud positions well for next growth cycle as enterprise adoption accelerates",
+        "\ud83d\udd35 Analyst Conviction: $328 consensus target implies 33% upside with strong buy ratings despite current technical weakness"
       ],
       "risks": [
-        "\u26a0\ufe0f Intensifying competition in GLP-1 obesity market from Eli Lilly's Mounjaro potentially eroding market share",
-        "\u26a0\ufe0f Revenue and earnings declining YoY with stock in clear downtrend below all major EMAs",
-        "\u26a0\ufe0f Limited pipeline visibility and potential pricing pressure from healthcare cost containment globally"
+        "\u26a0\ufe0f Economic slowdown reducing enterprise software spending and SMB creative subscriptions",
+        "\u26a0\ufe0f AI disruption risk as competitors like Canva and open-source AI tools challenge Adobe's creative monopoly",
+        "\u26a0\ufe0f Technical breakdown below $245 support could trigger further selling toward $200-220 range"
       ],
       "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
         {
           "category": "product_market_fit",
           "score": 0.429
@@ -610,7 +337,11 @@
         },
         {
           "category": "financial_health",
-          "score": 0.6
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
         },
         {
           "category": "technicals_entry",
@@ -623,36 +354,210 @@
       ]
     },
     {
-      "ticker": "FSM",
-      "name": "Fortuna Mining Corp.",
-      "composite_score": 65.5,
+      "ticker": "EOG",
+      "name": "EOG Resources, Inc.",
+      "composite_score": 59.5,
       "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
+      "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 9.0,
-      "sector": "Basic Materials",
+      "price": 138.82000732421875,
+      "sector": "Energy",
       "pool": "mainstream",
-      "entry_zone": "$8.50-$9.20 on further weakness or break above $10 with volume confirmation",
-      "target_1y": "$12.50 - Reversion to mean valuation as oversold conditions normalize and strong fundamentals recognized",
-      "target_3y": "$16.00 - Expansion multiple on sustained operational excellence and potential gold cycle recovery",
+      "entry_zone": "$121-$125 on pullback to 50 EMA support with RSI below 60",
+      "target_1y": "$145-$150 assuming stable oil prices and operational improvements",
+      "target_3y": "$160-$175 if company successfully navigates energy transition while maintaining cash generation",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 987% earnings growth, 49% gross margins, and minimal debt (0.12 D/E)",
-        "\ud83d\udd35 Valuation: Extremely attractive at 5.6x forward PE trading 34% below 52-week highs with $14 analyst target",
-        "\ud83d\udd35 Technicals: Severely oversold RSI of 6.5 suggests capitulation, though bearish MACD and below 200 EMA remain concerning",
-        "\ud83d\udd35 Operations: Strong operational performance with 38% revenue growth and diversified geographic portfolio across 5 countries",
-        "\ud83d\udd35 Cash Generation: Solid $300M free cash flow provides flexibility for growth investments and potential shareholder returns",
-        "\ud83d\udd35 Macro Headwinds: Gold mining facing pressure from potential Fed policy shifts and strong dollar environment",
-        "\ud83d\udd35 Leadership Risk: Below-average leadership scores (0.4) and product-market fit concerns in competitive mining space"
+        "\ud83d\udd35 Financial Health: Strong balance sheet with 0.31 D/E ratio and $2.33B free cash flow generation demonstrates capital discipline",
+        "\ud83d\udd35 Valuation: Forward PE of 12.3x appears reasonable for energy sector, though PEG ratio concerns given earnings decline",
+        "\ud83d\udd35 Technical Position: At 52-week highs with RSI at 80.8 indicating overbought conditions and poor risk/reward setup",
+        "\ud83d\udd35 Operational Efficiency: Impressive 62% gross margins showcase low-cost production capabilities in current environment",
+        "\ud83d\udd35 Growth Trajectory: Flat revenue growth and -41.7% earnings decline signal challenging operational headwinds",
+        "\ud83d\udd35 Market Position: Strong ROE of 16.8% indicates efficient capital allocation despite sector cyclicality",
+        "\ud83d\udd35 Macro Exposure: Vulnerable to oil price volatility and energy transition risks over 3-5 year horizon"
       ],
       "risks": [
-        "\u26a0\ufe0f Geopolitical exposure across emerging markets (Argentina, C\u00f4te d'Ivoire, Peru, Senegal) increases operational risk",
-        "\u26a0\ufe0f Commodity price volatility could rapidly erode margins despite current strong performance",
-        "\u26a0\ufe0f Technical breakdown below $9 support with no social sentiment cushion creates downside momentum risk"
+        "\u26a0\ufe0f Extremely overbought at 52-week highs with 80+ RSI creating significant downside risk",
+        "\u26a0\ufe0f Earnings declining 41.7% YoY despite strong margins suggests underlying operational challenges",
+        "\u26a0\ufe0f Energy sector faces long-term headwinds from ESG concerns and renewable energy transition"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
           "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "RNR",
+      "name": "RenaissanceRe Holdings Ltd.",
+      "composite_score": 59.4,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 291.67999267578125,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$270-$280 on pullback to 50 EMA support with RSI below 30",
+      "target_1y": "$335 based on 9.5x forward PE expansion as earnings recover and hard market continues",
+      "target_3y": "$380 assuming 8% annual appreciation driven by normalized underwriting cycles and investment income growth",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Forward PE of 7.0 suggests significant undervaluation for a profitable reinsurer with 19.7% ROE",
+        "\ud83d\udd35 Financial Health: Strong balance sheet with minimal debt (0.13 D/E) but concerning negative $14.7B free cash flow reflects claims payouts",
+        "\ud83d\udd35 Technical Setup: Oversold RSI at 34.4 with golden cross intact, sitting 6% below 52w high in healthy correction",
+        "\ud83d\udd35 Revenue Growth: Impressive 27.6% YoY revenue growth driven by hard insurance pricing environment and catastrophe exposure",
+        "\ud83d\udd35 Profitability: Solid 43.7% operating margin but flat earnings growth indicates margin compression pressure",
+        "\ud83d\udd35 Leadership Concerns: Below-average leadership score (0.4) raises questions about strategic execution in competitive market",
+        "\ud83d\udd35 Market Position: Limited product-market fit score (0.29) suggests challenges in differentiation within commoditized reinsurance space"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Catastrophe exposure could lead to significant quarterly volatility and capital impairment during severe weather events",
+        "\u26a0\ufe0f Insurance pricing cycle may turn softer, compressing premiums and reducing profitability after current hard market ends",
+        "\u26a0\ufe0f Rising interest rates create mark-to-market losses on investment portfolio while increasing competitive pressure"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "VOYA",
+      "name": "Voya Financial, Inc.",
+      "composite_score": 59.3,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "C",
+      "sentiment_grade": "Neutral",
+      "price": 66.80999755859375,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$58-62 on break below 52-week low support with volume confirmation",
+      "target_1y": "$78 - reversion to 52-week high as valuation attracts institutional buyers",
+      "target_3y": "$95 - compound growth from retirement market expansion and operational improvements",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Extremely cheap at 5.9x forward PE with 48% earnings growth - potential value trap or deep value opportunity",
+        "\ud83d\udd35 Technicals: Below all major EMAs in downtrend, but RSI neutral at 49.8 suggests oversold condition may be stabilizing",
+        "\ud83d\udd35 Financial Health: Strong FCF of $1.51B and manageable 0.69 D/E ratio provide financial stability in volatile markets",
+        "\ud83d\udd35 Macro Environment: Interest rate sensitivity cuts both ways - higher rates boost investment income but pressure valuations",
+        "\ud83d\udd35 Leadership: Weak leadership score (0.4) raises concerns about strategic execution in competitive benefits market",
+        "\ud83d\udd35 Market Position: Limited product-market fit score (0.14) suggests challenges in differentiating workplace benefits offerings",
+        "\ud83d\udd35 Analyst Sentiment: Strong upside to $84.70 target (+27%) but zero social mentions indicate lack of retail interest"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Technical breakdown below 200 EMA with no golden cross signal indicates continued selling pressure",
+        "\u26a0\ufe0f Low product-market fit and leadership scores suggest structural competitive disadvantages",
+        "\u26a0\ufe0f Financial services face regulatory headwinds and potential economic slowdown impact on corporate benefits demand"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.143
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "SEIC",
+      "name": "SEI Investments Company",
+      "composite_score": 55.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "D",
+      "sentiment_grade": "Neutral",
+      "price": 77.87000274658203,
+      "sector": "Financial Services",
+      "pool": "mainstream",
+      "entry_zone": "$68-$72 near 52-week lows with oversold bounce confirmation",
+      "target_1y": "$88-$92 (reversal to 50 EMA resistance on fundamental strength)",
+      "target_3y": "$110-$120 (analyst target achieved through margin expansion and market recovery)",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Outstanding metrics with 78.4% gross margins, 29% ROE, and minimal debt (0.01 D/E)",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 12.2x with 16.9% earnings growth suggests undervaluation",
+        "\ud83d\udd35 Technicals: Oversold RSI (32.9) but trading below all EMAs in confirmed downtrend",
+        "\ud83d\udd35 Macro Headwinds: Asset management sector faces fee compression and potential AUM outflows in uncertain markets",
+        "\ud83d\udd35 Market Position: Weak product-market fit score (0.29) suggests competitive challenges in wealth management space",
+        "\ud83d\udd35 Governance: Strong stability score (1.0) indicates solid management execution capabilities",
+        "\ud83d\udd35 Sentiment Void: Zero market mentions and neutral sentiment suggests institutional neglect"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Fee compression pressures in asset management industry eroding margins",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA signals potential further downside to $65-70 range",
+        "\u26a0\ufe0f Rising interest rates creating headwinds for AUM growth and client retention"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.6
         },
         {
           "category": "product_market_fit",
@@ -672,465 +577,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "RTX",
-      "name": "RTX Corporation",
-      "composite_score": 64.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 200.72999572753906,
-      "sector": "Industrials",
-      "pool": "mainstream",
-      "entry_zone": "$185-$195 on pullback to 50 EMA support with volume confirmation",
-      "target_1y": "$230 - analyst targets achievable with continued aerospace recovery and margin expansion",
-      "target_3y": "$275 - defense modernization cycle and commercial fleet renewal drive 8-10% annual growth",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Strong FCF generation at $6.46B with moderate 0.60 D/E ratio shows solid balance sheet management in capital-intensive aerospace sector",
-        "\ud83d\udd35 Fundamentals: 12.1% revenue growth demonstrates robust demand recovery, though 26.7x forward PE suggests premium valuation relative to industrial peers",
-        "\ud83d\udd35 Technicals: Trading above all key EMAs with golden cross intact, but bearish MACD and low volume signal potential near-term consolidation",
-        "\ud83d\udd35 Market Position: Diversified aerospace/defense portfolio with Collins, Pratt & Whitney, and Raytheon segments provides multiple revenue streams and cycle resilience",
-        "\ud83d\udd35 Macro Environment: Defense spending tailwinds and commercial aviation recovery support growth, but elevated valuation leaves limited margin for execution missteps",
-        "\ud83d\udd35 Governance: Perfect stability score reflects mature management structure, though leadership effectiveness scores suggest room for operational improvements"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Premium valuation at 26.7x forward PE vulnerable to multiple compression if growth disappoints or rates remain elevated",
-        "\u26a0\ufe0f Cyclical aerospace exposure to potential commercial aviation downturn or defense budget cuts in changing geopolitical environment",
-        "\u26a0\ufe0f Technical deterioration with bearish MACD divergence and declining volume suggesting momentum loss near 52-week highs"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
           "score": 0.4
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 0.4
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "SYK",
-      "name": "Stryker Corporation",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 339.760009765625,
-      "sector": "Healthcare",
-      "pool": "mainstream",
-      "entry_zone": "$320-$335 on further weakness or break above $370 with volume confirmation of trend reversal",
-      "target_1y": "$400-$420 as margins normalize and growth momentum attracts institutional buyers back to quality healthcare names",
-      "target_3y": "$480-$520 driven by aging demographics tailwinds, innovation pipeline execution, and margin expansion in core segments",
-      "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Exceptional earnings growth (55.9% YoY) and strong margins (65% gross, 27.2% operating) demonstrate operational excellence",
-        "\ud83d\udd35 Financial Health: Solid balance sheet with 0.73 D/E ratio, $4.17B FCF, and healthy 15.1% ROE supporting dividend sustainability",
-        "\ud83d\udd35 Valuation: Forward PE of 20.3x appears reasonable for quality medical device leader, though premium to historical averages",
-        "\ud83d\udd35 Technicals: Severely oversold with RSI at 18.6, presenting contrarian opportunity but downtrend remains intact below all EMAs",
-        "\ud83d\udd35 Market Position: Dominant player in orthopedics and medical devices with durable competitive moats and pricing power",
-        "\ud83d\udd35 Sentiment: Complete absence of market attention (0 mentions) creates information asymmetry opportunity for patient investors",
-        "\ud83d\udd35 Risk/Reward: Attractive 3.6x risk/reward ratio with analyst target at $424 (+24.8% upside) vs technical support levels"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Technical breakdown below 200 EMA with bearish MACD signals potential further downside to $320-310 range",
-        "\u26a0\ufe0f Healthcare sector facing regulatory pressures and potential Medicare reimbursement cuts impacting device pricing",
-        "\u26a0\ufe0f High valuation multiple vulnerable to multiple compression in rising rate environment despite growth quality"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "QCOM",
-      "name": "QUALCOMM Incorporated",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 131.27999877929688,
-      "sector": "Technology",
-      "pool": "mainstream",
-      "entry_zone": "$125\u2013$135 on any further weakness below current levels with RSI remaining oversold",
-      "target_1y": "$165 - Multiple expansion to 14x P/E as cycle turns and 5G/AI adoption accelerates",
-      "target_3y": "$200 - Beneficiary of automotive/IoT growth with licensing model scaling, targeting 16x P/E on normalized earnings",
-      "rationale_bullets": [
-        "\ud83d\udd35 [Valuation]: Trading at 11.8x forward P/E with strong fundamentals - significant discount to historical multiples suggests oversold condition",
-        "\ud83d\udd35 [Financial Health]: Exceptional cash generation with $10.4B FCF, healthy 0.64 D/E ratio, and strong 21.5% ROE indicating robust capital efficiency",
-        "\ud83d\udd35 [Technical Setup]: Severely oversold with RSI at 28.6, trading 29% below 52w highs - risk/reward ratio of 8.3x suggests potential mean reversion opportunity",
-        "\ud83d\udd35 [Market Position]: Dominant moat in 5G/mobile chipsets with high-margin licensing business (QTL) providing recurring revenue streams",
-        "\ud83d\udd35 [Cyclical Headwinds]: Smartphone market weakness and inventory destocking weighing on near-term growth, but positioning for AI/automotive recovery",
-        "\ud83d\udd35 [Margin Quality]: Maintaining strong 55.1% gross margins despite headwinds, demonstrating pricing power and operational resilience"
-      ],
-      "risks": [
-        "\u26a0\ufe0f China exposure remains significant geopolitical risk given trade tensions and regulatory scrutiny",
-        "\u26a0\ufe0f Smartphone market saturation continuing longer than expected, delaying cyclical recovery",
-        "\u26a0\ufe0f Competition from Apple's in-house chips and potential customer diversification away from QCOM solutions"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "ALAB",
-      "name": "Astera Labs, Inc.",
-      "composite_score": 72.3,
-      "investment_rating": "\u2705 BUY",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 126.16000366210938,
-      "sector": "Technology",
-      "pool": "hidden_gem",
-      "entry_zone": "$115-$125 on break below current support or bounce off 200 EMA around $142",
-      "target_1y": "$180-$200 as AI infrastructure buildout accelerates and technical repair occurs",
-      "target_3y": "$280-$320 assuming continued AI adoption and market expansion with margin sustainability",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 92% revenue growth, 76% gross margins, and minimal debt (0.02 D/E)",
-        "\ud83d\udd35 Market Position: Well-positioned in AI infrastructure connectivity with semiconductor solutions for cloud/AI data centers",
-        "\ud83d\udd35 Valuation Reset: Trading 50% below 52w highs creates attractive entry despite premium Forward PE of 35.8x",
-        "\ud83d\udd35 Technical Setup: Below all major EMAs in downtrend but RSI at neutral 56.7 suggests oversold bounce potential",
-        "\ud83d\udd35 Growth Quality: 84% earnings growth with 25% operating margins demonstrates operational leverage scaling",
-        "\ud83d\udd35 Analyst Confidence: Strong buy rating with $206.75 target implies 64% upside from current levels",
-        "\ud83d\udd35 Balance Sheet: $210M free cash flow and 18.8% ROE indicate efficient capital allocation and profitability"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Semiconductor cyclicality could pressure margins and growth rates in economic downturn",
-        "\u26a0\ufe0f Heavy concentration in AI/cloud infrastructure creates single-point-of-failure exposure",
-        "\u26a0\ufe0f Technical downtrend below 200 EMA suggests institutional distribution may continue"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "GOOGL",
-      "name": "Alphabet Inc.",
-      "composite_score": 71.2,
-      "investment_rating": "\u2705 BUY",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 307.1300048828125,
-      "sector": "Communication Services",
-      "pool": "hidden_gem",
-      "entry_zone": "$290-$305 on any pullback to 50 EMA support or current levels for long-term holders",
-      "target_1y": "$380 - driven by AI monetization, cloud growth acceleration, and multiple re-rating",
-      "target_3y": "$450 - benefiting from AI platform dominance, cloud market share gains, and secular digital transformation tailwinds",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 59.7% gross margin, $38B FCF, and minimal 0.16 D/E ratio - fortress balance sheet",
-        "\ud83d\udd35 Growth Momentum: Strong 18% revenue growth accelerating to 31.1% earnings growth driven by AI monetization and cloud expansion",
-        "\ud83d\udd35 Valuation: Trading at reasonable 22.9x forward PE despite premium quality - 23% upside to analyst target of $377",
-        "\ud83d\udd35 Market Position: Dominant search moat with expanding AI capabilities through Gemini/Bard positioning for next computing paradigm",
-        "\ud83d\udd35 Technicals: Consolidating above 200 EMA with golden cross intact - building base for next leg higher",
-        "\ud83d\udd35 Cloud Acceleration: Google Cloud momentum gaining on hyperscale trends and enterprise AI adoption",
-        "\ud83d\udd35 Capital Allocation: Disciplined buyback program with ROE of 35.7% demonstrating efficient capital deployment"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Regulatory overhang from DOJ antitrust case and potential search monopoly breakup risks",
-        "\u26a0\ufe0f AI disruption threat to core search business model from ChatGPT and emerging AI interfaces",
-        "\u26a0\ufe0f Macro headwinds pressuring digital advertising spend amid economic uncertainty and rising rates"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "NBIX",
-      "name": "Neurocrine Biosciences, Inc.",
-      "composite_score": 68.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "C",
-      "sentiment_grade": "Neutral",
-      "price": 129.6999969482422,
-      "sector": "Healthcare",
-      "pool": "hidden_gem",
-      "entry_zone": "$115\u2013$125 on break below current support or bounce off 200 EMA with volume confirmation",
-      "target_1y": "$165 - multiple expansion as growth sustainability proven and technical oversold conditions reverse",
-      "target_3y": "$220 - pipeline development success and market expansion drive premium valuation for best-in-class CNS franchise",
-      "rationale_bullets": [
-        "\ud83d\udd35 [Financials]: Exceptional growth metrics with 28% revenue and 48% earnings growth, pristine balance sheet (0.14 D/E), and strong margins (63% gross, 28% operating)",
-        "\ud83d\udd35 [Valuation]: Trading at attractive 13.3x forward P/E despite strong fundamentals, with analyst consensus at $178 (+37% upside)",
-        "\ud83d\udd35 [Product Portfolio]: INGREZZA franchise dominates tardive dyskinesia market with expanding indications, women's health products (Orilissa, Oriahnn) provide diversification",
-        "\ud83d\udd35 [Technical Setup]: Below all major EMAs in downtrend, but RSI at 42 suggests oversold conditions with bullish MACD divergence emerging",
-        "\ud83d\udd35 [Market Position]: Specialized focus in CNS and women's health creates defensible moats, but limited pipeline visibility beyond current products",
-        "\ud83d\udd35 [Capital Allocation]: Strong FCF generation ($400M) with conservative debt management, though R&D intensity typical for specialty pharma",
-        "\ud83d\udd35 [Macro Headwinds]: Healthcare sector faces pricing pressure and regulatory uncertainty, though specialty neurological drugs less vulnerable"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Heavy dependence on INGREZZA franchise creates single-point-of-failure risk for revenue growth",
-        "\u26a0\ufe0f Technical breakdown below 200 EMA with weak momentum suggests further downside possible to $110-115 support",
-        "\u26a0\ufe0f Zero social sentiment and mentions indicate lack of retail/institutional interest, limiting near-term catalyst potential"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "VEEV",
-      "name": "Veeva Systems Inc.",
-      "composite_score": 68.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 185.58999633789062,
-      "sector": "Healthcare",
-      "pool": "hidden_gem",
-      "entry_zone": "$170-$180 on test of 52w low support or break above $200 with volume confirmation",
-      "target_1y": "$240 - Return to historical valuation multiples as growth story regains momentum",
-      "target_3y": "$320 - Compound growth at 15%+ CAGR driven by healthcare digitization mega-trend",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 75.5% gross margins, 29.4% operating margins, and minimal debt (0.01 D/E ratio)",
-        "\ud83d\udd35 Growth Profile: Strong 16% revenue growth and 23.5% earnings growth in defensive healthcare IT sector with sticky SaaS model",
-        "\ud83d\udd35 Valuation: Forward PE of 18.8x appears reasonable for quality growth, down 39% from 52w high creating potential value opportunity",
-        "\ud83d\udd35 Market Position: Dominant niche player in life sciences software with high switching costs and recurring revenue model",
-        "\ud83d\udd35 Technical Setup: Trading below all major EMAs in downtrend, RSI neutral at 54, MACD showing early bullish divergence",
-        "\ud83d\udd35 Macro Tailwinds: Healthcare digitization and regulatory compliance driving long-term demand for specialized software solutions",
-        "\ud83d\udd35 Cash Generation: $1.05B free cash flow demonstrates strong cash conversion and ability to self-fund growth"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Technical breakdown below 200 EMA suggests institutional selling pressure may continue",
-        "\u26a0\ufe0f Zero social sentiment and analyst coverage gaps could indicate waning institutional interest",
-        "\u26a0\ufe0f Concentrated exposure to pharma/biotech spending cycles and potential healthcare budget cuts"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "GRMN",
-      "name": "Garmin Ltd.",
-      "composite_score": 67.2,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 235.11000061035156,
-      "sector": "Technology",
-      "pool": "hidden_gem",
-      "entry_zone": "$220-$230 on further RSI oversold conditions or test of 50 EMA support",
-      "target_1y": "$270 - Premium valuation justified by consistent execution and market share defense",
-      "target_3y": "$320 - Expansion into new verticals (automotive, aviation) and international growth driving multiple expansion",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional metrics with 58.7% gross margin, 28.9% operating margin, and minimal debt (0.02 D/E)",
-        "\ud83d\udd35 Growth Trajectory: Strong momentum with 16.6% revenue growth and 21.2% earnings growth YoY",
-        "\ud83d\udd35 Technical Position: Oversold RSI (28.6) above 200 EMA with golden cross intact suggests potential bounce opportunity",
-        "\ud83d\udd35 Market Position: Dominant in GPS/wearables with strong moat, but facing intensifying competition from Apple/Samsung",
-        "\ud83d\udd35 Valuation: Forward PE of 23.1x reasonable for growth profile, trading 8.8% below 52-week high",
-        "\ud83d\udd35 Cash Generation: Solid $0.79B free cash flow provides flexibility for R&D investment and shareholder returns",
-        "\ud83d\udd35 Leadership Concerns: Below-average leadership scoring suggests execution risks in competitive landscape"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Intensifying competition from Apple Watch and Samsung in smartwatch/fitness tracker segments",
-        "\u26a0\ufe0f Consumer discretionary exposure vulnerable to economic slowdown reducing demand for premium wearables",
-        "\u26a0\ufe0f Limited social media buzz and narrative adoption may signal waning brand momentum vs. competitors"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
         },
         {
           "category": "governance_stability",
@@ -1141,248 +588,53 @@
   ],
   "all_scores": [
     {
-      "ticker": "ALAB",
-      "composite_score": 72.3,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "GOOGL",
-      "composite_score": 71.2,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "NVO",
-      "composite_score": 68.5,
+      "ticker": "ADBE",
+      "composite_score": 62.5,
       "pool": "mainstream"
     },
     {
-      "ticker": "NBIX",
-      "composite_score": 68.5,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "VEEV",
-      "composite_score": 68.5,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "GRMN",
-      "composite_score": 67.2,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "THG",
-      "composite_score": 65.5,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "FSM",
-      "composite_score": 65.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "RTX",
-      "composite_score": 64.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "SYK",
-      "composite_score": 62.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "QCOM",
-      "composite_score": 62.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "DLTR",
+      "ticker": "EOG",
       "composite_score": 59.5,
       "pool": "mainstream"
     },
     {
-      "ticker": "CNA",
-      "composite_score": 59.5,
+      "ticker": "RNR",
+      "composite_score": 59.4,
       "pool": "mainstream"
     },
     {
-      "ticker": "NTNX",
-      "composite_score": 58.2,
+      "ticker": "VOYA",
+      "composite_score": 59.3,
       "pool": "mainstream"
     },
     {
-      "ticker": "SOLV",
-      "composite_score": 52.3,
+      "ticker": "SEIC",
+      "composite_score": 55.5,
       "pool": "mainstream"
     },
     {
-      "ticker": "ESTC",
-      "composite_score": 52.3,
+      "ticker": "ACAD",
+      "composite_score": 52.4,
       "pool": "mainstream"
     },
     {
-      "ticker": "LHX",
-      "composite_score": 49.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "AL",
-      "composite_score": 49.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "NXST",
-      "composite_score": 49.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "DTE",
-      "composite_score": 49.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CHRW",
+      "ticker": "CBSH",
       "composite_score": 49.3,
       "pool": "mainstream"
     },
     {
-      "ticker": "CHD",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "IEX",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "AEP",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "TIGR",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "TSLA",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "WELL",
-      "composite_score": 46.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "NEU",
-      "composite_score": 45.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "UCTT",
-      "composite_score": 42.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CERT",
-      "composite_score": 42.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "ARW",
-      "composite_score": 42.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CLH",
+      "ticker": "ALK",
       "composite_score": 42.2,
       "pool": "mainstream"
     },
     {
-      "ticker": "CACC",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "LAD",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "QSR",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "ESAB",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "FLUT",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "SWK",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "BBWI",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CAG",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "PNFP",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CNR",
-      "composite_score": 39.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "NSC",
-      "composite_score": 39.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "YETI",
-      "composite_score": 39.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "PSA",
-      "composite_score": 36.6,
+      "ticker": "VET",
+      "composite_score": 29.5,
       "pool": "mainstream"
     },
     {
       "ticker": "CNXC",
-      "composite_score": 32.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "AXTI",
-      "composite_score": 32.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "CPB",
-      "composite_score": 28.2,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "BXP",
-      "composite_score": 22.5,
+      "composite_score": 28.5,
       "pool": "mainstream"
     }
   ],
@@ -1396,16 +648,16 @@
     "regime": "\u2194\ufe0f Sideways market \u2014 stock-picking alpha matters most"
   },
   "scan_stats": {
-    "tickers_in_universe": "49",
-    "analyzed_last_24h": "49",
+    "tickers_in_universe": "10",
+    "analyzed_last_24h": "10",
     "current_cycle": "1",
-    "scan_duration_mins": "2.1"
+    "scan_duration_mins": "0.3"
   },
   "meta": {
-    "topScore": 68.0,
-    "topTicker": "NVO",
-    "avgScore": 67.0,
-    "tickers": 49,
+    "topScore": 62.0,
+    "topTicker": "ADBE",
+    "avgScore": 59.0,
+    "tickers": 10,
     "regime": "Elevated",
     "vix": "24.1",
     "runDate": "2026-03-19"
