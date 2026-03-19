@@ -1,0 +1,20 @@
+# Never commit real config (contains secrets after injection)
+# The template config.yaml IS committed — secrets go in GitHub Secrets only
+# config.yaml   ← intentionally NOT ignored so the template is in the repo
+
+# Logs
+logs/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+dist/
+*.egg-info/
+
+# Keep output/ folder tracked (GitHub Pages serves it)
+# But ignore the dated per-day files if you only want latest.json
+# output/picks_*.json   ← comment this out to keep all history
