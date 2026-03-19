@@ -1,18 +1,22 @@
 """
-bot.py
-──────
-Main orchestration loop for the WatchlistBot.
+bot.py — @VisionariesOnly Watchlist Bot (GitHub Actions Edition)
+────────────────────────────────────────────────────────────────
+Designed to run as a single GitHub Actions job:
 
-Workflow:
-  1. Load config
-  2. Fetch framework from configured URL
-  3. Build candidate universe (static watchlist + dynamic discovery)
-  4. Run data + sentiment fetch in parallel
-  5. Score every ticker against the framework
-  6. Rank and filter to top N
-  7. Post to Discord at configured time (or immediately if --now flag used)
-  8. Save JSON + Markdown output
-  9. Sleep until next scheduled run
+  1. Builds a dynamic universe of 1,000+ tickers
+  2. Scans ALL of them in parallel batches (takes ~2-3 hours)
+  3. Immediately posts the top picks to Discord
+  4. Saves output/latest.json for the dashboard
+
+Triggered by GitHub Actions at 6:30 AM ET Mon-Fri.
+Finishes scanning ~9:00-9:30 AM ET and posts to Discord.
+Total runtime fits within GitHub's 6-hour free tier limit.
+
+Usage:
+  python bot.py                    # full scan + post (production)
+  python bot.py --dry-run          # full scan, print to console only
+  python bot.py --post-now         # skip scan, post whatever is in output/latest.json
+  python bot.py --limit 100        # scan only first 100 tickers (for testing)
 """
 
 from __future__ import annotations
@@ -24,345 +28,370 @@ import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
-from typing import List
+from typing import List, Optional, Tuple
 
-import pytz
-import schedule
 import yaml
 
-# Local imports
-sys.path.insert(0, str(Path(__file__).parent))
-from src.framework_loader import load_framework
-from src.data_fetcher import DataFetcher, discover_momentum_tickers
-from src.sentiment_analyzer import SentimentAnalyzer
-from src.scoring_engine import ScoringEngine, ScoredStock
-from src.discord_poster import DiscordPoster
-from src.macro_analyzer import MacroAnalyzer, MacroContext
+_root = Path(__file__).resolve().parent
+sys.path.insert(0, str(_root))
+os.chdir(_root)
 
-# ─── Logging ──────────────────────────────────────────────────────────────────
+from src.framework_loader import load_framework
+from src.data_fetcher import DataFetcher
+from src.sentiment_analyzer import SentimentAnalyzer, SentimentScore
+from src.scoring_engine import ScoringEngine, ScoredStock, get_rating
+from src.discord_poster import DiscordPoster
+from src.macro_analyzer import MacroAnalyzer
+from src.universe import get_universe
+
+
+# ── Logging ───────────────────────────────────────────────────────────────────
 
 def setup_logging(level: str = "INFO"):
-    log_dir = Path("logs")
-    log_dir.mkdir(exist_ok=True)
-    fmt = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+    Path("logs").mkdir(exist_ok=True)
     logging.basicConfig(
         level=getattr(logging, level.upper(), logging.INFO),
-        format=fmt,
+        format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
         handlers=[
             logging.StreamHandler(sys.stdout),
-            logging.FileHandler(log_dir / f"bot_{datetime.now().strftime('%Y%m%d')}.log"),
+            logging.FileHandler(f"logs/run_{datetime.now().strftime('%Y%m%d_%H%M')}.log"),
         ],
     )
 
 log = logging.getLogger("WatchlistBot")
 
 
-# ─── Config ───────────────────────────────────────────────────────────────────
+# ── Config ────────────────────────────────────────────────────────────────────
 
 def load_config(path: str = "config.yaml") -> dict:
     with open(path) as f:
-        cfg = yaml.safe_load(f)
-    log.info("Config loaded from %s", path)
-    return cfg
+        return yaml.safe_load(f)
 
 
-# ─── Core Analysis Run ────────────────────────────────────────────────────────
+# ── Determine pool for a ticker ───────────────────────────────────────────────
 
-def run_analysis(cfg: dict) -> List[ScoredStock]:
-    log.info("═══════════════════════════════════════════")
-    log.info("  WatchlistBot Analysis Run Starting")
-    log.info("═══════════════════════════════════════════")
+def get_pool(ticker: str, config: dict) -> str:
+    gems = set(config.get("universe", {}).get("hidden_gems", []))
+    return "hidden_gem" if ticker in gems else "mainstream"
 
-    # 1. Load framework
-    framework_url = cfg.get("framework", {}).get("url", "")
-    framework = load_framework(framework_url)
-    log.info("Framework loaded: %d questions", len(framework))
 
-    # 2. Build universe
-    universe_cfg = cfg.get("universe", {})
-    tickers = list(universe_cfg.get("watchlist", []))
+# ── Score a single ticker (safe wrapper) ─────────────────────────────────────
 
-    if universe_cfg.get("auto_discover", False):
-        discovered = discover_momentum_tickers(universe_cfg.get("auto_discover_count", 10))
-        new_tickers = [t for t in discovered if t not in tickers]
-        log.info("Discovered %d new tickers: %s", len(new_tickers), new_tickers)
-        tickers.extend(new_tickers)
-
-    tickers = list(dict.fromkeys(tickers))  # deduplicate, preserve order
-    log.info("Analyzing %d tickers: %s", len(tickers), tickers)
-
-    # 3. Macro context (runs once per session)
-    log.info("Fetching macro environment context...")
-    macro = MacroAnalyzer(cfg).get_context()
-    log.info("Macro regime: %s | Adjustment: %+.1f pts", macro.market_regime, macro.score_adjustment)
-    log.info("Best sectors: %s", macro.best_sectors)
-    log.info("Regime: %s", macro.regime_description)
-
-    # Initialize engines
-    fetcher = DataFetcher(cfg)
-    sentiment_analyzer = SentimentAnalyzer(cfg)
-    scorer = ScoringEngine(cfg, framework)
-    fundamental_filters = cfg.get("fundamentals", {})
-    min_vol = universe_cfg.get("min_avg_volume", 0)
-    min_cap = universe_cfg.get("min_market_cap", 0)
-
-    # 4. Parallel data fetch
-    stock_data = {}
-    log.info("Fetching market data...")
-    with ThreadPoolExecutor(max_workers=6) as executor:
-        futures = {executor.submit(fetcher.fetch, t): t for t in tickers}
-        for fut in as_completed(futures):
-            ticker = futures[fut]
-            try:
-                sd = fut.result()
-                stock_data[ticker] = sd
-                log.debug("[%s] Fetched: $%.2f, cap $%.1fB", ticker, sd.technicals.price, sd.fundamentals.market_cap / 1e9)
-            except Exception as exc:
-                log.warning("[%s] Fetch error: %s", ticker, exc)
-
-    # 5. Parallel sentiment fetch
-    sentiment_data = {}
-    log.info("Fetching sentiment data...")
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {
-            executor.submit(sentiment_analyzer.analyze, t, stock_data.get(t, None) and stock_data[t].name or t): t
-            for t in tickers if t in stock_data
-        }
-        for fut in as_completed(futures):
-            ticker = futures[fut]
-            try:
-                ss = fut.result()
-                sentiment_data[ticker] = ss
-            except Exception as exc:
-                log.warning("[%s] Sentiment error: %s", ticker, exc)
-
-    # 6. Score and filter
-    scored = []
-    for ticker in tickers:
-        sd = stock_data.get(ticker)
+def score_one(
+    ticker: str,
+    fetcher: DataFetcher,
+    sentiment_analyzer: SentimentAnalyzer,
+    scorer: ScoringEngine,
+    macro,
+    config: dict,
+) -> Optional[ScoredStock]:
+    try:
+        sd = fetcher.fetch(ticker)
         if not sd or sd.error:
-            log.debug("[%s] Skipping (no data / error: %s)", ticker, sd.error if sd else "None")
-            continue
+            return None
 
-        # Volume filter
-        if sd.avg_daily_volume < min_vol:
-            log.debug("[%s] Skipping: avg volume %.0f < minimum %.0f", ticker, sd.avg_daily_volume, min_vol)
-            continue
+        universe_cfg = config.get("universe", {})
+        if sd.avg_daily_volume < universe_cfg.get("min_avg_volume", 0):
+            return None
+        if sd.fundamentals.market_cap < universe_cfg.get("min_market_cap", 0):
+            return None
 
-        # Market cap filter
-        if sd.fundamentals.market_cap < min_cap:
-            log.debug("[%s] Skipping: market cap $%.0fM < minimum", ticker, sd.fundamentals.market_cap / 1e6)
-            continue
-
-        # Fundamental filters
-        f = sd.fundamentals
-        if f.revenue_growth_yoy < fundamental_filters.get("min_revenue_growth_yoy", 0.0):
-            log.debug("[%s] Skipping: revenue growth %.1%% below minimum", ticker, f.revenue_growth_yoy)
-            continue
-
-        sent = sentiment_data.get(ticker)
-        from src.sentiment_analyzer import SentimentScore
-        if sent is None:
-            sent = SentimentScore(ticker=ticker)
-
+        sent = sentiment_analyzer.analyze(ticker, sd.name)
         result = scorer.score(sd, sent)
-        # Apply macro tailwind/headwind adjustment
-        sector_bonus = 3.0 if f.sector in macro.best_sectors else (-3.0 if f.sector in macro.avoid_sectors else 0.0)
-        result.composite_score = max(0, min(100, result.composite_score + macro.score_adjustment + sector_bonus))
-        result.investment_rating = __import__('src.scoring_engine', fromlist=['get_rating']).get_rating(result.composite_score)
-        scored.append(result)
-        log.info(
-            "[%s] Score: %.0f/100 | %s | Tech: %s | Sentiment: %s",
-            ticker, result.composite_score, result.investment_rating,
-            result.technical_grade, result.sentiment_grade
+
+        # Attach mention count to result so the gem classifier can read it
+        result._mention_count = sent.mention_count
+
+        f = sd.fundamentals
+        sector_bonus = (
+            3.0 if f.sector in macro.best_sectors
+            else -3.0 if f.sector in macro.avoid_sectors
+            else 0.0
         )
+        result.composite_score = max(0, min(100,
+            result.composite_score + macro.score_adjustment + sector_bonus
+        ))
+        result.investment_rating = get_rating(result.composite_score)
+        return result
 
-    # 7. Rank by composite score
-    scored.sort(key=lambda x: x.composite_score, reverse=True)
-    top_n = cfg.get("output", {}).get("top_n", 5)
-    top_picks = scored[:top_n]
-
-    log.info("Top %d picks: %s", top_n, [f"{p.ticker}({p.composite_score:.0f})" for p in top_picks])
-    return top_picks, scored, macro
+    except Exception as exc:
+        log.debug("[%s] Error: %s", ticker, exc)
+        return None
 
 
-# ─── Output Saving ────────────────────────────────────────────────────────────
+# ── Full Universe Scan ────────────────────────────────────────────────────────
 
-def save_output(picks: List[ScoredStock], cfg: dict, all_scored: List[ScoredStock] = None, macro=None):
-    output_cfg = cfg.get("output", {})
-    out_dir = Path("output")
-    out_dir.mkdir(exist_ok=True)
+def run_full_scan(config: dict, limit: Optional[int] = None) -> Tuple[List[dict], List[dict], List[dict]]:
+    """
+    Scans the entire universe, returns (mainstream_picks, gem_picks, all_scores).
+    All picks are plain dicts ready to be saved to JSON and sent to Discord.
+    """
+    log.info("═══════════════════════════════════════════════════════")
+    log.info("  @VisionariesOnly Watchlist Bot — Full Universe Scan")
+    log.info("═══════════════════════════════════════════════════════")
+    start_time = time.time()
+
+    # Load framework
+    framework = load_framework(config.get("framework", {}).get("url", ""))
+    log.info("Framework: %d questions", len(framework))
+
+    # Build universe — returns all tickers + the russell-only set
+    tickers, russell_only_set = get_universe(config)
+    if limit:
+        tickers = tickers[:limit]
+        log.info("Limiting to first %d tickers (--limit flag)", limit)
+    log.info("Universe: %d tickers | %d potential gem candidates", len(tickers), len(russell_only_set))
+
+    # Macro context
+    try:
+        macro = MacroAnalyzer(config).get_context()
+        log.info("Macro: %s | adj %+.1f | VIX %.1f",
+                 macro.market_regime, macro.score_adjustment, macro.vix)
+    except Exception as e:
+        log.warning("Macro fetch failed: %s — using defaults", e)
+        from src.macro_analyzer import MacroContext
+        macro = MacroContext()
+
+    # Engines
+    fetcher = DataFetcher(config)
+    sentiment_analyzer = SentimentAnalyzer(config)
+    scorer = ScoringEngine(config, framework)
+
+    # Thresholds for dynamic hidden gem classification
+    GEM_MIN_SCORE    = 65    # must score at least this to qualify
+    GEM_MAX_MENTIONS = 5     # must have fewer social mentions than this
+
+    # Score all tickers in parallel batches
+    all_results: List[Tuple[str, str, ScoredStock]] = []  # (ticker, pool, result)
+    total = len(tickers)
+    analyzed = 0
+    scored_count = 0
+    batch_size = 12  # parallel workers
+
+    log.info("Starting scan with %d parallel workers...", batch_size)
+
+    for i in range(0, total, batch_size):
+        batch = tickers[i:i + batch_size]
+
+        with ThreadPoolExecutor(max_workers=batch_size) as executor:
+            futures = {
+                executor.submit(score_one, t, fetcher, sentiment_analyzer, scorer, macro, config): t
+                for t in batch
+            }
+            for fut in as_completed(futures):
+                ticker = futures[fut]
+                analyzed += 1
+                try:
+                    result = fut.result()
+                    if result:
+                        # Dynamic hidden gem classification:
+                        #   - Must be a Russell 1000 stock not in S&P 500/NASDAQ
+                        #   - Must score >= 65 (good fundamentals)
+                        #   - Must have < 5 social mentions (under the radar)
+                        in_russell_only = ticker in russell_only_set
+                        low_social = (result.sentiment_mentions if hasattr(result, 'sentiment_mentions')
+                                      else getattr(result, '_mention_count', 0)) < GEM_MAX_MENTIONS
+                        high_score = result.composite_score >= GEM_MIN_SCORE
+
+                        pool = "hidden_gem" if (in_russell_only and high_score and low_social) else "mainstream"
+                        all_results.append((ticker, pool, result))
+                        scored_count += 1
+                        log.debug("[%s] %.0f | %s | pool=%s mentions=%s",
+                                  ticker, result.composite_score, result.investment_rating,
+                                  pool, getattr(result, '_mention_count', '?'))
+                except Exception as exc:
+                    log.debug("[%s] Unhandled error: %s", ticker, exc)
+
+        # Progress log every 100 tickers
+        if analyzed % 100 == 0 or analyzed == total:
+            elapsed = time.time() - start_time
+            pct = analyzed / total * 100
+            remaining_tickers = total - analyzed
+            rate = analyzed / elapsed if elapsed > 0 else 1
+            eta_mins = int(remaining_tickers / rate / 60)
+            log.info("Progress: %d/%d (%.0f%%) | scored: %d | elapsed: %.0fm | ETA: ~%dm",
+                     analyzed, total, pct, scored_count,
+                     elapsed / 60, eta_mins)
+
+        # Small delay to avoid hammering yfinance
+        time.sleep(0.3)
+
+    elapsed_total = time.time() - start_time
+    log.info("Scan complete: %d/%d tickers scored in %.1f minutes",
+             scored_count, total, elapsed_total / 60)
+
+    # ── Sort and split by pool ────────────────────────────────────────────────
+    mainstream_results = sorted(
+        [(t, r) for t, pool, r in all_results if pool == "mainstream"],
+        key=lambda x: x[1].composite_score, reverse=True
+    )
+    gem_results = sorted(
+        [(t, r) for t, pool, r in all_results if pool == "hidden_gem"],
+        key=lambda x: x[1].composite_score, reverse=True
+    )
+    all_sorted = sorted(all_results, key=lambda x: x[2].composite_score, reverse=True)
+
+    output_cfg = config.get("output", {})
+    n_main = output_cfg.get("top_n_mainstream", 5)
+    n_gems = output_cfg.get("top_n_hidden_gems", 5)
+
+    top_mainstream = [_to_dict(r, "mainstream") for _, r in mainstream_results[:n_main]]
+    top_gems       = [_to_dict(r, "hidden_gem") for _, r in gem_results[:n_gems]]
+    all_scores     = [{"ticker": t, "composite_score": round(r.composite_score, 2), "pool": pool}
+                      for t, pool, r in all_sorted]
+
+    log.info("Top mainstream: %s", [f"{p['ticker']}({p['composite_score']:.0f})" for p in top_mainstream])
+    log.info("Top gems:       %s", [f"{p['ticker']}({p['composite_score']:.0f})" for p in top_gems])
+
+    return top_mainstream, top_gems, all_scores
+
+
+def _to_dict(result: ScoredStock, pool: str) -> dict:
+    return {
+        "ticker":             result.ticker,
+        "name":               result.name,
+        "composite_score":    round(result.composite_score, 2),
+        "investment_rating":  result.investment_rating,
+        "technical_grade":    result.technical_grade,
+        "sentiment_grade":    result.sentiment_grade,
+        "price":              result.price,
+        "sector":             result.sector,
+        "pool":               pool,
+        "entry_zone":         result.entry_zone,
+        "target_1y":          result.target_1y,
+        "target_3y":          result.target_3y,
+        "rationale_bullets":  result.rationale_bullets or [],
+        "risks":              result.risks or [],
+        "category_scores":    [
+            {"category": c.category, "score": round(c.score, 3)}
+            for c in (result.category_scores or [])
+        ],
+    }
+
+
+# ── Save Output ───────────────────────────────────────────────────────────────
+
+def save_output(
+    mainstream: List[dict],
+    gems: List[dict],
+    all_scores: List[dict],
+    config: dict,
+    macro=None,
+    scan_duration_mins: float = 0,
+):
+    Path("output").mkdir(exist_ok=True)
     date_str = datetime.now().strftime("%Y-%m-%d")
-
-    def pick_to_dict(p):
-        return {
-            "ticker": p.ticker,
-            "name": p.name,
-            "composite_score": round(p.composite_score, 2),
-            "investment_rating": p.investment_rating,
-            "technical_grade": p.technical_grade,
-            "sentiment_grade": p.sentiment_grade,
-            "price": p.price,
-            "sector": p.sector,
-            "entry_zone": p.entry_zone,
-            "target_1y": p.target_1y,
-            "target_3y": p.target_3y,
-            "rationale_bullets": p.rationale_bullets,
-            "risks": p.risks,
-            "category_scores": [
-                {"category": c.category, "score": round(c.score, 3)}
-                for c in p.category_scores
-            ],
-        }
 
     macro_dict = {}
     if macro:
-        macro_dict = {
-            "yield10": round(macro.rate_10yr, 2),
-            "yieldCurve": f"{macro.yield_curve_status.title()} ({macro.yield_curve_spread:+.2f})",
-            "vix": round(macro.vix, 1),
-            "vixRegime": macro.vix_regime.title(),
-            "dxy": round(macro.dxy, 1),
-            "dxyTrend": macro.dollar_trend.title(),
-            "regime": macro.regime_description,
-        }
+        try:
+            macro_dict = {
+                "yield10":     round(macro.rate_10yr, 2),
+                "yieldCurve":  f"{macro.yield_curve_status.title()} ({macro.yield_curve_spread:+.2f})",
+                "vix":         round(macro.vix, 1),
+                "vixRegime":   macro.vix_regime.title(),
+                "dxy":         round(macro.dxy, 1),
+                "dxyTrend":    macro.dollar_trend.title(),
+                "regime":      macro.regime_description,
+            }
+        except Exception:
+            pass
 
-    full_output = {
-        "run_date": date_str,
-        "generated_at": datetime.now().isoformat(),
-        "picks": [pick_to_dict(p) for p in picks],
-        "all_scores": [
-            {"ticker": p.ticker, "composite_score": round(p.composite_score, 2)}
-            for p in (all_scored or picks)
-        ],
-        "macro": macro_dict,
+    all_picks = mainstream + gems
+    output = {
+        "run_date":           date_str,
+        "generated_at":       datetime.now().isoformat(),
+        "mainstream_picks":   mainstream,
+        "hidden_gem_picks":   gems,
+        "picks":              all_picks,      # legacy field for dashboard
+        "all_scores":         all_scores,
+        "macro":              macro_dict,
+        "scan_stats": {
+            "tickers_in_universe": str(len(all_scores)),
+            "analyzed_last_24h":   str(len(all_scores)),
+            "current_cycle":       "1",
+            "scan_duration_mins":  f"{scan_duration_mins:.1f}",
+        },
         "meta": {
-            "topScore": round(picks[0].composite_score, 0) if picks else 0,
-            "topTicker": picks[0].ticker if picks else "—",
-            "avgScore": round(sum(p.composite_score for p in picks) / len(picks), 0) if picks else 0,
-            "tickers": len(all_scored or picks),
-            "regime": macro.market_regime.upper() if macro else "—",
-            "vix": str(round(macro.vix, 1)) if macro else "—",
-            "runDate": date_str,
+            "topScore":  round(all_picks[0]["composite_score"], 0) if all_picks else 0,
+            "topTicker": all_picks[0]["ticker"] if all_picks else "—",
+            "avgScore":  round(
+                sum(p["composite_score"] for p in all_picks) / max(len(all_picks), 1), 0
+            ),
+            "tickers":   len(all_scores),
+            "regime":    macro_dict.get("vixRegime", "—"),
+            "vix":       str(macro_dict.get("vix", "—")),
+            "runDate":   date_str,
         }
     }
 
-    # Write dated file
-    if output_cfg.get("save_json", True):
-        json_path = out_dir / f"picks_{date_str}.json"
-        json_path.write_text(json.dumps(full_output, indent=2))
-        log.info("Saved JSON: %s", json_path)
-
-        # Always overwrite latest.json — this is what the dashboard reads
-        latest_path = out_dir / "latest.json"
-        latest_path.write_text(json.dumps(full_output, indent=2))
-        log.info("Updated latest.json")
-
-    if output_cfg.get("save_markdown", True):
-        md_path = out_dir / f"picks_{date_str}.md"
-        lines = [f"# Top {len(picks)} Watchlist — {date_str}\n"]
-        for rank, p in enumerate(picks, 1):
-            lines.append(f"## #{rank} {p.ticker} — {p.name} (${p.price:.2f})")
-            lines.append(f"**Score: {p.composite_score:.0f}/100** | {p.investment_rating} | Technical: {p.technical_grade} | Sentiment: {p.sentiment_grade}")
-            if p.entry_zone:
-                lines.append(f"- 🎯 Entry Zone: {p.entry_zone}")
-            if p.target_1y:
-                lines.append(f"- 📅 1-Year Target: {p.target_1y}")
-            if p.target_3y:
-                lines.append(f"- 🚀 3-Year Target: {p.target_3y}")
-            lines.append("\n**Rationale:**")
-            for b in p.rationale_bullets:
-                lines.append(f"- {b}")
-            if p.risks:
-                lines.append("\n**Risks:**")
-                for r in p.risks:
-                    lines.append(f"- {r}")
-            lines.append("")
-        md_path.write_text("\n".join(lines))
-        log.info("Saved Markdown: %s", md_path)
+    json_str = json.dumps(output, indent=2)
+    Path(f"output/picks_{date_str}.json").write_text(json_str)
+    Path("output/latest.json").write_text(json_str)
+    log.info("Saved output/latest.json (%d mainstream + %d gems | %d total scored)",
+             len(mainstream), len(gems), len(all_scores))
 
 
-# ─── Scheduled Job ────────────────────────────────────────────────────────────
-
-def run_and_post(cfg: dict):
-    try:
-        picks, all_scored, macro = run_analysis(cfg)
-        poster = DiscordPoster(cfg)
-        save_output(picks, cfg, all_scored=all_scored, macro=macro)
-        poster.post_watchlist(picks, datetime.now())
-    except Exception as exc:
-        log.exception("Critical error in run_and_post: %s", exc)
-
-
-# ─── Entry Point ──────────────────────────────────────────────────────────────
+# ── Entry Point ───────────────────────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(description="WatchlistBot — AI-Powered Daily Stock Picks")
-    parser.add_argument("--config", default="config.yaml", help="Path to config file")
-    parser.add_argument("--now", action="store_true", help="Run analysis immediately (skip scheduler)")
-    parser.add_argument("--dry-run", action="store_true", help="Run analysis but don't post to Discord")
+    parser = argparse.ArgumentParser(description="@VisionariesOnly Watchlist Bot")
+    parser.add_argument("--config",    default="config.yaml")
+    parser.add_argument("--dry-run",   action="store_true",
+                        help="Run full scan but print to console instead of posting to Discord")
+    parser.add_argument("--post-now",  action="store_true",
+                        help="Skip scan — post whatever is already in output/latest.json")
+    parser.add_argument("--limit",     type=int, default=None,
+                        help="Only scan first N tickers (useful for testing, e.g. --limit 50)")
     args = parser.parse_args()
 
-    cfg = load_config(args.config)
-    setup_logging(cfg.get("output", {}).get("log_level", "INFO"))
+    config = load_config(args.config)
+    setup_logging(config.get("output", {}).get("log_level", "INFO"))
+    log.info("@VisionariesOnly Watchlist Bot starting")
 
-    log.info("WatchlistBot starting up...")
-    log.info("Framework URL: %s", cfg.get("framework", {}).get("url", "N/A"))
-
-    if args.now or args.dry_run:
-        log.info("Running immediately (--now / --dry-run flag set)")
-        picks, all_scored, macro = run_analysis(cfg)
-        save_output(picks, cfg, all_scored=all_scored, macro=macro)
-        if not args.dry_run:
-            poster = DiscordPoster(cfg)
-            poster.post_watchlist(picks, datetime.now())
+    # ── Post-only mode ────────────────────────────────────────────────────────
+    if args.post_now:
+        latest = Path("output/latest.json")
+        if not latest.exists():
+            log.error("No output/latest.json found — run a full scan first")
+            return
+        data = json.loads(latest.read_text())
+        mainstream = data.get("mainstream_picks", data.get("picks", [])[:5])
+        gems       = data.get("hidden_gem_picks", data.get("picks", [])[5:10])
+        poster = DiscordPoster(config)
+        if args.dry_run:
+            poster._print_to_console(mainstream, gems, datetime.now())
         else:
-            poster = DiscordPoster({"discord": {"webhook_url": ""}})
-            poster._print_to_console(picks, datetime.now())
+            poster.post_from_dicts(mainstream, gems, datetime.now())
         return
 
-    # ── Scheduled mode ───────────────────────────────────────────────────────
-    sched_cfg = cfg.get("schedule", {})
-    post_time = sched_cfg.get("post_time", "09:30")
-    tz_name = sched_cfg.get("timezone", "America/New_York")
-    tz = pytz.timezone(tz_name)
+    # ── Full scan + post ──────────────────────────────────────────────────────
+    scan_start = time.time()
 
-    analysis_offset_h = sched_cfg.get("analysis_window_hours", 12)
-    analysis_time_naive = datetime.strptime(post_time, "%H:%M") - timedelta(hours=analysis_offset_h)
-    analysis_time_str = analysis_time_naive.strftime("%H:%M")
+    # Get macro once upfront so we can pass it to save_output
+    try:
+        macro = MacroAnalyzer(config).get_context()
+    except Exception:
+        macro = None
 
-    log.info("Scheduled: Analysis at %s %s, Post at %s %s", analysis_time_str, tz_name, post_time, tz_name)
+    mainstream, gems, all_scores = run_full_scan(config, limit=args.limit)
+    scan_duration = (time.time() - scan_start) / 60
+    log.info("Total scan time: %.1f minutes", scan_duration)
 
-    # Schedule analysis run (starts gathering data N hours before post)
-    analysis_results = []
-    analysis_all_scored = []
-    analysis_macro = None
+    save_output(mainstream, gems, all_scores, config, macro, scan_duration)
 
-    def _analysis_job():
-        nonlocal analysis_results, analysis_all_scored, analysis_macro
-        log.info("Starting scheduled analysis...")
-        try:
-            analysis_results, analysis_all_scored, analysis_macro = run_analysis(cfg)
-            save_output(analysis_results, cfg, all_scored=analysis_all_scored, macro=analysis_macro)
-        except Exception as exc:
-            log.exception("Analysis job failed: %s", exc)
+    if args.dry_run:
+        log.info("Dry run — printing to console, skipping Discord")
+        DiscordPoster({"discord": {"webhook_url": ""}})._print_to_console(
+            mainstream, gems, datetime.now()
+        )
+    else:
+        log.info("Posting to Discord...")
+        DiscordPoster(config).post_from_dicts(mainstream, gems, datetime.now())
 
-    def _post_job():
-        if not analysis_results:
-            log.warning("No analysis results ready — running now...")
-            _analysis_job()
-        poster = DiscordPoster(cfg)
-        poster.post_watchlist(analysis_results, datetime.now(tz))
-
-    schedule.every().day.at(analysis_time_str).do(_analysis_job)
-    schedule.every().day.at(post_time).do(_post_job)
-
-    log.info("Scheduler running. Ctrl+C to stop.")
-    while True:
-        schedule.run_pending()
-        time.sleep(30)
+    log.info("All done.")
 
 
 if __name__ == "__main__":

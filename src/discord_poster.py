@@ -1,282 +1,185 @@
 """
-discord_poster.py
-─────────────────
-Formats ScoredStock results and POSTs them to a Discord webhook.
-
-Message layout:
-  • Header embed with date + market context
-  • One embed per top pick with score, grade, bullets, entry zone, targets
-  • Footer embed with risk disclaimer
+discord_poster.py — @VisionariesOnly Watchlist Bot
+────────────────────────────────────────────────────
+Concise Discord output. Accepts either ScoredStock objects or
+plain dicts (from the SQLite DB via score_db.get_top_picks).
 """
 
 from __future__ import annotations
 
-import json
 import logging
 from datetime import datetime
-from typing import List
+from typing import List, Union
 
 import requests
-
-from .scoring_engine import ScoredStock
 
 log = logging.getLogger(__name__)
 
 EMBED_COLORS = {
-    "🔥 STRONG BUY": 0x00FF88,  # green
-    "✅ BUY": 0x44CC44,
-    "👀 WATCH": 0xFFAA00,       # amber
-    "⚠️ SPECULATIVE": 0xFF6600,
-    "❌ AVOID": 0xFF3333,        # red
+    "STRONG BUY": 0x00FF88,
+    "BUY":        0x44CC44,
+    "WATCH":      0xFFAA00,
+    "SPECULATIVE":0xFF6600,
+    "AVOID":      0xFF3333,
 }
+TECH_EMOJI = {"A+": "🟢", "A": "🟢", "B": "🟡", "C": "🟡", "D": "🔴", "F": "🔴"}
 
-TECH_GRADE_EMOJI = {
-    "A+": "🟢", "A": "🟢", "B": "🟡", "C": "🟡", "D": "🔴", "F": "🔴",
-}
+
+def _as_dict(p) -> dict:
+    """Normalise a ScoredStock object or plain dict to a consistent dict."""
+    if isinstance(p, dict):
+        return p
+    # ScoredStock object
+    return {
+        "ticker": p.ticker,
+        "name": p.name,
+        "composite_score": p.composite_score,
+        "investment_rating": p.investment_rating,
+        "technical_grade": p.technical_grade,
+        "sentiment_grade": p.sentiment_grade,
+        "price": p.price,
+        "sector": p.sector,
+        "entry_zone": p.entry_zone,
+        "target_1y": p.target_1y,
+        "target_3y": p.target_3y,
+        "rationale_bullets": p.rationale_bullets or [],
+        "risks": p.risks or [],
+    }
 
 
 class DiscordPoster:
     def __init__(self, config: dict):
-        self.webhook = config.get("discord", {}).get("webhook_url", "")
-        self.mention = config.get("discord", {}).get("mention", "")
-        self.username = config.get("discord", {}).get("username", "📈 WatchlistBot")
-        self.avatar_url = config.get("discord", {}).get("avatar_url", "")
+        self.webhook  = config.get("discord", {}).get("webhook_url", "")
+        self.username = config.get("discord", {}).get("username", "@VisionariesOnly Watchlist Bot")
+        self.avatar   = config.get("discord", {}).get("avatar_url", "")
+        self.mention  = config.get("discord", {}).get("mention", "")
 
-    def post_watchlist(self, picks: List[ScoredStock], run_date: datetime) -> bool:
-        if not self.webhook or self.webhook == "YOUR_DISCORD_WEBHOOK_URL_HERE":
-            log.warning("Discord webhook not configured — printing to stdout only")
-            self._print_to_console(picks, run_date)
+    # ── Called from bot.py with DB dicts ─────────────────────────────────────
+
+    def post_from_dicts(self, mainstream: List[dict], gems: List[dict], run_date: datetime):
+        return self.post_watchlist(mainstream, gems, run_date)
+
+    # ── Main entry ────────────────────────────────────────────────────────────
+
+    def post_watchlist(self, mainstream, gems, run_date: datetime) -> bool:
+        mainstream = [_as_dict(p) for p in mainstream]
+        gems       = [_as_dict(p) for p in gems]
+
+        if not self.webhook or "YOUR_DISCORD" in self.webhook:
+            self._print_to_console(mainstream, gems, run_date)
             return False
 
-        # Post header first, then one embed per pick — avoids 6000 char Discord limit
-        success = True
+        ok = True
 
-        # Header message
-        header_payload = {
-            "username": self.username,
-            "embeds": [{
-                "title": f"📊  Daily Top {len(picks)} Watchlist  •  {run_date.strftime('%A, %B %d %Y')}",
-                "description": (
-                    "Scored against the **Master Investment Scoring Framework** — "
-                    "Leadership · Product · Macro · Financials · Narrative · Technicals · Governance\n"
-                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-                ),
-                "color": 0x0099FF,
-                "timestamp": run_date.isoformat(),
-            }]
-        }
-        if self.mention:
-            header_payload["content"] = self.mention
-        if self.avatar_url:
-            header_payload["avatar_url"] = self.avatar_url
-
-        try:
-            resp = requests.post(self.webhook, json=header_payload, timeout=15)
-            resp.raise_for_status()
-        except Exception as exc:
-            log.error("Discord header post failed: %s", exc)
-            try:
-                log.error("Discord response body: %s", exc.response.text if hasattr(exc, 'response') else "N/A")
-            except Exception:
-                pass
-            return False
-
-        # One message per pick
-        for rank, pick in enumerate(picks, 1):
-            pick_payload = {
-                "username": self.username,
-                "embeds": [self._build_pick_embed(rank, pick)]
-            }
-            if self.avatar_url:
-                pick_payload["avatar_url"] = self.avatar_url
-            try:
-                resp = requests.post(self.webhook, json=pick_payload, timeout=15)
-                resp.raise_for_status()
-                log.info("Posted pick #%d %s to Discord", rank, pick.ticker)
-            except Exception as exc:
-                log.error("Discord pick #%d post failed: %s", rank, exc)
-                try:
-                    log.error("Discord response: %s", exc.response.text if hasattr(exc, 'response') else "N/A")
-                except Exception:
-                    pass
-                success = False
-
-        # Footer
-        try:
-            footer_payload = {
-                "username": self.username,
-                "embeds": [{
-                    "description": "⚠️ *Algorithmic analysis only — not financial advice. Always do your own due diligence.*",
-                    "color": 0x444444,
-                }]
-            }
-            if self.avatar_url:
-                footer_payload["avatar_url"] = self.avatar_url
-            requests.post(self.webhook, json=footer_payload, timeout=15)
-        except Exception:
-            pass
-
-        return success
-
-    def _build_pick_embed(self, rank: int, pick: ScoredStock) -> dict:
-        color = EMBED_COLORS.get(pick.investment_rating, 0x888888)
-        tech_emoji = TECH_GRADE_EMOJI.get(pick.technical_grade, "⚪")
-
-        bar_filled = round(pick.composite_score / 10)
-        bar = "█" * bar_filled + "░" * (10 - bar_filled)
-
-        description_lines = [
-            f"**{pick.investment_rating}**  •  Score: `{pick.composite_score:.0f}/100`",
-            f"`{bar}` {pick.composite_score:.0f}%",
-            "",
-        ]
-        # Trim bullets to max 120 chars each, max 6 bullets
-        for b in (pick.rationale_bullets or [])[:6]:
-            description_lines.append(str(b)[:120])
-
-        description = "\n".join(description_lines)[:4000]  # Discord embed desc limit
-
-        fields = []
-        if pick.entry_zone:
-            fields.append({"name": "🎯 Entry Zone", "value": str(pick.entry_zone)[:1024], "inline": True})
-        if pick.target_1y:
-            fields.append({"name": "📅 1-Year Target", "value": str(pick.target_1y)[:1024], "inline": True})
-        if pick.target_3y:
-            fields.append({"name": "🚀 3-Year Target", "value": str(pick.target_3y)[:1024], "inline": True})
-
-        fields.append({
-            "name": "Grades",
-            "value": (
-                f"{tech_emoji} Technical: **{pick.technical_grade}**  "
-                f"| 📣 Sentiment: **{pick.sentiment_grade}**  "
-                f"| 💼 Sector: `{pick.sector}`"
-            )[:1024],
-            "inline": False,
-        })
-
-        if pick.risks:
-            risks_text = "\n".join(str(r)[:100] for r in pick.risks[:3])
-            fields.append({"name": "⚠️ Key Risks", "value": risks_text[:1024], "inline": False})
-
-        return {
-            "title": f"#{rank}  {pick.ticker}  —  {pick.name}  •  ${pick.price:.2f}"[:256],
-            "description": description,
-            "color": color,
-            "fields": fields,
-        }
-
-    def _build_payload(self, picks: List[ScoredStock], run_date: datetime) -> dict:
-        embeds = []
-
-        # ── Header ────────────────────────────────────────────────────────────
-        header = {
-            "title": f"📊  Daily Top {len(picks)} Watchlist  •  {run_date.strftime('%A, %B %d %Y')}",
+        # Header
+        ok &= self._send({"embeds": [{
+            "title": f"👁  VisionariesOnly Watchlist  •  {run_date.strftime('%b %d, %Y')}",
             "description": (
-                "Scored against the **Master Investment Scoring Framework** — "
-                "Leadership · Product · Macro · Financials · Narrative · Technicals · Governance\n"
-                "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                f"Analyzed from a universe of **1,000+ stocks** over the past 24 hours\n"
+                f"Scored: Leadership · Product · Macro · Financials · Narrative · Technicals\n"
+                f"{'━'*38}"
             ),
             "color": 0x0099FF,
-            "timestamp": run_date.isoformat(),
+        }]})
+
+        # Mainstream section
+        ok &= self._send({"embeds": [{"title": "📈  Top 5 Mainstream Picks", "color": 0x00AAFF,
+            "description": "Large & mid-cap stocks with highest framework scores"}]})
+        for i, p in enumerate(mainstream, 1):
+            ok &= self._send({"embeds": [self._pick_embed(i, p, gem=False)]})
+
+        # Hidden gems section
+        ok &= self._send({"embeds": [{"title": "💎  Top 5 Hidden Gem Picks", "color": 0xAA44FF,
+            "description": "Under-the-radar high-conviction opportunities"}]})
+        for i, p in enumerate(gems, 1):
+            ok &= self._send({"embeds": [self._pick_embed(i, p, gem=True)]})
+
+        # Footer
+        ok &= self._send({"embeds": [{"description":
+            "⚠️ *Algorithmic analysis only — not financial advice. Do your own due diligence.*",
+            "color": 0x222222}]})
+
+        return ok
+
+    def _pick_embed(self, rank: int, p: dict, gem: bool) -> dict:
+        score = p.get("composite_score") or 0
+        rating_raw = (p.get("investment_rating") or "WATCH").upper()
+        # Strip emoji prefix
+        for prefix in ["🔥 ", "✅ ", "👀 ", "⚠️ ", "❌ "]:
+            rating_raw = rating_raw.replace(prefix, "")
+        rating_raw = rating_raw.strip()
+
+        # Find matching color key
+        color = 0x888888
+        for key, val in EMBED_COLORS.items():
+            if key in rating_raw:
+                color = val
+                break
+
+        bar = "█" * round(score / 10) + "░" * (10 - round(score / 10))
+        t_emoji = TECH_EMOJI.get(p.get("technical_grade", "B"), "⚪")
+        prefix = "💎" if gem else "📈"
+
+        # 3 bullets max, cleaned up
+        bullets = ""
+        for b in (p.get("rationale_bullets") or [])[:3]:
+            clean = str(b).replace("🔵 ", "").replace("📈 ", "").replace("💰 ", "")
+            if "]: " in clean:
+                clean = clean.split("]: ", 1)[1]
+            bullets += f"• {clean[:85]}\n"
+
+        t1 = str(p.get("target_1y") or "—")[:25]
+        t3 = str(p.get("target_3y") or "—")[:25]
+        entry = str(p.get("entry_zone") or "—")[:55]
+
+        desc = (
+            f"`{bar}` **{round(score)}/100**  {rating_raw}\n"
+            f"{t_emoji} Tech: **{p.get('technical_grade','?')}**"
+            f"  |  📣 {p.get('sentiment_grade','Neutral')}"
+            f"  |  💼 {p.get('sector','—')}\n"
+            f"🎯 Entry: {entry}\n"
+            f"🚀 1yr: **{t1}**  |  3yr: {t3}\n\n"
+            f"{bullets}"
+        )
+
+        price = p.get("price") or 0
+        return {
+            "title": f"{prefix} #{rank}  {p.get('ticker','')}  —  ${price:.2f}"[:100],
+            "description": desc[:2000],
+            "color": color,
         }
-        embeds.append(header)
 
-        # ── Per-pick embeds ───────────────────────────────────────────────────
-        for rank, pick in enumerate(picks, 1):
-            color = EMBED_COLORS.get(pick.investment_rating, 0x888888)
-            tech_emoji = TECH_GRADE_EMOJI.get(pick.technical_grade, "⚪")
+    def _send(self, payload: dict) -> bool:
+        payload["username"] = self.username
+        if self.avatar:
+            payload["avatar_url"] = self.avatar
+        try:
+            resp = requests.post(self.webhook, json=payload, timeout=15)
+            resp.raise_for_status()
+            return True
+        except Exception as exc:
+            body = ""
+            try: body = exc.response.text[:200]
+            except Exception: pass
+            log.error("Discord send failed: %s %s", exc, body)
+            return False
 
-            # Score bar visual
-            bar_filled = round(pick.composite_score / 10)
-            bar = "█" * bar_filled + "░" * (10 - bar_filled)
-
-            description_lines = [
-                f"**{pick.investment_rating}**  •  Score: `{pick.composite_score:.0f}/100`",
-                f"`{bar}` {pick.composite_score:.0f}%",
-                "",
-            ]
-            if pick.rationale_bullets:
-                description_lines.extend(pick.rationale_bullets)
-
-            fields = []
-            if pick.entry_zone:
-                fields.append({"name": "🎯 Entry Zone", "value": pick.entry_zone, "inline": True})
-            if pick.target_1y:
-                fields.append({"name": "📅 1-Year Target", "value": pick.target_1y, "inline": True})
-            if pick.target_3y:
-                fields.append({"name": "🚀 3-Year Target", "value": pick.target_3y, "inline": True})
-
-            # Grade row
-            fields.append({
-                "name": "Grades",
-                "value": (
-                    f"{tech_emoji} Technical: **{pick.technical_grade}**  "
-                    f"| 📣 Sentiment: **{pick.sentiment_grade}**  "
-                    f"| 💼 Sector: `{pick.sector}`"
-                ),
-                "inline": False,
-            })
-
-            if pick.risks:
-                fields.append({
-                    "name": "⚠️ Key Risks",
-                    "value": "\n".join(pick.risks),
-                    "inline": False,
-                })
-
-            embed = {
-                "title": f"#{rank}  {pick.ticker}  —  {pick.name}  •  ${pick.price:.2f}",
-                "description": "\n".join(description_lines),
-                "color": color,
-                "fields": fields,
-            }
-            embeds.append(embed)
-
-        # ── Footer ────────────────────────────────────────────────────────────
-        footer_embed = {
-            "description": (
-                "⚠️ *This is algorithmic analysis only — not financial advice. "
-                "Always do your own due diligence. Past performance does not guarantee future results.*"
-            ),
-            "color": 0x444444,
-        }
-        embeds.append(footer_embed)
-
-        payload = {
-            "username": self.username,
-            "embeds": embeds,
-        }
-        if self.avatar_url:
-            payload["avatar_url"] = self.avatar_url
-        if self.mention:
-            payload["content"] = self.mention
-
-        return payload
-
-    def _print_to_console(self, picks: List[ScoredStock], run_date: datetime):
-        """Fallback: pretty-print to stdout when Discord is not configured."""
-        print(f"\n{'═'*70}")
-        print(f"  📊  DAILY TOP {len(picks)} WATCHLIST  —  {run_date.strftime('%A, %B %d %Y')}")
-        print(f"{'═'*70}")
-        for rank, pick in enumerate(picks, 1):
-            bar_filled = round(pick.composite_score / 10)
-            bar = "█" * bar_filled + "░" * (10 - bar_filled)
-            print(f"\n#{rank}  {pick.ticker}  —  {pick.name}  •  ${pick.price:.2f}")
-            print(f"   Score: [{bar}] {pick.composite_score:.0f}/100  {pick.investment_rating}")
-            print(f"   Technical: {pick.technical_grade}  |  Sentiment: {pick.sentiment_grade}  |  Sector: {pick.sector}")
-            if pick.entry_zone:
-                print(f"   Entry Zone: {pick.entry_zone}")
-            if pick.target_1y:
-                print(f"   1-Year Target: {pick.target_1y}")
-            if pick.target_3y:
-                print(f"   3-Year Target: {pick.target_3y}")
-            print("   Rationale:")
-            for b in pick.rationale_bullets:
-                print(f"     {b}")
-            if pick.risks:
-                print("   Risks:")
-                for r in pick.risks:
-                    print(f"     {r}")
-        print(f"\n{'═'*70}")
-        print("⚠️  Not financial advice. Do your own due diligence.")
-        print(f"{'═'*70}\n")
+    def _print_to_console(self, mainstream, gems, run_date):
+        print(f"\n{'═'*65}")
+        print(f"  @VisionariesOnly Watchlist  —  {run_date.strftime('%b %d, %Y  %I:%M %p ET')}")
+        print(f"{'═'*65}")
+        for label, picks in [("📈 MAINSTREAM", mainstream), ("💎 HIDDEN GEMS", gems)]:
+            print(f"\n  {label}")
+            print(f"  {'─'*50}")
+            for i, p in enumerate(picks, 1):
+                score = p.get("composite_score", 0)
+                bar = "█" * round(score/10) + "░" * (10 - round(score/10))
+                price = p.get("price", 0)
+                print(f"\n  #{i}  {p.get('ticker')}  ${price:.2f}")
+                print(f"      [{bar}] {round(score)}/100  {p.get('investment_rating','')}")
+                print(f"      Tech:{p.get('technical_grade','?')}  Sent:{p.get('sentiment_grade','?')}  {p.get('sector','')}")
+                if p.get("entry_zone"): print(f"      Entry: {p['entry_zone']}")
+                if p.get("target_1y"):  print(f"      1yr: {p['target_1y']}")
+                for b in (p.get("rationale_bullets") or [])[:3]:
+                    print(f"      • {str(b)[:80]}")
+        print(f"\n{'═'*65}\n")

@@ -1,29 +1,38 @@
-name: 📈 Daily Watchlist Bot
+name: 📈 VisionariesOnly Watchlist Bot
 
 on:
   schedule:
-    # 1:00 PM UTC = 9:00 AM ET (gives 30 min to analyze before 9:30 AM post)
-    - cron: "0 13 * * 1-5"   # Mon–Fri only
+    # 11:30 AM UTC = 6:30 AM ET
+    # Scans 1,000+ stocks over ~2.5-3 hours
+    # Finishes and posts to Discord around 9:00-9:30 AM ET
+    - cron: "30 11 * * 1-5"   # Mon–Fri only
 
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Dry run — analyze but SKIP Discord post (leave unchecked to post normally)"
+        description: "Dry run — print to console, skip Discord post"
         required: false
         default: false
         type: boolean
+      limit:
+        description: "Limit scan to N tickers (leave blank for full universe)"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
 
 jobs:
-  run-watchlist-bot:
-    name: Analyze & Post
+  scan-and-post:
+    name: Full Universe Scan + Post
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 6 hours = max GitHub Actions free tier
+    # Full 1,000+ stock scan takes ~2.5-3 hours
+    timeout-minutes: 360
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Set up Python 3.11
@@ -35,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Write secrets into config
+      - name: Inject secrets into config
         env:
           DISCORD_WEBHOOK:      ${{ secrets.DISCORD_WEBHOOK }}
           ANTHROPIC_API_KEY:    ${{ secrets.ANTHROPIC_API_KEY }}
@@ -53,45 +62,56 @@ jobs:
           cfg["api_keys"]["news_api_key"]         = os.environ.get("NEWS_API_KEY", "")
           cfg["api_keys"]["reddit_client_id"]     = os.environ.get("REDDIT_CLIENT_ID", "")
           cfg["api_keys"]["reddit_client_secret"] = os.environ.get("REDDIT_CLIENT_SECRET", "")
-          framework_url = os.environ.get("FRAMEWORK_URL", "")
-          if framework_url:
-              cfg["framework"]["url"] = framework_url
+          url = os.environ.get("FRAMEWORK_URL", "")
+          if url:
+              cfg["framework"]["url"] = url
           with open("config.yaml", "w") as f:
               yaml.dump(cfg, f)
-          print("Config secrets injected")
+          print("✓ Secrets injected")
           EOF
 
-      - name: Run WatchlistBot
+      - name: Run full universe scan + post to Discord
         env:
-          # On scheduled runs: github.event.inputs is empty so dry_run is always false
-          # On manual runs: dry_run is false by default — post to Discord unless user checks the box
           DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && 'true' || 'false' }}
+          LIMIT:   ${{ github.event.inputs.limit }}
           PYTHONPATH: ${{ github.workspace }}
         run: |
-          echo "Trigger: ${{ github.event_name }}"
-          echo "Dry run: $DRY_RUN"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "  Trigger  : ${{ github.event_name }}"
+          echo "  Dry run  : $DRY_RUN"
+          echo "  Limit    : ${LIMIT:-full universe}"
+          echo "  Started  : $(date -u '+%Y-%m-%d %H:%M UTC')"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+          # Build the command
+          CMD="python bot.py"
           if [ "$DRY_RUN" = "true" ]; then
-            echo "→ Dry run mode — will NOT post to Discord"
-            python bot.py --now --dry-run
-          else
-            echo "→ Live mode — WILL post to Discord"
-            python bot.py --now
+            CMD="$CMD --dry-run"
+          fi
+          if [ -n "$LIMIT" ]; then
+            CMD="$CMD --limit $LIMIT"
           fi
 
+          echo "Running: $CMD"
+          $CMD
+
       - name: Commit output JSON to repo
+        if: always()
         run: |
-          git config user.name  "WatchlistBot"
-          git config user.email "bot@watchlistbot"
+          git config user.name  "VisionariesOnly Bot"
+          git config user.email "bot@visionariesonly"
           git add output/latest.json output/picks_*.json || true
           git diff --staged --quiet || git commit -m "chore: picks $(date -u '+%Y-%m-%d')"
-          git push
+          git push || echo "Nothing to push"
 
-      - name: Upload artifacts
+      - name: Upload run artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: watchlist-run-${{ github.run_id }}
-          path: output/
+          name: scan-${{ github.run_id }}
+          path: |
+            output/
+            logs/
           retention-days: 30
 
       - name: Notify Discord on failure
@@ -103,5 +123,12 @@ jobs:
           import requests, os
           w = os.environ.get("DISCORD_WEBHOOK", "")
           if w and len(w) > 10:
-              requests.post(w, json={"username":"WatchlistBot","embeds":[{"title":"Bot Run Failed","description":"Check GitHub Actions for logs.","color":0xFF3333}]}, timeout=10)
+              requests.post(w, json={
+                  "username": "@VisionariesOnly Watchlist Bot",
+                  "embeds": [{
+                      "title": "❌ Bot Run Failed",
+                      "description": "The daily scan failed on GitHub Actions.\nCheck the Actions tab for logs.",
+                      "color": 0xFF3333
+                  }]
+              }, timeout=10)
           EOF
