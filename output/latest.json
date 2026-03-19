@@ -1,100 +1,42 @@
 {
   "run_date": "2026-03-19",
-  "generated_at": "2026-03-19T22:36:56.430461",
+  "generated_at": "2026-03-19T22:41:09.838064",
   "mainstream_picks": [
     {
-      "ticker": "SHOP",
-      "name": "Shopify Inc.",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 122.37000274658203,
-      "sector": "Technology",
-      "pool": "mainstream",
-      "entry_zone": "$105-$115 on break below 200 EMA support with volume confirmation",
-      "target_1y": "$145 - recovery to 50 EMA resistance as growth stabilizes and macro concerns ease",
-      "target_3y": "$180 - return to previous highs driven by international expansion and enterprise market penetration",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional balance sheet with 0.01 D/E ratio and $1.29B FCF generation, providing fortress-like stability",
-        "\ud83d\udd35 Growth Trajectory: 30.6% revenue growth demonstrates strong top-line momentum despite macro headwinds in e-commerce",
-        "\ud83d\udd35 Profitability Inflection: 20.3% operating margin shows mature unit economics, but -42.3% earnings decline signals margin compression",
-        "\ud83d\udd35 Technical Setup: Below all major EMAs in confirmed downtrend, but bullish MACD suggests potential momentum shift brewing",
-        "\ud83d\udd35 Valuation Premium: 53.2x forward PE reflects high growth expectations that may be difficult to sustain in current macro environment",
-        "\ud83d\udd35 Market Position: Dominant e-commerce infrastructure play with embedded switching costs, but facing intensifying competition from AMZN/META",
-        "\ud83d\udd35 Governance Excellence: Perfect stability score indicates strong operational discipline and strategic execution capabilities"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Economic downturn could severely impact SMB merchant base and discretionary spending on e-commerce tools",
-        "\u26a0\ufe0f Intensifying competition from Amazon, Meta, and traditional payment processors threatens market share and pricing power",
-        "\u26a0\ufe0f High valuation multiple leaves little room for execution missteps or growth deceleration disappointments"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "JHG",
-      "name": "Janus Henderson Group plc",
-      "composite_score": 59.3,
+      "ticker": "TPL",
+      "name": "Texas Pacific Land Corporation",
+      "composite_score": 65.5,
       "investment_rating": "\ud83d\udc40 WATCH",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 51.369998931884766,
-      "sector": "Financial Services",
+      "price": 532.52001953125,
+      "sector": "Energy",
       "pool": "mainstream",
-      "entry_zone": "$47-$49 on pullback to 50 EMA support with RSI below 35",
-      "target_1y": "$58 based on 11x forward earnings multiple expansion as growth stabilizes",
-      "target_3y": "$68 assuming 6% annual EPS growth and multiple re-rating to 12x PE as execution improves",
+      "entry_zone": "$450-$480 on pullback to 50 EMA or below recent support levels",
+      "target_1y": "$580-$620 assuming sustained oil prices above $70 and continued Permian drilling activity",
+      "target_3y": "$750-$850 based on compound royalty growth and potential multiple expansion as cash flow improves",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional balance sheet with 0.08 D/E ratio, $470M FCF, and 65.9% gross margins demonstrate operational excellence",
-        "\ud83d\udd35 Valuation: Attractive forward PE of 10.6x with 244.6% earnings growth creates compelling value proposition in asset management",
-        "\ud83d\udd35 Technical Setup: Above all EMAs with golden cross intact, but RSI at 39.7 and bearish MACD signal near-term consolidation",
-        "\ud83d\udd35 Leadership Concerns: Low leadership score (0.2) suggests management execution risks in competitive asset management landscape",
-        "\ud83d\udd35 Market Position: 61.3% revenue growth indicates strong AUM flows, but product-market-fit score of 0.43 raises sustainability questions",
-        "\ud83d\udd35 Macro Headwinds: Asset managers face fee compression and passive investing shift, reflected in 0.25 macro score",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions and neutral sentiment indicate lack of retail interest and institutional narrative"
+        "\ud83d\udd35 Financial Health: Exceptional margins (93% gross, 71% operating) with minimal debt (0.01 D/E) and strong ROE of 37%",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 7.3x despite premium business model suggests market undervaluation",
+        "\ud83d\udd35 Technicals: Strong uptrend above all EMAs with golden cross intact, though MACD showing bearish divergence",
+        "\ud83d\udd35 Business Model: Unique Permian Basin land/royalty owner benefits from drilling activity without operational risks",
+        "\ud83d\udd35 Cash Flow Concern: Negative FCF of -$0.08B despite strong profitability indicates potential capital allocation issues",
+        "\ud83d\udd35 Macro Tailwinds: Permian Basin remains most active US shale play, supporting long-term royalty income growth",
+        "\ud83d\udd35 Market Position: Near 52-week highs but analyst consensus at $444 suggests limited near-term upside"
       ],
       "risks": [
-        "\u26a0\ufe0f Asset management fee compression from passive investing trend and regulatory pressure",
-        "\u26a0\ufe0f Market volatility could trigger AUM outflows and revenue decline given asset-based fee structure",
-        "\u26a0\ufe0f Low leadership and product-market-fit scores suggest execution and competitive positioning challenges"
+        "\u26a0\ufe0f Oil price volatility directly impacts drilling activity and royalty payments",
+        "\u26a0\ufe0f Negative free cash flow despite high margins suggests unsustainable capital spending",
+        "\u26a0\ufe0f Single geographic concentration in Permian Basin creates undiversified exposure"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
-          "score": 0.2
+          "score": 0.4
         },
         {
           "category": "product_market_fit",
-          "score": 0.429
+          "score": 0.286
         },
         {
           "category": "macro_environment",
@@ -102,7 +44,7 @@
         },
         {
           "category": "financial_health",
-          "score": 1.0
+          "score": 0.8
         },
         {
           "category": "narrative_adoption",
@@ -119,31 +61,31 @@
       ]
     },
     {
-      "ticker": "LSCC",
-      "name": "Lattice Semiconductor Corporation",
-      "composite_score": 52.8,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
-      "technical_grade": "B",
+      "ticker": "GWRE",
+      "name": "Guidewire Software, Inc.",
+      "composite_score": 58.2,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 94.91999816894531,
+      "price": 156.02999877929688,
       "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$75-$82 on pullback below 50 EMA with improving earnings visibility",
-      "target_1y": "$85-$95 assuming margin recovery and semiconductor cycle stabilization",
-      "target_3y": "$110-$125 if company executes on edge AI/5G infrastructure opportunities with improved operational efficiency",
+      "entry_zone": "$135-145 on break below 50 EMA with volume confirmation or $120-130 if downtrend accelerates",
+      "target_1y": "$190-210 assuming successful cloud transition and margin recovery",
+      "target_3y": "$250-280 based on completed SaaS transformation and 15-20% normalized growth",
       "rationale_bullets": [
-        "\ud83d\udd35 [Fundamentals]: Strong 68.2% gross margin shows pricing power, but anemic 1.8% operating margin and 0% earnings growth reveal execution issues",
-        "\ud83d\udd35 [Valuation]: Forward PE of 47.4x is excessive for a company with zero earnings growth and 0.4% ROE - premium valuation without premium performance",
-        "\ud83d\udd35 [Technical]: Above all EMAs in uptrend but bearish MACD divergence and poor 0.5x risk/reward ratio suggest momentum is fading",
-        "\ud83d\udd35 [Financial Health]: Excellent balance sheet with 0.06 D/E ratio and positive FCF provides downside protection in volatile semiconductor cycles",
-        "\ud83d\udd35 [Market Position]: FPGA niche player faces intense competition from Intel/AMD and custom ASIC solutions - limited moat despite specialized products",
-        "\ud83d\udd35 [Macro Environment]: Semiconductor cycle headwinds and inventory corrections create uncertain demand outlook for next 12-18 months",
-        "\ud83d\udd35 [Sentiment]: Zero social mentions and flat sentiment indicate institutional indifference - lacks catalysts for multiple expansion"
+        "\ud83d\udd35 Financial Health: Strong 63.8% gross margins and improving 24% revenue growth, but 0% earnings growth reveals execution challenges",
+        "\ud83d\udd35 Valuation: Trading 40% below 52w high at 36.8x forward PE, creating potential value opportunity but still expensive for current growth",
+        "\ud83d\udd35 Technical Setup: Below 200 EMA in confirmed downtrend, RSI at 61.3 suggests limited downside momentum but no trend reversal yet",
+        "\ud83d\udd35 Market Position: Dominant P&C insurance software platform with strong moat, but cloud transition creating near-term headwinds",
+        "\ud83d\udd35 Leadership Concerns: Weak leadership score (0.4) and poor narrative adoption (0.33) indicate execution and communication issues",
+        "\ud83d\udd35 Macro Environment: Rising insurance premiums and digital transformation tailwinds offset by higher interest rates pressuring tech multiples",
+        "\ud83d\udd35 Analyst Sentiment: Strong $234 price target (+50% upside) with buy rating, but zero social mentions indicate lack of retail interest"
       ],
       "risks": [
-        "\u26a0\ufe0f Massive valuation compression risk if earnings growth doesn't materialize - trading at 47x forward earnings with zero growth",
-        "\u26a0\ufe0f Semiconductor downcycle could pressure margins further given already thin 1.8% operating leverage",
-        "\u26a0\ufe0f FPGA market consolidation risk as larger players like Intel integrate competing solutions into broader platforms"
+        "\u26a0\ufe0f Cloud transition execution risk - 0% earnings growth despite 24% revenue growth indicates margin compression challenges",
+        "\u26a0\ufe0f High customer concentration in P&C insurance creates cyclical exposure and limited TAM expansion opportunities",
+        "\u26a0\ufe0f Technical breakdown below key support levels could trigger further selling to $120-130 range"
       ],
       "category_scores": [
         {
@@ -168,7 +110,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "governance_stability",
@@ -177,30 +119,31 @@
       ]
     },
     {
-      "ticker": "CG",
-      "name": "The Carlyle Group Inc.",
-      "composite_score": 49.3,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
+      "ticker": "MELI",
+      "name": "MercadoLibre, Inc.",
+      "composite_score": 55.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
       "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 47.720001220703125,
-      "sector": "Financial Services",
+      "price": 1666.9300537109375,
+      "sector": "Consumer Cyclical",
       "pool": "mainstream",
-      "entry_zone": "$42-45 on break below current support with confirmed volume",
-      "target_1y": "$58 - Recovery to 200 EMA as markets stabilize and deal flow improves",
-      "target_3y": "$72 - Full cycle recovery with normalized deal environment and fee generation",
+      "entry_zone": "$1500-$1600 on further weakness with RSI below 30 and positive divergence signals",
+      "target_1y": "$2200 - recovery to 50 EMA as fundamentals stabilize and cash flow improves",
+      "target_3y": "$2800 - approaching analyst targets as Latin American digital commerce matures and profitability scales",
       "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Explosive 93.9% revenue and 70.2% earnings growth with strong 76.8% gross margins, but zero free cash flow is concerning",
-        "\ud83d\udd35 Valuation: Forward PE of 8.8x appears attractive for asset management sector, trading at 30% discount from 52-week high",
-        "\ud83d\udd35 Technicals: Oversold RSI at 32.1 with bullish MACD cross suggests potential reversal, but downtrend persists below all EMAs",
-        "\ud83d\udd35 Balance Sheet: High D/E ratio of 1.97 creates financial leverage risk in volatile markets typical of private equity cycles",
-        "\ud83d\udd35 Industry Dynamics: Asset management facing headwinds from rising rates affecting deal flow and portfolio valuations",
-        "\ud83d\udd35 Sentiment: Complete absence of retail interest (0 mentions) could indicate institutional accumulation opportunity or fundamental concerns"
+        "\ud83d\udd35 Fundamentals: Strong 44.6% revenue growth and healthy 50.7% gross margins demonstrate robust market position in Latin American e-commerce",
+        "\ud83d\udd35 Valuation: Forward PE of 21.8x appears reasonable for growth profile, with analyst target of $2640 implying 58% upside potential",
+        "\ud83d\udd35 Technical: Stock at 52-week low with oversold RSI of 39.9, but bearish trend below all major EMAs signals continued weakness",
+        "\ud83d\udd35 Financial Health: Negative $2.46B free cash flow and elevated D/E ratio of 1.69 raise concerns about capital efficiency and leverage",
+        "\ud83d\udd35 Market Position: Dominant e-commerce and fintech platform in Latin America with strong ROE of 36%, but earnings declined 12.5%",
+        "\ud83d\udd35 Macro Headwinds: Consumer cyclical exposure amid economic uncertainty and currency volatility in key Latin American markets",
+        "\ud83d\udd35 Growth Investment: High-growth company transitioning through investment phase, but execution risks elevated given cash burn rate"
       ],
       "risks": [
-        "\u26a0\ufe0f Zero free cash flow despite strong revenue growth indicates potential working capital or cash conversion issues",
-        "\u26a0\ufe0f High leverage (D/E 1.97) makes company vulnerable to credit market tightening and economic downturn",
-        "\u26a0\ufe0f Private equity industry cyclicality with deal activity declining in higher rate environment"
+        "\u26a0\ufe0f Significant cash burn of $2.46B and high leverage could pressure financial flexibility during economic downturn",
+        "\u26a0\ufe0f Heavy exposure to volatile Latin American economies with currency devaluation and inflation risks",
+        "\u26a0\ufe0f Technical breakdown below $1667 support could trigger further selling toward $1400-1500 range"
       ],
       "category_scores": [
         {
@@ -209,11 +152,11 @@
         },
         {
           "category": "product_market_fit",
-          "score": 0.429
+          "score": 0.286
         },
         {
           "category": "financial_health",
-          "score": 0.2
+          "score": 0.4
         },
         {
           "category": "narrative_adoption",
@@ -230,35 +173,94 @@
       ]
     },
     {
-      "ticker": "CFR",
-      "name": "Cullen/Frost Bankers, Inc.",
+      "ticker": "ROL",
+      "name": "Rollins, Inc.",
       "composite_score": 49.3,
       "investment_rating": "\u26a0\ufe0f SPECULATIVE",
       "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 130.97999572753906,
-      "sector": "Financial Services",
+      "price": 54.09000015258789,
+      "sector": "Consumer Cyclical",
       "pool": "mainstream",
-      "entry_zone": "$115-$125 on break below 200 EMA with volume confirmation",
-      "target_1y": "$140 - Multiple expansion on stabilizing fundamentals and oversold bounce",
-      "target_3y": "$155 - Assuming 2.5% dividend yield plus modest book value growth in normalized environment",
+      "entry_zone": "$48-$52 on break below 52w low with RSI showing bullish divergence",
+      "target_1y": "$58-$62 as defensive qualities and recurring revenue model support gradual recovery",
+      "target_3y": "$70-$78 driven by market consolidation opportunities and steady mid-single digit organic growth",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Strong ROE of 15.3% and zero debt, but concerning FCF of $0B raises questions about capital generation",
-        "\ud83d\udd35 Valuation: Forward PE of 12.4x appears reasonable for regional banking, but PEG of 0.00 indicates limited growth expectations",
-        "\ud83d\udd35 Technicals: Oversold RSI at 25.5 presents potential bounce opportunity, though MACD remains bearish with declining momentum",
-        "\ud83d\udd35 Market Position: Texas-focused regional bank with solid operating margin of 34.5%, but product-market-fit score of 0.14 suggests limited competitive differentiation",
-        "\ud83d\udd35 Growth Profile: Modest 9.5% revenue and 8.5% earnings growth insufficient for premium valuation in rising rate environment",
-        "\ud83d\udd35 Macro Headwinds: Regional banks face NIM compression and credit normalization as Fed policy shifts from tightening cycle"
+        "\ud83d\udd35 Financials: Strong 38.9% ROE and healthy 52.8% gross margins indicate efficient capital allocation, but 38.5x forward P/E suggests overvaluation",
+        "\ud83d\udd35 Growth: Consistent 9.7% revenue and 9.9% earnings growth YoY, though PEG ratio of 0.00 signals potential earnings deceleration concerns",
+        "\ud83d\udd35 Technicals: Severely oversold with RSI at 13.8 and -17.3% from 52w high, but bearish MACD and downtrend below 200 EMA indicate continued weakness",
+        "\ud83d\udd35 Business Model: Pest control offers recession-resistant recurring revenue streams with defensive characteristics in economic downturns",
+        "\ud83d\udd35 Valuation: Trading at premium multiples despite recent decline, with analyst target of $63.66 suggesting 17.7% upside potential",
+        "\ud83d\udd35 Macro: Consumer discretionary exposure creates headwinds in rising rate environment, though essential services nature provides some protection",
+        "\ud83d\udd35 Market Position: Dominant market share in fragmented pest control industry with strong competitive moat through route density and brand recognition"
       ],
       "risks": [
-        "\u26a0\ufe0f Texas economic concentration creates geographic risk during potential recession or energy sector weakness",
-        "\u26a0\ufe0f Zero free cash flow generation despite profitable operations suggests poor working capital management or aggressive expansion",
-        "\u26a0\ufe0f Rising credit costs and potential loan losses as economic cycle matures could pressure earnings sustainability"
+        "\u26a0\ufe0f High valuation multiples leave little margin of safety despite recent pullback",
+        "\u26a0\ufe0f Consumer spending pressures from macro headwinds could impact commercial and residential demand",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA with bearish momentum suggests further downside possible"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
           "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "WBD",
+      "name": "Warner Bros. Discovery, Inc.",
+      "composite_score": 35.5,
+      "investment_rating": "\u274c AVOID",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 27.6299991607666,
+      "sector": "Communication Services",
+      "pool": "mainstream",
+      "entry_zone": "$22-$24 on pullback below 50 EMA with improved streaming metrics",
+      "target_1y": "$26 - limited upside given execution risks and sector headwinds",
+      "target_3y": "$35 - contingent on successful streaming profitability and debt reduction",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Declining revenue (-5.7% YoY) with stagnant earnings growth (0%) signals structural headwinds in traditional media",
+        "\ud83d\udd35 Technicals: Price near resistance at 52w high ($29.98) with bearish MACD divergence and weak RSI (40.9) suggesting momentum loss",
+        "\ud83d\udd35 Balance Sheet: Concerning debt levels (D/E 0.99) amid declining cash generation capability in legacy linear TV business",
+        "\ud83d\udd35 Streaming Transition: HBO Max/Discovery+ integration challenges persist while competing against Netflix, Disney+ in saturated market",
+        "\ud83d\udd35 Leadership: Management execution remains questionable given poor product-market fit score (0.14) and narrative adoption struggles",
+        "\ud83d\udd35 Valuation: Negative forward PE (-1657.5) reflects analyst uncertainty about earnings visibility in streaming pivot",
+        "\ud83d\udd35 Macro Environment: Cord-cutting acceleration and advertising headwinds create secular decline in linear TV revenues"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Streaming losses could accelerate as traditional linear TV revenues decline faster than subscriber growth",
+        "\u26a0\ufe0f High debt burden limits financial flexibility during expensive content wars and technology investments",
+        "\u26a0\ufe0f Further management changes or strategic pivots could create additional operational disruption and investor uncertainty"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
         },
         {
           "category": "product_market_fit",
@@ -270,7 +272,7 @@
         },
         {
           "category": "financial_health",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "narrative_adoption",
@@ -278,7 +280,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.8
+          "score": 0.6
         },
         {
           "category": "governance_stability",
@@ -287,160 +289,43 @@
       ]
     }
   ],
-  "hidden_gem_picks": [
-    {
-      "ticker": "MNST",
-      "name": "Monster Beverage Corporation",
-      "composite_score": 65.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 73.73999786376953,
-      "sector": "Consumer Defensive",
-      "pool": "hidden_gem",
-      "entry_zone": "$70-$72 on further RSI oversold bounce or test of 200 EMA support",
-      "target_1y": "$85-$88 as margins stabilize and growth momentum continues with economic recovery",
-      "target_3y": "$110-$120 driven by international expansion and new product innovation in growing energy drink market",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional margins (55.8% gross, 29.5% operating) with minimal debt (0.01 D/E) and strong FCF generation at $1.49B",
-        "\ud83d\udd35 Growth Momentum: Accelerating fundamentals with 17.6% revenue growth and explosive 66.6% earnings growth YoY",
-        "\ud83d\udd35 Technical Setup: Oversold RSI at 15.4 signals potential reversal opportunity, trading above key 200 EMA support with golden cross intact",
-        "\ud83d\udd35 Valuation: Forward PE of 28.9x reasonable for growth profile, with analyst consensus targeting $87.29 (+18% upside)",
-        "\ud83d\udd35 Market Position: Dominant energy drink franchise with proven distribution through Coca-Cola partnership",
-        "\ud83d\udd35 Macro Headwinds: Consumer discretionary pressure and rising input costs creating near-term margin compression risks",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions indicate lack of retail interest, potentially creating institutional opportunity"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Consumer spending slowdown impacting premium beverage categories as economic uncertainty persists",
-        "\u26a0\ufe0f Intensifying competition from established players (Red Bull) and new entrants eroding market share",
-        "\u26a0\ufe0f Regulatory scrutiny on energy drinks and potential health-related restrictions limiting growth"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.8
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    }
-  ],
+  "hidden_gem_picks": [],
   "picks": [
     {
-      "ticker": "SHOP",
-      "name": "Shopify Inc.",
-      "composite_score": 62.3,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "D",
-      "sentiment_grade": "Neutral",
-      "price": 122.37000274658203,
-      "sector": "Technology",
-      "pool": "mainstream",
-      "entry_zone": "$105-$115 on break below 200 EMA support with volume confirmation",
-      "target_1y": "$145 - recovery to 50 EMA resistance as growth stabilizes and macro concerns ease",
-      "target_3y": "$180 - return to previous highs driven by international expansion and enterprise market penetration",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional balance sheet with 0.01 D/E ratio and $1.29B FCF generation, providing fortress-like stability",
-        "\ud83d\udd35 Growth Trajectory: 30.6% revenue growth demonstrates strong top-line momentum despite macro headwinds in e-commerce",
-        "\ud83d\udd35 Profitability Inflection: 20.3% operating margin shows mature unit economics, but -42.3% earnings decline signals margin compression",
-        "\ud83d\udd35 Technical Setup: Below all major EMAs in confirmed downtrend, but bullish MACD suggests potential momentum shift brewing",
-        "\ud83d\udd35 Valuation Premium: 53.2x forward PE reflects high growth expectations that may be difficult to sustain in current macro environment",
-        "\ud83d\udd35 Market Position: Dominant e-commerce infrastructure play with embedded switching costs, but facing intensifying competition from AMZN/META",
-        "\ud83d\udd35 Governance Excellence: Perfect stability score indicates strong operational discipline and strategic execution capabilities"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Economic downturn could severely impact SMB merchant base and discretionary spending on e-commerce tools",
-        "\u26a0\ufe0f Intensifying competition from Amazon, Meta, and traditional payment processors threatens market share and pricing power",
-        "\u26a0\ufe0f High valuation multiple leaves little room for execution missteps or growth deceleration disappointments"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 0.8
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.4
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "JHG",
-      "name": "Janus Henderson Group plc",
-      "composite_score": 59.3,
+      "ticker": "TPL",
+      "name": "Texas Pacific Land Corporation",
+      "composite_score": 65.5,
       "investment_rating": "\ud83d\udc40 WATCH",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 51.369998931884766,
-      "sector": "Financial Services",
+      "price": 532.52001953125,
+      "sector": "Energy",
       "pool": "mainstream",
-      "entry_zone": "$47-$49 on pullback to 50 EMA support with RSI below 35",
-      "target_1y": "$58 based on 11x forward earnings multiple expansion as growth stabilizes",
-      "target_3y": "$68 assuming 6% annual EPS growth and multiple re-rating to 12x PE as execution improves",
+      "entry_zone": "$450-$480 on pullback to 50 EMA or below recent support levels",
+      "target_1y": "$580-$620 assuming sustained oil prices above $70 and continued Permian drilling activity",
+      "target_3y": "$750-$850 based on compound royalty growth and potential multiple expansion as cash flow improves",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional balance sheet with 0.08 D/E ratio, $470M FCF, and 65.9% gross margins demonstrate operational excellence",
-        "\ud83d\udd35 Valuation: Attractive forward PE of 10.6x with 244.6% earnings growth creates compelling value proposition in asset management",
-        "\ud83d\udd35 Technical Setup: Above all EMAs with golden cross intact, but RSI at 39.7 and bearish MACD signal near-term consolidation",
-        "\ud83d\udd35 Leadership Concerns: Low leadership score (0.2) suggests management execution risks in competitive asset management landscape",
-        "\ud83d\udd35 Market Position: 61.3% revenue growth indicates strong AUM flows, but product-market-fit score of 0.43 raises sustainability questions",
-        "\ud83d\udd35 Macro Headwinds: Asset managers face fee compression and passive investing shift, reflected in 0.25 macro score",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions and neutral sentiment indicate lack of retail interest and institutional narrative"
+        "\ud83d\udd35 Financial Health: Exceptional margins (93% gross, 71% operating) with minimal debt (0.01 D/E) and strong ROE of 37%",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 7.3x despite premium business model suggests market undervaluation",
+        "\ud83d\udd35 Technicals: Strong uptrend above all EMAs with golden cross intact, though MACD showing bearish divergence",
+        "\ud83d\udd35 Business Model: Unique Permian Basin land/royalty owner benefits from drilling activity without operational risks",
+        "\ud83d\udd35 Cash Flow Concern: Negative FCF of -$0.08B despite strong profitability indicates potential capital allocation issues",
+        "\ud83d\udd35 Macro Tailwinds: Permian Basin remains most active US shale play, supporting long-term royalty income growth",
+        "\ud83d\udd35 Market Position: Near 52-week highs but analyst consensus at $444 suggests limited near-term upside"
       ],
       "risks": [
-        "\u26a0\ufe0f Asset management fee compression from passive investing trend and regulatory pressure",
-        "\u26a0\ufe0f Market volatility could trigger AUM outflows and revenue decline given asset-based fee structure",
-        "\u26a0\ufe0f Low leadership and product-market-fit scores suggest execution and competitive positioning challenges"
+        "\u26a0\ufe0f Oil price volatility directly impacts drilling activity and royalty payments",
+        "\u26a0\ufe0f Negative free cash flow despite high margins suggests unsustainable capital spending",
+        "\u26a0\ufe0f Single geographic concentration in Permian Basin creates undiversified exposure"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
-          "score": 0.2
+          "score": 0.4
         },
         {
           "category": "product_market_fit",
-          "score": 0.429
+          "score": 0.286
         },
         {
           "category": "macro_environment",
@@ -448,7 +333,7 @@
         },
         {
           "category": "financial_health",
-          "score": 1.0
+          "score": 0.8
         },
         {
           "category": "narrative_adoption",
@@ -465,31 +350,31 @@
       ]
     },
     {
-      "ticker": "LSCC",
-      "name": "Lattice Semiconductor Corporation",
-      "composite_score": 52.8,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
-      "technical_grade": "B",
+      "ticker": "GWRE",
+      "name": "Guidewire Software, Inc.",
+      "composite_score": 58.2,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 94.91999816894531,
+      "price": 156.02999877929688,
       "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$75-$82 on pullback below 50 EMA with improving earnings visibility",
-      "target_1y": "$85-$95 assuming margin recovery and semiconductor cycle stabilization",
-      "target_3y": "$110-$125 if company executes on edge AI/5G infrastructure opportunities with improved operational efficiency",
+      "entry_zone": "$135-145 on break below 50 EMA with volume confirmation or $120-130 if downtrend accelerates",
+      "target_1y": "$190-210 assuming successful cloud transition and margin recovery",
+      "target_3y": "$250-280 based on completed SaaS transformation and 15-20% normalized growth",
       "rationale_bullets": [
-        "\ud83d\udd35 [Fundamentals]: Strong 68.2% gross margin shows pricing power, but anemic 1.8% operating margin and 0% earnings growth reveal execution issues",
-        "\ud83d\udd35 [Valuation]: Forward PE of 47.4x is excessive for a company with zero earnings growth and 0.4% ROE - premium valuation without premium performance",
-        "\ud83d\udd35 [Technical]: Above all EMAs in uptrend but bearish MACD divergence and poor 0.5x risk/reward ratio suggest momentum is fading",
-        "\ud83d\udd35 [Financial Health]: Excellent balance sheet with 0.06 D/E ratio and positive FCF provides downside protection in volatile semiconductor cycles",
-        "\ud83d\udd35 [Market Position]: FPGA niche player faces intense competition from Intel/AMD and custom ASIC solutions - limited moat despite specialized products",
-        "\ud83d\udd35 [Macro Environment]: Semiconductor cycle headwinds and inventory corrections create uncertain demand outlook for next 12-18 months",
-        "\ud83d\udd35 [Sentiment]: Zero social mentions and flat sentiment indicate institutional indifference - lacks catalysts for multiple expansion"
+        "\ud83d\udd35 Financial Health: Strong 63.8% gross margins and improving 24% revenue growth, but 0% earnings growth reveals execution challenges",
+        "\ud83d\udd35 Valuation: Trading 40% below 52w high at 36.8x forward PE, creating potential value opportunity but still expensive for current growth",
+        "\ud83d\udd35 Technical Setup: Below 200 EMA in confirmed downtrend, RSI at 61.3 suggests limited downside momentum but no trend reversal yet",
+        "\ud83d\udd35 Market Position: Dominant P&C insurance software platform with strong moat, but cloud transition creating near-term headwinds",
+        "\ud83d\udd35 Leadership Concerns: Weak leadership score (0.4) and poor narrative adoption (0.33) indicate execution and communication issues",
+        "\ud83d\udd35 Macro Environment: Rising insurance premiums and digital transformation tailwinds offset by higher interest rates pressuring tech multiples",
+        "\ud83d\udd35 Analyst Sentiment: Strong $234 price target (+50% upside) with buy rating, but zero social mentions indicate lack of retail interest"
       ],
       "risks": [
-        "\u26a0\ufe0f Massive valuation compression risk if earnings growth doesn't materialize - trading at 47x forward earnings with zero growth",
-        "\u26a0\ufe0f Semiconductor downcycle could pressure margins further given already thin 1.8% operating leverage",
-        "\u26a0\ufe0f FPGA market consolidation risk as larger players like Intel integrate competing solutions into broader platforms"
+        "\u26a0\ufe0f Cloud transition execution risk - 0% earnings growth despite 24% revenue growth indicates margin compression challenges",
+        "\u26a0\ufe0f High customer concentration in P&C insurance creates cyclical exposure and limited TAM expansion opportunities",
+        "\u26a0\ufe0f Technical breakdown below key support levels could trigger further selling to $120-130 range"
       ],
       "category_scores": [
         {
@@ -514,7 +399,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "governance_stability",
@@ -523,30 +408,31 @@
       ]
     },
     {
-      "ticker": "CG",
-      "name": "The Carlyle Group Inc.",
-      "composite_score": 49.3,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
+      "ticker": "MELI",
+      "name": "MercadoLibre, Inc.",
+      "composite_score": 55.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
       "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 47.720001220703125,
-      "sector": "Financial Services",
+      "price": 1666.9300537109375,
+      "sector": "Consumer Cyclical",
       "pool": "mainstream",
-      "entry_zone": "$42-45 on break below current support with confirmed volume",
-      "target_1y": "$58 - Recovery to 200 EMA as markets stabilize and deal flow improves",
-      "target_3y": "$72 - Full cycle recovery with normalized deal environment and fee generation",
+      "entry_zone": "$1500-$1600 on further weakness with RSI below 30 and positive divergence signals",
+      "target_1y": "$2200 - recovery to 50 EMA as fundamentals stabilize and cash flow improves",
+      "target_3y": "$2800 - approaching analyst targets as Latin American digital commerce matures and profitability scales",
       "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Explosive 93.9% revenue and 70.2% earnings growth with strong 76.8% gross margins, but zero free cash flow is concerning",
-        "\ud83d\udd35 Valuation: Forward PE of 8.8x appears attractive for asset management sector, trading at 30% discount from 52-week high",
-        "\ud83d\udd35 Technicals: Oversold RSI at 32.1 with bullish MACD cross suggests potential reversal, but downtrend persists below all EMAs",
-        "\ud83d\udd35 Balance Sheet: High D/E ratio of 1.97 creates financial leverage risk in volatile markets typical of private equity cycles",
-        "\ud83d\udd35 Industry Dynamics: Asset management facing headwinds from rising rates affecting deal flow and portfolio valuations",
-        "\ud83d\udd35 Sentiment: Complete absence of retail interest (0 mentions) could indicate institutional accumulation opportunity or fundamental concerns"
+        "\ud83d\udd35 Fundamentals: Strong 44.6% revenue growth and healthy 50.7% gross margins demonstrate robust market position in Latin American e-commerce",
+        "\ud83d\udd35 Valuation: Forward PE of 21.8x appears reasonable for growth profile, with analyst target of $2640 implying 58% upside potential",
+        "\ud83d\udd35 Technical: Stock at 52-week low with oversold RSI of 39.9, but bearish trend below all major EMAs signals continued weakness",
+        "\ud83d\udd35 Financial Health: Negative $2.46B free cash flow and elevated D/E ratio of 1.69 raise concerns about capital efficiency and leverage",
+        "\ud83d\udd35 Market Position: Dominant e-commerce and fintech platform in Latin America with strong ROE of 36%, but earnings declined 12.5%",
+        "\ud83d\udd35 Macro Headwinds: Consumer cyclical exposure amid economic uncertainty and currency volatility in key Latin American markets",
+        "\ud83d\udd35 Growth Investment: High-growth company transitioning through investment phase, but execution risks elevated given cash burn rate"
       ],
       "risks": [
-        "\u26a0\ufe0f Zero free cash flow despite strong revenue growth indicates potential working capital or cash conversion issues",
-        "\u26a0\ufe0f High leverage (D/E 1.97) makes company vulnerable to credit market tightening and economic downturn",
-        "\u26a0\ufe0f Private equity industry cyclicality with deal activity declining in higher rate environment"
+        "\u26a0\ufe0f Significant cash burn of $2.46B and high leverage could pressure financial flexibility during economic downturn",
+        "\u26a0\ufe0f Heavy exposure to volatile Latin American economies with currency devaluation and inflation risks",
+        "\u26a0\ufe0f Technical breakdown below $1667 support could trigger further selling toward $1400-1500 range"
       ],
       "category_scores": [
         {
@@ -555,11 +441,11 @@
         },
         {
           "category": "product_market_fit",
-          "score": 0.429
+          "score": 0.286
         },
         {
           "category": "financial_health",
-          "score": 0.2
+          "score": 0.4
         },
         {
           "category": "narrative_adoption",
@@ -576,35 +462,94 @@
       ]
     },
     {
-      "ticker": "CFR",
-      "name": "Cullen/Frost Bankers, Inc.",
+      "ticker": "ROL",
+      "name": "Rollins, Inc.",
       "composite_score": 49.3,
       "investment_rating": "\u26a0\ufe0f SPECULATIVE",
       "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 130.97999572753906,
-      "sector": "Financial Services",
+      "price": 54.09000015258789,
+      "sector": "Consumer Cyclical",
       "pool": "mainstream",
-      "entry_zone": "$115-$125 on break below 200 EMA with volume confirmation",
-      "target_1y": "$140 - Multiple expansion on stabilizing fundamentals and oversold bounce",
-      "target_3y": "$155 - Assuming 2.5% dividend yield plus modest book value growth in normalized environment",
+      "entry_zone": "$48-$52 on break below 52w low with RSI showing bullish divergence",
+      "target_1y": "$58-$62 as defensive qualities and recurring revenue model support gradual recovery",
+      "target_3y": "$70-$78 driven by market consolidation opportunities and steady mid-single digit organic growth",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Strong ROE of 15.3% and zero debt, but concerning FCF of $0B raises questions about capital generation",
-        "\ud83d\udd35 Valuation: Forward PE of 12.4x appears reasonable for regional banking, but PEG of 0.00 indicates limited growth expectations",
-        "\ud83d\udd35 Technicals: Oversold RSI at 25.5 presents potential bounce opportunity, though MACD remains bearish with declining momentum",
-        "\ud83d\udd35 Market Position: Texas-focused regional bank with solid operating margin of 34.5%, but product-market-fit score of 0.14 suggests limited competitive differentiation",
-        "\ud83d\udd35 Growth Profile: Modest 9.5% revenue and 8.5% earnings growth insufficient for premium valuation in rising rate environment",
-        "\ud83d\udd35 Macro Headwinds: Regional banks face NIM compression and credit normalization as Fed policy shifts from tightening cycle"
+        "\ud83d\udd35 Financials: Strong 38.9% ROE and healthy 52.8% gross margins indicate efficient capital allocation, but 38.5x forward P/E suggests overvaluation",
+        "\ud83d\udd35 Growth: Consistent 9.7% revenue and 9.9% earnings growth YoY, though PEG ratio of 0.00 signals potential earnings deceleration concerns",
+        "\ud83d\udd35 Technicals: Severely oversold with RSI at 13.8 and -17.3% from 52w high, but bearish MACD and downtrend below 200 EMA indicate continued weakness",
+        "\ud83d\udd35 Business Model: Pest control offers recession-resistant recurring revenue streams with defensive characteristics in economic downturns",
+        "\ud83d\udd35 Valuation: Trading at premium multiples despite recent decline, with analyst target of $63.66 suggesting 17.7% upside potential",
+        "\ud83d\udd35 Macro: Consumer discretionary exposure creates headwinds in rising rate environment, though essential services nature provides some protection",
+        "\ud83d\udd35 Market Position: Dominant market share in fragmented pest control industry with strong competitive moat through route density and brand recognition"
       ],
       "risks": [
-        "\u26a0\ufe0f Texas economic concentration creates geographic risk during potential recession or energy sector weakness",
-        "\u26a0\ufe0f Zero free cash flow generation despite profitable operations suggests poor working capital management or aggressive expansion",
-        "\u26a0\ufe0f Rising credit costs and potential loan losses as economic cycle matures could pressure earnings sustainability"
+        "\u26a0\ufe0f High valuation multiples leave little margin of safety despite recent pullback",
+        "\u26a0\ufe0f Consumer spending pressures from macro headwinds could impact commercial and residential demand",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA with bearish momentum suggests further downside possible"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
           "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "WBD",
+      "name": "Warner Bros. Discovery, Inc.",
+      "composite_score": 35.5,
+      "investment_rating": "\u274c AVOID",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 27.6299991607666,
+      "sector": "Communication Services",
+      "pool": "mainstream",
+      "entry_zone": "$22-$24 on pullback below 50 EMA with improved streaming metrics",
+      "target_1y": "$26 - limited upside given execution risks and sector headwinds",
+      "target_3y": "$35 - contingent on successful streaming profitability and debt reduction",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Declining revenue (-5.7% YoY) with stagnant earnings growth (0%) signals structural headwinds in traditional media",
+        "\ud83d\udd35 Technicals: Price near resistance at 52w high ($29.98) with bearish MACD divergence and weak RSI (40.9) suggesting momentum loss",
+        "\ud83d\udd35 Balance Sheet: Concerning debt levels (D/E 0.99) amid declining cash generation capability in legacy linear TV business",
+        "\ud83d\udd35 Streaming Transition: HBO Max/Discovery+ integration challenges persist while competing against Netflix, Disney+ in saturated market",
+        "\ud83d\udd35 Leadership: Management execution remains questionable given poor product-market fit score (0.14) and narrative adoption struggles",
+        "\ud83d\udd35 Valuation: Negative forward PE (-1657.5) reflects analyst uncertainty about earnings visibility in streaming pivot",
+        "\ud83d\udd35 Macro Environment: Cord-cutting acceleration and advertising headwinds create secular decline in linear TV revenues"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Streaming losses could accelerate as traditional linear TV revenues decline faster than subscriber growth",
+        "\u26a0\ufe0f High debt burden limits financial flexibility during expensive content wars and technology investments",
+        "\u26a0\ufe0f Further management changes or strategic pivots could create additional operational disruption and investor uncertainty"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
         },
         {
           "category": "product_market_fit",
@@ -616,7 +561,7 @@
         },
         {
           "category": "financial_health",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "narrative_adoption",
@@ -624,65 +569,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.8
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "MNST",
-      "name": "Monster Beverage Corporation",
-      "composite_score": 65.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 73.73999786376953,
-      "sector": "Consumer Defensive",
-      "pool": "hidden_gem",
-      "entry_zone": "$70-$72 on further RSI oversold bounce or test of 200 EMA support",
-      "target_1y": "$85-$88 as margins stabilize and growth momentum continues with economic recovery",
-      "target_3y": "$110-$120 driven by international expansion and new product innovation in growing energy drink market",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional margins (55.8% gross, 29.5% operating) with minimal debt (0.01 D/E) and strong FCF generation at $1.49B",
-        "\ud83d\udd35 Growth Momentum: Accelerating fundamentals with 17.6% revenue growth and explosive 66.6% earnings growth YoY",
-        "\ud83d\udd35 Technical Setup: Oversold RSI at 15.4 signals potential reversal opportunity, trading above key 200 EMA support with golden cross intact",
-        "\ud83d\udd35 Valuation: Forward PE of 28.9x reasonable for growth profile, with analyst consensus targeting $87.29 (+18% upside)",
-        "\ud83d\udd35 Market Position: Dominant energy drink franchise with proven distribution through Coca-Cola partnership",
-        "\ud83d\udd35 Macro Headwinds: Consumer discretionary pressure and rising input costs creating near-term margin compression risks",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions indicate lack of retail interest, potentially creating institutional opportunity"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Consumer spending slowdown impacting premium beverage categories as economic uncertainty persists",
-        "\u26a0\ufe0f Intensifying competition from established players (Red Bull) and new entrants eroding market share",
-        "\u26a0\ufe0f Regulatory scrutiny on energy drinks and potential health-related restrictions limiting growth"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
           "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.429
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.8
         },
         {
           "category": "governance_stability",
@@ -693,53 +580,28 @@
   ],
   "all_scores": [
     {
-      "ticker": "MNST",
+      "ticker": "TPL",
       "composite_score": 65.5,
-      "pool": "hidden_gem"
-    },
-    {
-      "ticker": "SHOP",
-      "composite_score": 62.3,
       "pool": "mainstream"
     },
     {
-      "ticker": "JHG",
-      "composite_score": 59.3,
+      "ticker": "GWRE",
+      "composite_score": 58.2,
       "pool": "mainstream"
     },
     {
-      "ticker": "LSCC",
-      "composite_score": 52.8,
+      "ticker": "MELI",
+      "composite_score": 55.5,
       "pool": "mainstream"
     },
     {
-      "ticker": "CG",
+      "ticker": "ROL",
       "composite_score": 49.3,
       "pool": "mainstream"
     },
     {
-      "ticker": "CFR",
-      "composite_score": 49.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "ADM",
-      "composite_score": 42.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "SAIA",
-      "composite_score": 39.5,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "MKC",
-      "composite_score": 39.3,
-      "pool": "mainstream"
-    },
-    {
-      "ticker": "EGP",
-      "composite_score": 36.5,
+      "ticker": "WBD",
+      "composite_score": 35.5,
       "pool": "mainstream"
     }
   ],
@@ -753,16 +615,16 @@
     "regime": "\u2194\ufe0f Sideways market \u2014 stock-picking alpha matters most"
   },
   "scan_stats": {
-    "tickers_in_universe": "10",
-    "analyzed_last_24h": "10",
+    "tickers_in_universe": "5",
+    "analyzed_last_24h": "5",
     "current_cycle": "1",
     "scan_duration_mins": "0.3"
   },
   "meta": {
-    "topScore": 62.0,
-    "topTicker": "SHOP",
-    "avgScore": 56.0,
-    "tickers": 10,
+    "topScore": 66.0,
+    "topTicker": "TPL",
+    "avgScore": 53.0,
+    "tickers": 5,
     "regime": "Elevated",
     "vix": "24.1",
     "runDate": "2026-03-19"
