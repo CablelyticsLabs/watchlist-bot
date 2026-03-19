@@ -1,188 +1,181 @@
-# 📈 WatchlistBot — AI-Powered Daily Stock Intelligence
+# 👁 VisionariesOnly Watchlist Bot
 
-> *Beats most retail investors and many hedge funds by combining quantitative
-> fundamentals, technical analysis, social sentiment, and Claude AI reasoning
-> against a structured investment framework — delivered to Discord every morning
-> at market open.*
+An AI-powered stock analysis bot that scans 1,200+ stocks every weekday morning, scores each one against a custom investment framework, and posts the top picks to Discord at market open. Runs entirely on GitHub Actions — no server, no cost.
 
 ---
 
-## 🏗️ Architecture
+## What It Does
+
+Every weekday at **6:30 AM ET**, GitHub automatically wakes up the bot and runs a full market sweep:
+
+1. Pulls a live universe of 1,200+ tickers from S&P 500, NASDAQ 100, and Russell 1000
+2. Scores every stock 0–100 against your investment framework
+3. Classifies results into **Mainstream Picks** and **Hidden Gem Picks**
+4. Posts the top 5 from each category to Discord around **9:00–9:30 AM ET**
+5. Updates the live dashboard automatically
+
+Zero input needed from you. It just runs every weekday on its own.
+
+---
+
+## The Two Categories
+
+### 📈 Mainstream Picks
+Top-scoring stocks from the S&P 500 and NASDAQ 100. Well-known large and mid-cap companies with the strongest framework scores that day.
+
+### 💎 Hidden Gem Picks
+Dynamically discovered — not a hardcoded list. A stock qualifies as a hidden gem only if **all three** are true:
+- It's in the Russell 1000 but **not** in the S&P 500 or NASDAQ 100 (smaller, less-covered)
+- It scores **65+** on the framework (genuinely strong fundamentals)
+- It has **fewer than 5 social mentions** in the last 24 hours (not yet on anyone's radar)
+
+---
+
+## How the Scoring Works
+
+The bot answers every question in your Google Sheet framework with a Yes or No based on real data, then scores across 7 categories:
+
+| Category | Weight | What It Checks |
+|---|---|---|
+| **Technicals & Entry** | 20% | EMA structure, RSI, MACD, volume, golden cross, risk/reward ratio |
+| **Product & Market Fit** | 18% | Revenue growth, gross margin, sector trends, competitive moat |
+| **Financial Health** | 16% | Free cash flow, debt/equity, cash reserves, ROE |
+| **Narrative & Adoption** | 14% | Social sentiment, institutional ownership, analyst ratings |
+| **Macro Environment** | 12% | Market regime, sector tailwinds, rate resilience |
+| **Leadership & Team** | 12% | Insider buying/selling, institutional ownership, exec track record |
+| **Governance & Stability** | 8% | Earnings quality, insider behavior, regulatory risk |
+
+After category scoring, **Claude AI** synthesizes everything holistically and produces a final 0–100 composite score plus bullet rationale, entry zone, and 1yr/3yr price targets. A macro adjustment of ±15 points is then applied based on current VIX, yield curve, and market regime.
+
+**Score interpretation:**
+- 85+ = 🔥 Strong Buy
+- 70+ = ✅ Buy
+- 55+ = 👀 Watch
+- 40+ = ⚠️ Speculative
+- Below 40 = ❌ Avoid
+
+---
+
+## File Structure
 
 ```
 watchlist-bot/
-├── bot.py                   # Main entry point + scheduler
-├── config.yaml              # 🔧 All configuration lives here
-├── requirements.txt
+├── bot.py                        # Main orchestrator — runs the full scan
+├── config.yaml                   # All settings (edit this)
+├── dashboard.html                # Live web dashboard (hosted on GitHub Pages)
+├── requirements.txt              # Python dependencies
+├── .github/
+│   └── workflows/
+│       └── daily_watchlist.yml   # GitHub Actions schedule (6:30 AM ET Mon-Fri)
 ├── src/
-│   ├── framework_loader.py  # Fetches scoring questions from Google Sheet / CSV / JSON
-│   ├── data_fetcher.py      # yfinance: price, fundamentals, insider activity, technicals
-│   ├── sentiment_analyzer.py# Reddit, Yahoo RSS, NewsAPI sentiment
-│   ├── scoring_engine.py    # Rule engine + Claude AI scoring
-│   └── discord_poster.py    # Rich Discord embeds + console fallback
-├── output/                  # JSON + Markdown pick reports
-└── logs/                    # Daily rotating log files
+│   ├── universe.py               # Builds 1,200+ ticker universe dynamically
+│   ├── data_fetcher.py           # Pulls price, technicals, fundamentals, insider data
+│   ├── sentiment_analyzer.py     # Reddit + Yahoo Finance sentiment scoring
+│   ├── scoring_engine.py         # Framework scoring + Claude AI synthesis
+│   ├── macro_analyzer.py         # VIX, yield curve, market regime analysis
+│   ├── discord_poster.py         # Formats and sends Discord messages
+│   ├── framework_loader.py       # Fetches questions from your Google Sheet
+│   └── score_db.py               # SQLite score persistence
+├── output/                       # Bot writes latest.json here (dashboard reads it)
+└── data/                         # Universe cache and local DB
 ```
 
 ---
 
-## ⚡ Quick Start
+## Setup
 
-### 1. Install dependencies
-```bash
-pip install -r requirements.txt
+### 1. Fork or push this repo to GitHub
+
+Make sure the folder structure is intact — especially `.github/workflows/daily_watchlist.yml`.
+
+### 2. Add your secrets
+
+Go to your repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
+
+| Secret | Required | Where to get it |
+|---|---|---|
+| `DISCORD_WEBHOOK` | ✅ Yes | Discord channel → Edit → Integrations → Webhooks |
+| `ANTHROPIC_API_KEY` | ✅ Recommended | console.anthropic.com |
+| `NEWS_API_KEY` | Optional | newsapi.org (free tier) |
+| `REDDIT_CLIENT_ID` | Optional | reddit.com/prefs/apps |
+| `REDDIT_CLIENT_SECRET` | Optional | same as above |
+
+### 3. Enable GitHub Pages
+
+Go to **Settings** → **Pages** → Source: **Deploy from branch** → Branch: `main` → Folder: `/ (root)`
+
+Your dashboard will be live at:
+```
+https://YOUR-USERNAME.github.io/YOUR-REPO-NAME/dashboard.html
 ```
 
-### 2. Configure `config.yaml`
+### 4. Test it
+
+Go to **Actions** → **VisionariesOnly Watchlist Bot** → **Run workflow**
+
+Set the **Limit** field to `50` for a quick 5-minute test run. Leave it blank for the full 1,200+ stock sweep.
+
+---
+
+## Configuration
+
+Everything is controlled through `config.yaml`. Key settings:
+
 ```yaml
-# Minimum required settings:
 discord:
-  webhook_url: "https://discord.com/api/webhooks/YOUR_WEBHOOK"
+  webhook_url: "YOUR_WEBHOOK"          # Discord webhook URL
+  username: "@VisionariesOnly Watchlist Bot"
 
-api_keys:
-  anthropic_api_key: "sk-ant-..."   # For AI-powered analysis
+framework:
+  url: "YOUR_GOOGLE_SHEET_CSV_URL"     # Your scoring framework spreadsheet
+
+universe:
+  gem_min_score: 65                    # Minimum score to qualify as hidden gem
+  gem_max_social_mentions: 5           # Max social mentions to qualify as hidden gem
+
+output:
+  top_n_mainstream: 5                  # How many mainstream picks to surface
+  top_n_hidden_gems: 5                 # How many hidden gem picks to surface
 ```
 
-### 3. Run immediately (test mode)
-```bash
-python bot.py --now --dry-run     # No Discord post, prints to console
-python bot.py --now               # Runs now, posts to Discord
-```
-
-### 4. Run on schedule (production)
-```bash
-python bot.py                     # Runs analysis 12h before 9:30am ET, posts at 9:30am
-```
-
-### 5. (Optional) Run as a service
-```bash
-# systemd example — create /etc/systemd/system/watchlistbot.service
-[Unit]
-Description=WatchlistBot
-After=network.target
-
-[Service]
-WorkingDirectory=/path/to/watchlist-bot
-ExecStart=/usr/bin/python3 bot.py
-Restart=always
-
-[Install]
-WantedBy=multi-user.target
-```
+To update your investment framework, just edit your Google Sheet. The bot fetches it fresh every run — no code changes needed.
 
 ---
 
-## 🧠 The Scoring Framework (7 Categories)
+## How to Trigger Manually
 
-| Category | Weight | What It Measures |
-|---|---|---|
-| **Leadership & Team** | 12% | CEO track record, insider buying, exec accolades |
-| **Product & Market Fit** | 18% | Moat, scalability, megatrend alignment |
-| **Macro Environment** | 12% | Sector tailwinds, rate resilience, policy support |
-| **Financial Health** | 16% | FCF, debt, margins, recession resilience |
-| **Narrative & Adoption** | 14% | Institutional accumulation, cultural momentum |
-| **Technicals & Entry** | 20% | EMA structure, RSI, volume, risk/reward |
-| **Governance & Stability** | 8% | Regulatory risk, transparency |
+Go to **Actions** → **VisionariesOnly Watchlist Bot** → **Run workflow**
 
-The framework is loaded dynamically from your configured URL — update it anytime without redeploying.
+- Leave **Dry run** unchecked → full scan + Discord post
+- Check **Dry run** → full scan, no Discord post (for testing)
+- Set **Limit** to a number → only scan that many tickers (faster for testing)
 
 ---
 
-## 📊 Technical Indicators Calculated
+## Schedule
 
-| Indicator | Use |
-|---|---|
-| EMA 20/50/200 | Trend structure, support levels |
-| RSI(14) | Overbought / oversold detection |
-| MACD | Momentum crossover signals |
-| Volume Ratio | Accumulation vs distribution |
-| Golden Cross (50>200 EMA) | Long-term trend confirmation |
-| 52-Week High/Low Distance | Entry timing |
-| Risk/Reward Ratio | Upside to 52w high vs downside to 200 EMA |
-| At-Support Detection | Optimal buy zone identification |
+The bot runs **Monday through Friday only**, starting at **6:30 AM ET** (11:30 AM UTC).
+
+A full scan of 1,200+ stocks takes approximately 2.5–3 hours using 12 parallel workers, finishing around 9:00–9:30 AM ET — right at market open.
+
+GitHub Actions free tier gives 2,000 minutes/month. This bot uses roughly 180 minutes/week (3 hours × 5 days), well within the free limit.
 
 ---
 
-## 📡 Sentiment Sources
+## Dashboard
 
-- **Reddit** — r/wallstreetbets, r/stocks, r/investing (public API, no auth needed)
-- **Yahoo Finance RSS** — real-time headlines per ticker
-- **NewsAPI** *(optional)* — broader news aggregation
+The dashboard reads from `output/latest.json` which gets committed to the repo after every run. It shows:
 
----
-
-## 🤖 AI Analysis (Claude Sonnet)
-
-When an Anthropic API key is configured, each top candidate is sent to Claude with the full data package for a holistic score (0–100) plus:
-- 5–8 concise investment thesis bullets
-- 3 key risks
-- Optimal entry zone
-- 1-year and 3-year price targets
-
-Without an API key, the rule-based engine provides solid scoring that still outperforms most retail analysis.
+- Top 5 mainstream picks + top 5 hidden gems (click any row to expand full thesis)
+- Score distribution chart across all analyzed stocks
+- Category radar chart for selected pick
+- Macro environment panel (VIX, yield curve, DXY, market regime)
+- Sector distribution
+- Scan statistics (universe size, tickers analyzed, cycle progress)
+- Countdown to next post
 
 ---
 
-## 📬 Discord Output Example
+## Disclaimer
 
-```
-📊 Daily Top 5 Watchlist — Wednesday, March 18 2026
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-#1 NVDA — NVIDIA Corporation • $875.40
-Score: [████████░░] 84/100   🔥 STRONG BUY
-🟢 Technical: A  |  📣 Sentiment: Very Positive  |  💼 Sector: Technology
-🎯 Entry: $840–$870 on 50 EMA touch
-📅 1-Year Target: $1,100 (+26%)
-🚀 3-Year Target: $1,800–$2,200 (+100–150%)
-
-• 📈 Revenue grew 122% YoY — datacenter GPU dominance
-• 💰 FCF $21B — strongest balance sheet in semis
-• 📊 Golden cross active, above 200 EMA — uptrend intact
-• 🔥 Institutional accumulation at 65% ownership
-• ⚖️ 3.2x risk/reward at current levels
-• 🎯 Analyst consensus Buy, $1,050 mean target
-
-⚠️ Key Risks:
-⚠️ Valuation stretched (FWD PE 35x) — priced for perfection
-⚠️ China export restrictions could impact ~20% of revenue
-⚠️ AMD Instinct GPU competition accelerating
-```
-
----
-
-## ⚙️ Configuration Reference
-
-| Key | Default | Description |
-|---|---|---|
-| `discord.webhook_url` | required | Discord channel webhook |
-| `discord.mention` | "" | Role/user tag on post (e.g. `<@&ROLE_ID>`) |
-| `framework.url` | Google Sheet | CSV/JSON URL of scoring questions |
-| `schedule.post_time` | `09:30` | Daily post time (24hr, Eastern) |
-| `schedule.analysis_window_hours` | `12` | Hours before post to start analysis |
-| `universe.watchlist` | 20 tickers | Static ticker list |
-| `universe.auto_discover` | `true` | Add high-momentum tickers automatically |
-| `output.top_n` | `5` | Number of picks to surface |
-| `weights.*` | Various | Per-category framework weights |
-| `technicals.max_pct_from_52w_high` | `0.35` | Skip stocks within 5% of ATH |
-| `fundamentals.min_revenue_growth_yoy` | `0.05` | Skip slow-growers |
-| `api_keys.anthropic_api_key` | optional | Enables AI scoring layer |
-| `api_keys.news_api_key` | optional | NewsAPI.org enrichment |
-
----
-
-## 🔑 API Keys
-
-| Service | Required? | Free Tier | Get At |
-|---|---|---|---|
-| yfinance | No (built-in) | Unlimited | — |
-| Anthropic | Recommended | $5 free credit | anthropic.com |
-| Reddit | No | Public JSON API | — |
-| NewsAPI | No | 100 req/day | newsapi.org |
-| Alpha Vantage | No | 25 calls/day | alphavantage.co |
-
----
-
-## ⚠️ Disclaimer
-
-This bot is for educational and research purposes only. It does not constitute financial advice. Always perform your own due diligence before making any investment decisions. Past performance does not guarantee future results.
+This bot is for educational and research purposes only. It does not constitute financial advice. Always do your own due diligence before making any investment decisions. Past performance does not guarantee future results.

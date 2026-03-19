@@ -3,772 +3,478 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WatchlistBot Dashboard</title>
+<title>VisionariesOnly Watchlist</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
-  :root {
-    --bg: #0a0e1a;
-    --bg2: #111827;
-    --bg3: #1a2235;
-    --card: #151d2e;
-    --border: rgba(255,255,255,0.07);
-    --text: #e8eaf0;
-    --text2: #8b93a7;
-    --text3: #5a6377;
-    --green: #00e5a0;
-    --green2: #00b37d;
-    --red: #ff4d6a;
-    --amber: #ffa94d;
-    --blue: #4da6ff;
-    --purple: #b07ffc;
-    --accent: #00e5a0;
-    --font: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-    --sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    font-size: 14px;
-    line-height: 1.5;
-    min-height: 100vh;
-  }
+:root {
+  --bg:#08101f;--bg2:#0f1829;--card:#111e30;
+  --border:rgba(255,255,255,0.07);
+  --text:#e2e8f0;--text2:#8b99b5;--text3:#4a5568;
+  --green:#00e5a0;--green2:#00b37d;
+  --blue:#4da6ff;--purple:#a78bfa;--gem:#c084fc;
+  --amber:#fbbf24;--red:#f87171;
+  --mono:'SF Mono','Fira Code',monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.5;min-height:100vh}
 
-  /* ── Header ── */
-  .header {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: linear-gradient(135deg, #00e5a0, #4da6ff);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-  }
-  .logo-text { font-size: 16px; font-weight: 600; letter-spacing: -0.3px; }
-  .logo-sub { font-size: 11px; color: var(--text3); font-family: var(--font); }
-  .header-right { display: flex; align-items: center; gap: 16px; }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  .status-text { font-size: 12px; color: var(--text2); }
-  .run-btn {
-    background: var(--green);
-    color: #000;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .run-btn:hover { background: var(--green2); transform: translateY(-1px); }
+.header{background:var(--bg2);border-bottom:1px solid var(--border);padding:13px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#00e5a0,#4da6ff);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.logo-title{font-size:14px;font-weight:600;letter-spacing:-.3px}
+.logo-sub{font-size:10px;color:var(--text3);font-family:var(--mono);letter-spacing:.5px}
+.header-right{display:flex;align-items:center;gap:16px}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.live-label{font-size:11px;color:var(--text2)}
+.updated{font-size:11px;color:var(--text3);font-family:var(--mono)}
 
-  /* ── Layout ── */
-  .main { max-width: 1400px; margin: 0 auto; padding: 24px; }
-  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .grid-3 { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 24px; }
+.main{max-width:1320px;margin:0 auto;padding:18px 24px}
 
-  /* ── Cards ── */
-  .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-  }
-  .card-sm { padding: 16px; }
-  .card-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--text3);
-    margin-bottom: 8px;
-  }
-  .card-value {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: var(--text);
-  }
-  .card-delta {
-    font-size: 12px;
-    margin-top: 4px;
-  }
-  .up { color: var(--green); }
-  .down { color: var(--red); }
-  .neutral { color: var(--text2); }
-  .section-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text2);
-    letter-spacing: 0.5px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .section-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+/* Scan stats banner */
+.scan-banner{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 18px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.scan-stat{display:flex;flex-direction:column;align-items:center}
+.scan-stat-val{font-size:20px;font-weight:700;font-family:var(--mono);color:var(--green)}
+.scan-stat-lbl{font-size:10px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);margin-top:2px}
+.scan-divider{width:1px;height:36px;background:var(--border)}
+.scan-progress{flex:1;min-width:200px}
+.scan-progress-lbl{font-size:10px;color:var(--text3);margin-bottom:5px}
+.progress-track{height:4px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden}
+.progress-fill{height:4px;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:2px;transition:width 1s}
 
-  /* ── Picks Table ── */
-  .picks-table { width: 100%; border-collapse: collapse; }
-  .picks-table th {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--text3);
-    text-align: left;
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .picks-table td {
-    padding: 14px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.03);
-    vertical-align: middle;
-  }
-  .picks-table tr:last-child td { border-bottom: none; }
-  .picks-table tr:hover td { background: rgba(255,255,255,0.02); }
-  .rank { font-family: var(--font); font-size: 13px; color: var(--text3); }
-  .ticker-cell { display: flex; align-items: center; gap: 10px; }
-  .ticker-logo {
-    width: 34px; height: 34px; border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700; font-family: var(--font);
-    flex-shrink: 0;
-  }
-  .ticker-name { font-weight: 600; font-size: 14px; }
-  .ticker-sub { font-size: 11px; color: var(--text3); margin-top: 1px; }
-  .score-bar-wrap { display: flex; align-items: center; gap: 10px; }
-  .score-bar {
-    flex: 1; height: 6px; background: rgba(255,255,255,0.06);
-    border-radius: 3px; overflow: hidden; max-width: 80px;
-  }
-  .score-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
-  .score-num { font-family: var(--font); font-size: 13px; font-weight: 600; min-width: 28px; }
-  .rating-badge {
-    font-size: 11px; font-weight: 600;
-    padding: 3px 8px; border-radius: 4px;
-    white-space: nowrap;
-  }
-  .rating-strong-buy { background: rgba(0,229,160,0.15); color: var(--green); }
-  .rating-buy { background: rgba(0,229,160,0.08); color: var(--green2); }
-  .rating-watch { background: rgba(255,169,77,0.12); color: var(--amber); }
-  .rating-spec { background: rgba(255,77,106,0.1); color: var(--red); }
-  .grade-badge {
-    font-family: var(--font); font-size: 12px; font-weight: 700;
-    padding: 2px 7px; border-radius: 4px;
-    background: rgba(255,255,255,0.06);
-  }
-  .grade-a { color: var(--green); }
-  .grade-b { color: var(--blue); }
-  .grade-c { color: var(--amber); }
-  .grade-d { color: var(--red); }
-  .price-cell { font-family: var(--font); font-size: 14px; font-weight: 600; }
-  .target-cell { font-size: 12px; color: var(--text2); }
+/* Stats row */
+.stats-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px}
+.stat-lbl{font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--text3);margin-bottom:5px}
+.stat-val{font-size:20px;font-weight:700;letter-spacing:-1px}
+.stat-sub{font-size:10px;color:var(--text2);margin-top:2px}
 
-  /* ── Expand Bullets ── */
-  .bullets-row td {
-    background: rgba(0,229,160,0.03);
-    border-left: 2px solid var(--green);
-    padding: 12px 16px 12px 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  .bullet-list { list-style: none; }
-  .bullet-list li {
-    font-size: 12px;
-    color: var(--text2);
-    padding: 3px 0;
-    display: flex; gap: 8px;
-  }
-  .bullet-list li::before { content: '›'; color: var(--accent); font-weight: 700; }
+/* Picks panels */
+.picks-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.panel-hdr{padding:13px 18px 11px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.panel-hdr-main{border-left:3px solid var(--blue)}
+.panel-hdr-gem{border-left:3px solid var(--gem)}
+.panel-title{font-size:13px;font-weight:600}
+.panel-sub{font-size:10px;color:var(--text3);margin-left:auto}
 
-  /* ── Macro Panel ── */
-  .macro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
-  .macro-item {
-    background: rgba(255,255,255,0.03);
-    border-radius: 8px; padding: 12px;
-    border: 1px solid var(--border);
-  }
-  .macro-label { font-size: 10px; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
-  .macro-val { font-size: 18px; font-weight: 700; font-family: var(--font); }
-  .macro-sub { font-size: 10px; color: var(--text3); margin-top: 2px; }
-  .regime-banner {
-    background: rgba(0,229,160,0.06);
-    border: 1px solid rgba(0,229,160,0.15);
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 12px;
-    color: var(--text2);
-    line-height: 1.6;
-  }
+/* Pick rows */
+.pick{padding:11px 18px;border-bottom:1px solid rgba(255,255,255,.03);cursor:pointer;transition:background .1s}
+.pick:last-child{border-bottom:none}
+.pick:hover{background:rgba(255,255,255,.02)}
+.pick-row{display:flex;align-items:center;gap:9px}
+.pick-rank{font-family:var(--mono);font-size:10px;color:var(--text3);min-width:14px}
+.pick-logo{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;font-family:var(--mono);flex-shrink:0}
+.pick-info{flex:1;min-width:0}
+.pick-ticker{font-weight:700;font-size:13px}
+.pick-name{font-size:9px;color:var(--text3);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:110px}
+.score-wrap{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.score-bar{width:52px;height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden}
+.score-fill{height:4px;border-radius:2px}
+.score-num{font-family:var(--mono);font-size:11px;font-weight:700;min-width:22px;text-align:right}
+.badge{font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.b-strong{background:rgba(0,229,160,.15);color:var(--green)}
+.b-buy{background:rgba(0,229,160,.08);color:var(--green2)}
+.b-watch{background:rgba(251,191,36,.1);color:var(--amber)}
+.b-spec{background:rgba(248,113,113,.1);color:var(--red)}
+.grade{font-family:var(--mono);font-size:10px;font-weight:700;padding:1px 5px;border-radius:3px;background:rgba(255,255,255,.06);flex-shrink:0}
+.g-a{color:var(--green)}.g-b{color:var(--blue)}.g-c{color:var(--amber)}.g-d{color:var(--red)}
+.pick-price{font-family:var(--mono);font-size:11px;font-weight:600;min-width:50px;text-align:right;flex-shrink:0}
+.pick-target{font-size:9px;color:var(--text2);min-width:60px;text-align:right;flex-shrink:0}
 
-  /* ── Sector Weights ── */
-  .sector-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-  .sector-name { font-size: 12px; min-width: 140px; color: var(--text2); }
-  .sector-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 3px; }
-  .sector-bar-fill { height: 5px; border-radius: 3px; background: var(--blue); }
-  .sector-pct { font-size: 11px; font-family: var(--font); color: var(--text3); min-width: 32px; text-align: right; }
+/* Expand */
+.pick-expand{display:none;padding:7px 18px 11px 52px;background:rgba(0,0,0,.2);border-top:1px solid var(--border)}
+.exp-entry{font-size:10px;color:var(--green);margin-bottom:4px}
+.exp-bullets{list-style:none}
+.exp-bullets li{font-size:10px;color:var(--text2);padding:2px 0;display:flex;gap:5px}
+.exp-bullets li::before{content:'›';color:var(--text3)}
 
-  /* ── Log ── */
-  .log-panel {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    font-family: var(--font);
-    font-size: 11px;
-    color: var(--text3);
-    height: 200px;
-    overflow-y: auto;
-    line-height: 1.8;
-  }
-  .log-line .ts { color: var(--text3); }
-  .log-line .info { color: var(--blue); }
-  .log-line .ok { color: var(--green); }
-  .log-line .warn { color: var(--amber); }
-  .log-line .msg { color: var(--text2); }
+/* Bottom grid */
+.bottom{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.chart-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.chart-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px}
+.chart-title{font-size:10px;font-weight:600;color:var(--text2);letter-spacing:.4px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:5px}
+.cdot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0}
+.cdot-gem{background:var(--gem)}
 
-  /* ── Next run ── */
-  .next-run {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 12px; color: var(--text3);
-    margin-top: 12px;
-  }
-  .countdown { font-family: var(--font); color: var(--accent); font-size: 13px; font-weight: 600; }
+.macro-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:10px}
+.m-item{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:7px;padding:9px 11px}
+.m-lbl{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--text3);margin-bottom:2px}
+.m-val{font-size:15px;font-weight:700;font-family:var(--mono)}
+.m-sub{font-size:9px;color:var(--text3);margin-top:1px}
+.regime{background:rgba(0,229,160,.04);border:1px solid rgba(0,229,160,.1);border-radius:7px;padding:9px 11px;font-size:10px;color:var(--text2);line-height:1.6;margin-bottom:10px}
 
-  /* ── Responsive ── */
-  @media (max-width: 900px) {
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: 1fr; }
-    .grid-2 { grid-template-columns: 1fr; }
-    .macro-grid { grid-template-columns: 1fr 1fr; }
-  }
+.sector-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.sector-nm{font-size:10px;color:var(--text2);min-width:120px}
+.sector-track{flex:1;height:3px;background:rgba(255,255,255,.05);border-radius:2px}
+.sector-fill{height:3px;border-radius:2px;background:var(--blue)}
+.sector-pct{font-size:9px;font-family:var(--mono);color:var(--text3);min-width:25px;text-align:right}
+
+.log-box{background:var(--bg2);border:1px solid var(--border);border-radius:9px;padding:10px;font-family:var(--mono);font-size:9px;color:var(--text3);height:140px;overflow-y:auto;line-height:1.9}
+.l-ts{color:var(--text3)}.l-ok{color:var(--green)}.l-info{color:var(--blue)}.l-warn{color:var(--amber)}.l-msg{color:var(--text2)}
+.next-run{font-size:10px;color:var(--text3);margin-top:8px;display:flex;align-items:center;gap:5px}
+.cd{font-family:var(--mono);color:var(--green);font-size:11px;font-weight:600}
+
+.no-data{text-align:center;padding:36px 20px;color:var(--text3)}
+.nd-icon{font-size:22px;margin-bottom:7px}
+.nd-title{font-size:12px;color:var(--amber);margin-bottom:3px}
+.nd-sub{font-size:10px}
+
+@media(max-width:900px){
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .picks-grid,.bottom,.chart-row{grid-template-columns:1fr}
+  .macro-mini{grid-template-columns:1fr 1fr}
+  .scan-banner{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
   <div class="logo">
-    <div class="logo-icon">📈</div>
+    <div class="logo-mark">👁</div>
     <div>
-      <div class="logo-text">WatchlistBot</div>
-      <div class="logo-sub">AI-POWERED DAILY PICKS</div>
+      <div class="logo-title">VisionariesOnly Watchlist</div>
+      <div class="logo-sub">24/7 AI-POWERED ANALYSIS</div>
     </div>
   </div>
   <div class="header-right">
-    <div style="display:flex;align-items:center;gap:6px">
-      <div class="status-dot" id="statusDot"></div>
-      <div class="status-text" id="statusText">Live — Last run: <span id="lastRunTime">loading…</span></div>
+    <div style="display:flex;align-items:center;gap:5px">
+      <div class="live-dot"></div>
+      <span class="live-label">Scanning</span>
     </div>
-    <button class="run-btn" onclick="triggerRun()">▶ Run Now</button>
+    <span class="updated">Updated: <span id="lastRun">—</span></span>
   </div>
 </div>
 
-<!-- Main -->
 <div class="main">
 
-  <!-- Stat Cards -->
-  <div class="grid-4" id="statCards">
-    <div class="card card-sm">
-      <div class="card-label">Top Score Today</div>
-      <div class="card-value up" id="topScore">—</div>
-      <div class="card-delta" id="topScoreTicker">Loading…</div>
+  <!-- Scan Progress Banner -->
+  <div class="scan-banner">
+    <div class="scan-stat">
+      <div class="scan-stat-val" id="univSize">—</div>
+      <div class="scan-stat-lbl">Universe Size</div>
     </div>
-    <div class="card card-sm">
-      <div class="card-label">Avg Score (Top 5)</div>
-      <div class="card-value" id="avgScore">—</div>
-      <div class="card-delta neutral">framework composite</div>
+    <div class="scan-divider"></div>
+    <div class="scan-stat">
+      <div class="scan-stat-val" id="analyzed24h">—</div>
+      <div class="scan-stat-lbl">Analyzed (24h)</div>
     </div>
-    <div class="card card-sm">
-      <div class="card-label">Tickers Analyzed</div>
-      <div class="card-value" id="tickersAnalyzed">—</div>
-      <div class="card-delta neutral" id="analysisDuration">—</div>
+    <div class="scan-divider"></div>
+    <div class="scan-stat">
+      <div class="scan-stat-val" id="cycleNum">—</div>
+      <div class="scan-stat-lbl">Current Cycle</div>
     </div>
-    <div class="card card-sm">
-      <div class="card-label">Market Regime</div>
-      <div class="card-value" id="marketRegime" style="font-size:20px">—</div>
-      <div class="card-delta" id="vixVal">VIX —</div>
+    <div class="scan-divider"></div>
+    <div class="scan-progress">
+      <div class="scan-progress-lbl">Cycle coverage: <span id="coveragePct">—</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressBar" style="width:0%"></div></div>
+    </div>
+    <div class="scan-divider"></div>
+    <div class="scan-stat">
+      <div class="scan-stat-val cd" id="countdown2">—</div>
+      <div class="scan-stat-lbl">Next Post</div>
     </div>
   </div>
 
-  <!-- Picks + Side Panel -->
-  <div class="grid-3">
+  <!-- Stat Row -->
+  <div class="stats-row">
+    <div class="stat"><div class="stat-lbl">Top Score</div><div class="stat-val" id="topScore" style="color:var(--green)">—</div><div class="stat-sub" id="topTicker">—</div></div>
+    <div class="stat"><div class="stat-lbl">Avg Score</div><div class="stat-val" id="avgScore">—</div><div class="stat-sub">top 10 picks</div></div>
+    <div class="stat"><div class="stat-lbl">In DB</div><div class="stat-val" id="dbCount">—</div><div class="stat-sub" id="runDate">—</div></div>
+    <div class="stat"><div class="stat-lbl">Regime</div><div class="stat-val" id="regime" style="font-size:14px">—</div><div class="stat-sub" id="vixStat">VIX —</div></div>
+    <div class="stat"><div class="stat-lbl">Next Post ET</div><div class="stat-val cd" id="countdown" style="font-size:14px;color:var(--green)">—</div><div class="stat-sub">9:30 AM weekdays</div></div>
+  </div>
 
-    <!-- Picks Table -->
-    <div class="card" style="padding:20px 0">
-      <div style="padding:0 20px 12px">
-        <div class="section-title"><div class="section-dot"></div>Today's Top Picks</div>
+  <!-- Two Pick Panels -->
+  <div class="picks-grid">
+    <div class="panel">
+      <div class="panel-hdr panel-hdr-main">
+        <span>📈</span><span class="panel-title">Top 5 Mainstream Picks</span>
+        <span class="panel-sub">Click row to expand</span>
       </div>
-      <table class="picks-table" id="picksTable">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Ticker</th>
-            <th>Score</th>
-            <th>Rating</th>
-            <th>Tech Grade</th>
-            <th>Price</th>
-            <th>1yr Target</th>
-          </tr>
-        </thead>
-        <tbody id="picksBody">
-          <tr><td colspan="7" style="text-align:center;padding:40px;color:var(--text3)">Loading picks…</td></tr>
-        </tbody>
-      </table>
+      <div id="mainPicks"><div class="no-data"><div class="nd-icon">⏳</div><div class="nd-title">Scanner running</div><div class="nd-sub">First results appear after ~2h</div></div></div>
     </div>
+    <div class="panel">
+      <div class="panel-hdr panel-hdr-gem">
+        <span>💎</span><span class="panel-title">Top 5 Hidden Gem Picks</span>
+        <span class="panel-sub">Under-the-radar high conviction</span>
+      </div>
+      <div id="gemPicks"><div class="no-data"><div class="nd-icon">⏳</div><div class="nd-title">Scanner running</div><div class="nd-sub">First results appear after ~2h</div></div></div>
+    </div>
+  </div>
 
-    <!-- Side: Macro + Log -->
+  <!-- Charts + Macro + Log -->
+  <div class="bottom">
     <div>
-      <!-- Macro -->
-      <div class="card" style="margin-bottom:16px">
-        <div class="section-title"><div class="section-dot"></div>Macro Environment</div>
-        <div class="macro-grid">
-          <div class="macro-item">
-            <div class="macro-label">10yr Yield</div>
-            <div class="macro-val" id="yield10">—%</div>
-            <div class="macro-sub" id="yieldCurve">—</div>
-          </div>
-          <div class="macro-item">
-            <div class="macro-label">VIX</div>
-            <div class="macro-val" id="vix">—</div>
-            <div class="macro-sub" id="vixRegime">—</div>
-          </div>
-          <div class="macro-item">
-            <div class="macro-label">USD Index</div>
-            <div class="macro-val" id="dxy">—</div>
-            <div class="macro-sub" id="dxyTrend">—</div>
-          </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <div class="chart-title"><div class="cdot"></div>Score Distribution (top 20)</div>
+          <div style="position:relative;height:180px"><canvas id="scoreChart"></canvas></div>
         </div>
-        <div class="regime-banner" id="regimeBanner">Fetching macro context…</div>
-      </div>
-
-      <!-- Sector Rotation -->
-      <div class="card" style="margin-bottom:16px">
-        <div class="section-title"><div class="section-dot"></div>Sector Weights in Picks</div>
-        <div id="sectorBars">Loading…</div>
-      </div>
-
-      <!-- Log -->
-      <div class="section-title" style="margin-bottom:8px"><div class="section-dot"></div>Activity Log</div>
-      <div class="log-panel" id="logPanel">
-        <div class="log-line"><span class="ts">[--:--:--]</span> <span class="info">INFO</span> <span class="msg">WatchlistBot dashboard initialized</span></div>
-      </div>
-      <div class="next-run">
-        Next scheduled run: <span class="countdown" id="countdown">09:30 ET</span>
+        <div class="chart-card">
+          <div class="chart-title"><div class="cdot cdot-gem"></div>Category Breakdown</div>
+          <div style="position:relative;height:180px"><canvas id="radarChart"></canvas></div>
+        </div>
       </div>
     </div>
 
-  </div>
+    <div>
+      <div class="panel" style="padding:14px;margin-bottom:12px">
+        <div class="chart-title" style="margin-bottom:9px"><div class="cdot"></div>Macro</div>
+        <div class="macro-mini">
+          <div class="m-item"><div class="m-lbl">10yr</div><div class="m-val" id="yield10">—</div><div class="m-sub" id="yieldStatus">—</div></div>
+          <div class="m-item"><div class="m-lbl">VIX</div><div class="m-val" id="vix">—</div><div class="m-sub" id="vixReg">—</div></div>
+          <div class="m-item"><div class="m-lbl">DXY</div><div class="m-val" id="dxy">—</div><div class="m-sub" id="dxyTrend">—</div></div>
+        </div>
+        <div class="regime" id="regimeBanner">Fetching…</div>
+      </div>
 
-  <!-- Score Distribution Chart -->
-  <div class="grid-2">
-    <div class="card">
-      <div class="section-title"><div class="section-dot"></div>Score Distribution — All Tickers</div>
-      <div style="position:relative;height:220px"><canvas id="scoreChart"></canvas></div>
-    </div>
-    <div class="card">
-      <div class="section-title"><div class="section-dot"></div>Category Breakdown — Top Pick</div>
-      <div style="position:relative;height:220px"><canvas id="radarChart"></canvas></div>
+      <div class="panel" style="padding:14px;margin-bottom:12px">
+        <div class="chart-title" style="margin-bottom:9px"><div class="cdot"></div>Sector Mix</div>
+        <div id="sectorBars">—</div>
+      </div>
+
+      <div class="log-box" id="logBox">
+        <span class="l-ts">[--:--]</span> <span class="l-info">INFO</span> <span class="l-msg">Dashboard ready</span>
+      </div>
+      <div class="next-run">Next run: <span class="cd" id="countdownBot">—</span></div>
     </div>
   </div>
 
-</div><!-- /main -->
+</div>
 
 <script>
-// ── Color palette for picks (cycles through top 5) ──────────────────────────
-const PICK_COLORS = ['#00e5a0', '#4da6ff', '#b07ffc', '#ffa94d', '#ff4d6a'];
+const MC = ['#00e5a0','#4da6ff','#b07ffc','#fbbf24','#f87171'];
+const GC = ['#c084fc','#e879f9','#f0abfc','#a78bfa','#818cf8'];
+let scoreChart=null, radarChart=null;
+let MAIN=[], GEMS=[], ALL=[], MACRO=null, META=null, SCAN=null;
 
-// ── Live data state ───────────────────────────────────────────────────────────
-let LIVE_PICKS = [];
-let LIVE_ALL_SCORES = [];
-let LIVE_MACRO = null;
-let LIVE_META = null;
-
-// ── Load data from JSON files written by the bot ──────────────────────────────
-async function loadData() {
-  const today = new Date().toISOString().slice(0, 10);
-
-  // Try today's file first, then fall back to the latest available
-  const filesToTry = [
-    `output/picks_${today}.json`,
-    `output/latest.json`,
-  ];
-
-  let picksRaw = null;
-  for (const file of filesToTry) {
+async function load() {
+  const today = new Date().toISOString().slice(0,10);
+  for (const f of [`output/picks_${today}.json`, 'output/latest.json']) {
     try {
-      const resp = await fetch(file);
-      if (resp.ok) {
-        picksRaw = await resp.json();
-        addLog('OK', `Loaded picks from ${file}`);
-        break;
-      }
-    } catch (e) { /* try next */ }
+      const r = await fetch(f + '?t=' + Date.now());
+      if (!r.ok) continue;
+      const raw = await r.json();
+      process(raw);
+      log('OK', `Loaded ${f}`);
+      return;
+    } catch(e) { continue; }
   }
+  log('WARN','No data yet — scanner may still be on first cycle');
+}
 
-  if (!picksRaw) {
-    showNoDataState();
-    addLog('WARN', 'No picks file found yet — bot has not run today');
-    return;
-  }
-
-  // Support both formats: array of picks, or {picks, macro, meta, all_scores}
-  const picks = Array.isArray(picksRaw) ? picksRaw : (picksRaw.picks || []);
-  const macroData = Array.isArray(picksRaw) ? null : picksRaw.macro;
-  const metaData = Array.isArray(picksRaw) ? null : picksRaw.meta;
-  const allScores = Array.isArray(picksRaw) ? picks : (picksRaw.all_scores || picks);
-
-  // Attach display colors and rank
-  LIVE_PICKS = picks.map((p, i) => ({
+function norm(arr, colors) {
+  return (arr||[]).map((p,i) => ({
     ...p,
-    rank: i + 1,
-    color: PICK_COLORS[i] || '#8b93a7',
-    // Normalise field names from bot output
-    score: Math.round(p.composite_score || p.score || 0),
-    rating: (p.investment_rating || p.rating || 'WATCH').replace(/[🔥✅👀⚠️❌]\s*/g, '').trim(),
+    rank: i+1,
+    color: colors[i] || '#8b99b5',
+    rating: (p.investment_rating||p.rating||'WATCH').replace(/[🔥✅👀⚠️❌]\s*/g,'').trim(),
     techGrade: p.technical_grade || p.techGrade || 'B',
     sentGrade: p.sentiment_grade || p.sentGrade || 'Neutral',
     target1y: p.target_1y || p.target1y || '—',
     target3y: p.target_3y || p.target3y || '—',
     entry: p.entry_zone || p.entry || '—',
-    bullets: p.rationale || p.rationale_bullets || p.bullets || [],
+    bullets: p.rationale_bullets || p.bullets || [],
     catScores: p.category_scores
-      ? Object.fromEntries(p.category_scores.map(c => [c.category, c.score]))
-      : (p.catScores || { leadership: 0.5, product: 0.5, macro: 0.5, financial: 0.5, narrative: 0.5, technical: 0.5, governance: 0.5 }),
+      ? (Array.isArray(p.category_scores)
+          ? Object.fromEntries(p.category_scores.map(c=>[c.category,c.score]))
+          : p.category_scores)
+      : {},
   }));
+}
 
-  LIVE_ALL_SCORES = allScores.map(p => ({
-    ticker: p.ticker,
-    score: Math.round(p.composite_score || p.score || 0),
-  })).sort((a, b) => b.score - a.score);
-
-  LIVE_MACRO = macroData || {
-    yield10: 0, yieldCurve: 'N/A', vix: 0, vixRegime: 'N/A',
-    dxy: 0, dxyTrend: 'N/A', regime: 'Macro data not available in this run',
-  };
-
-  LIVE_META = metaData || {
-    topScore: LIVE_PICKS[0]?.score || 0,
-    topTicker: LIVE_PICKS[0]?.ticker || '—',
-    avgScore: Math.round(LIVE_PICKS.reduce((s, p) => s + p.score, 0) / (LIVE_PICKS.length || 1)),
-    tickers: LIVE_ALL_SCORES.length,
-    regime: '—',
-    vix: LIVE_MACRO?.vix || '—',
-    runDate: picksRaw.run_date || today,
-    duration: picksRaw.duration || '—',
-  };
-
+function process(raw) {
+  MAIN  = norm(raw.mainstream_picks || raw.picks?.slice(0,5) || [], MC);
+  GEMS  = norm(raw.hidden_gem_picks || raw.picks?.slice(5,10) || [], GC);
+  ALL   = (raw.all_scores || []).sort((a,b)=>b.composite_score-a.composite_score);
+  MACRO = raw.macro || null;
+  META  = raw.meta || {};
+  SCAN  = raw.scan_stats || {};
   renderAll();
 }
 
-function showNoDataState() {
-  document.getElementById('picksBody').innerHTML = `
-    <tr><td colspan="7" style="text-align:center;padding:48px 20px">
-      <div style="color:var(--amber);font-size:13px;margin-bottom:8px">⏳ Waiting for first bot run</div>
-      <div style="color:var(--text3);font-size:12px">The bot runs daily at 9:30 AM ET.<br>After the first run, picks will appear here automatically.</div>
-    </td></tr>`;
-  document.getElementById('topScore').textContent = '—';
-  document.getElementById('avgScore').textContent = '—';
-  document.getElementById('tickersAnalyzed').textContent = '—';
-  document.getElementById('marketRegime').textContent = '—';
-}
-
 function renderAll() {
-  if (!LIVE_PICKS.length) { showNoDataState(); return; }
-  renderPicks(LIVE_PICKS);
-  if (LIVE_MACRO) renderMacro(LIVE_MACRO);
-  renderStats(LIVE_META);
-  renderSectors(buildSectors(LIVE_PICKS));
-  if (LIVE_ALL_SCORES.length) {
-    if (scoreChart) { scoreChart.destroy(); }
-    initScoreChart(LIVE_ALL_SCORES);
-  }
-  if (radarChart) { radarChart.destroy(); }
-  initRadarChart(LIVE_PICKS[0]);
-  document.getElementById('lastRunTime').textContent = LIVE_META.runDate || new Date().toLocaleDateString();
+  renderPool('mainPicks', MAIN, false);
+  renderPool('gemPicks',  GEMS, true);
+  if (MACRO) renderMacro(MACRO);
+  renderStats();
+  renderSectors([...MAIN,...GEMS]);
+  renderScanBanner();
+  if (scoreChart) scoreChart.destroy();
+  if (radarChart) radarChart.destroy();
+  if (ALL.length) initScore(ALL.slice(0,20));
+  const fp = MAIN[0]||GEMS[0];
+  if (fp) initRadar(fp);
+  document.getElementById('lastRun').textContent = META.runDate || new Date().toLocaleDateString();
 }
 
-function buildSectors(picks) {
-  const counts = {};
-  picks.forEach(p => { counts[p.sector || 'Unknown'] = (counts[p.sector || 'Unknown'] || 0) + 1; });
-  const total = picks.length || 1;
-  return Object.entries(counts)
-    .map(([name, n]) => ({ name, pct: Math.round(n / total * 100) }))
-    .sort((a, b) => b.pct - a.pct);
+function renderPool(id, picks, gem) {
+  const el = document.getElementById(id);
+  if (!picks.length) { el.innerHTML=`<div class="no-data"><div class="nd-icon">⏳</div><div class="nd-title">Scanner running…</div><div class="nd-sub">Results appear after first cycle (~2h)</div></div>`; return; }
+  el.innerHTML = picks.map(p => pickHTML(p, gem)).join('');
 }
 
-// ── Helpers ────────────────────────────────────────────────────────────────
-
-function getRatingClass(r) {
-  if (r.includes('STRONG')) return 'rating-strong-buy';
-  if (r === 'BUY') return 'rating-buy';
-  if (r === 'WATCH') return 'rating-watch';
-  return 'rating-spec';
+function pickHTML(p, gem) {
+  const sc = p.composite_score||0, col = scColor(sc);
+  const bar = '█'.repeat(Math.round(sc/10))+'░'.repeat(10-Math.round(sc/10));
+  const bdg = ratingBadge(p.rating), grd = gradeClass(p.techGrade);
+  const bullets = (p.bullets||[]).slice(0,3).map(b=>{
+    let c=String(b).replace(/^[🔵📈💰⚖️🔥🎯📊]+\s*/,'');
+    if (c.includes(']: ')) c=c.split(']: ')[1];
+    return `<li>${c.slice(0,85)}</li>`;
+  }).join('');
+  return `
+  <div class="pick" onclick="toggleExpand('${p.ticker}',${JSON.stringify(p).replace(/'/g,"&#39;")})">
+    <div class="pick-row">
+      <span class="pick-rank">${p.rank}</span>
+      <div class="pick-logo" style="background:${p.color}18;color:${p.color}">${p.ticker.slice(0,3)}</div>
+      <div class="pick-info"><div class="pick-ticker">${p.ticker}</div><div class="pick-name">${(p.name||'').split(' ').slice(0,3).join(' ')}</div></div>
+      <div class="score-wrap"><div class="score-bar"><div class="score-fill" style="width:${sc}%;background:${col}"></div></div><span class="score-num" style="color:${col}">${Math.round(sc)}</span></div>
+      <span class="badge ${bdg}">${p.rating}</span>
+      <span class="grade ${grd}">${p.techGrade}</span>
+      <span class="pick-price">$${Number(p.price||0).toFixed(2)}</span>
+      <span class="pick-target">${p.target1y}</span>
+    </div>
+  </div>
+  <div class="pick-expand" id="exp-${p.ticker}">
+    <div class="exp-entry">🎯 ${p.entry}</div>
+    <ul class="exp-bullets">${bullets}</ul>
+  </div>`;
 }
 
-function getGradeClass(g) {
-  if (g.startsWith('A')) return 'grade-a';
-  if (g.startsWith('B')) return 'grade-b';
-  if (g.startsWith('C')) return 'grade-c';
-  return 'grade-d';
+function toggleExpand(ticker, pick) {
+  const el = document.getElementById(`exp-${ticker}`);
+  if (!el) return;
+  const open = el.style.display==='block';
+  document.querySelectorAll('.pick-expand').forEach(e=>e.style.display='none');
+  if (!open) { el.style.display='block'; updateRadar(pick); }
 }
 
-function getScoreColor(s) {
-  if (s >= 80) return '#00e5a0';
-  if (s >= 65) return '#4da6ff';
-  if (s >= 50) return '#ffa94d';
-  return '#ff4d6a';
+function renderStats() {
+  const all=[...MAIN,...GEMS], top=all[0];
+  const el=id=>document.getElementById(id);
+  el('topScore').textContent = top ? Math.round(top.composite_score)+'/100' : '—';
+  el('topTicker').textContent = top ? '#1 '+top.ticker : '—';
+  const avg = all.length ? Math.round(all.reduce((s,p)=>s+p.composite_score,0)/all.length) : 0;
+  el('avgScore').textContent = avg||'—';
+  el('dbCount').textContent = ALL.length||META.tickers||'—';
+  el('runDate').textContent = META.runDate||'—';
+  el('regime').textContent = META.regime||'—';
+  el('vixStat').textContent = `VIX ${META.vix||'—'}`;
 }
 
-function tickerInitials(t) { return t.slice(0, 3); }
-
-function tickerBg(color) {
-  const map = { '#00e5a0': 'rgba(0,229,160,0.12)', '#4da6ff': 'rgba(77,166,255,0.12)',
-    '#b07ffc': 'rgba(176,127,252,0.12)', '#ffa94d': 'rgba(255,169,77,0.12)',
-    '#ff4d6a': 'rgba(255,77,106,0.12)' };
-  return map[color] || 'rgba(255,255,255,0.06)';
+function renderScanBanner() {
+  if (!SCAN) return;
+  document.getElementById('univSize').textContent = SCAN.tickers_in_universe||ALL.length||'—';
+  document.getElementById('analyzed24h').textContent = SCAN.analyzed_last_24h||ALL.length||'—';
+  document.getElementById('cycleNum').textContent = SCAN.current_cycle||'—';
+  const univ = parseInt(SCAN.tickers_in_universe)||1;
+  const done = parseInt(SCAN.analyzed_last_24h)||0;
+  const pct = Math.min(100, Math.round(done/univ*100));
+  document.getElementById('coveragePct').textContent = pct+'%';
+  document.getElementById('progressBar').style.width = pct+'%';
 }
-
-// ── Render Picks ──────────────────────────────────────────────────────────
-
-function renderPicks(picks) {
-  const tbody = document.getElementById('picksBody');
-  tbody.innerHTML = '';
-  picks.forEach(p => {
-    const tr = document.createElement('tr');
-    tr.style.cursor = 'pointer';
-    tr.onclick = () => toggleBullets(p);
-    tr.innerHTML = `
-      <td><span class="rank">${p.rank}</span></td>
-      <td>
-        <div class="ticker-cell">
-          <div class="ticker-logo" style="background:${tickerBg(p.color)};color:${p.color}">${tickerInitials(p.ticker)}</div>
-          <div>
-            <div class="ticker-name">${p.ticker}</div>
-            <div class="ticker-sub">${p.name.split(' ').slice(0,3).join(' ')}</div>
-          </div>
-        </div>
-      </td>
-      <td>
-        <div class="score-bar-wrap">
-          <div class="score-bar"><div class="score-fill" style="width:${p.score}%;background:${getScoreColor(p.score)}"></div></div>
-          <span class="score-num" style="color:${getScoreColor(p.score)}">${p.score}</span>
-        </div>
-      </td>
-      <td><span class="rating-badge ${getRatingClass(p.rating)}">${p.rating}</span></td>
-      <td><span class="grade-badge ${getGradeClass(p.techGrade)}">${p.techGrade}</span></td>
-      <td class="price-cell">$${p.price.toFixed(2)}</td>
-      <td class="target-cell">${p.target1y}</td>
-    `;
-    tbody.appendChild(tr);
-    // bullets row (hidden by default)
-    const btr = document.createElement('tr');
-    btr.className = 'bullets-row';
-    btr.id = `bullets-${p.ticker}`;
-    btr.style.display = 'none';
-    btr.innerHTML = `<td colspan="7">
-      <div style="font-size:11px;color:var(--accent);font-weight:600;margin-bottom:6px">Entry: ${p.entry}</div>
-      <ul class="bullet-list">${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-    </td>`;
-    tbody.appendChild(btr);
-  });
-}
-
-let openTicker = null;
-function toggleBullets(p) {
-  const row = document.getElementById(`bullets-${p.ticker}`);
-  if (openTicker && openTicker !== p.ticker) {
-    document.getElementById(`bullets-${openTicker}`).style.display = 'none';
-  }
-  if (openTicker === p.ticker) {
-    row.style.display = 'none';
-    openTicker = null;
-    if (LIVE_PICKS[0]) updateRadar(LIVE_PICKS[0]);
-  } else {
-    row.style.display = '';
-    openTicker = p.ticker;
-    updateRadar(p);
-  }
-}
-
-// ── Macro Panel ───────────────────────────────────────────────────────────
 
 function renderMacro(m) {
-  document.getElementById('yield10').textContent = m.yield10.toFixed(2) + '%';
-  document.getElementById('yieldCurve').textContent = m.yieldCurve;
-  document.getElementById('vix').textContent = m.vix.toFixed(1);
-  document.getElementById('vixRegime').textContent = m.vixRegime;
-  document.getElementById('dxy').textContent = m.dxy.toFixed(1);
-  document.getElementById('dxyTrend').textContent = m.dxyTrend;
-  document.getElementById('regimeBanner').textContent = m.regime;
-  document.getElementById('vixVal').textContent = 'VIX ' + m.vix.toFixed(1) + ' — ' + m.vixRegime;
+  const s=id=>document.getElementById(id);
+  s('yield10').textContent = m.yield10 ? m.yield10.toFixed(2)+'%' : '—';
+  s('yieldStatus').textContent = m.yieldCurve||'—';
+  s('vix').textContent = m.vix ? m.vix.toFixed(1) : '—';
+  s('vixReg').textContent = m.vixRegime||'—';
+  s('dxy').textContent = m.dxy ? m.dxy.toFixed(1) : '—';
+  s('dxyTrend').textContent = m.dxyTrend||'—';
+  s('regimeBanner').textContent = m.regime||'—';
 }
 
-// ── Sector Bars ───────────────────────────────────────────────────────────
-
-function renderSectors(sectors) {
-  const el = document.getElementById('sectorBars');
-  const max = Math.max(...sectors.map(s => s.pct), 1);
-  el.innerHTML = sectors.map(s => `
+function renderSectors(picks) {
+  const c={};
+  picks.forEach(p=>{const s=p.sector||'Unknown';c[s]=(c[s]||0)+1});
+  const t=picks.length||1, sorted=Object.entries(c).sort((a,b)=>b[1]-a[1]), mx=sorted[0]?.[1]||1;
+  document.getElementById('sectorBars').innerHTML=sorted.map(([n,v])=>`
     <div class="sector-row">
-      <div class="sector-name">${s.name}</div>
-      <div class="sector-bar-track"><div class="sector-bar-fill" style="width:${(s.pct/max*100).toFixed(0)}%"></div></div>
-      <div class="sector-pct">${s.pct}%</div>
-    </div>
-  `).join('');
+      <span class="sector-nm">${n}</span>
+      <div class="sector-track"><div class="sector-fill" style="width:${(v/mx*100).toFixed(0)}%"></div></div>
+      <span class="sector-pct">${Math.round(v/t*100)}%</span>
+    </div>`).join('');
 }
 
-// ── Stats ─────────────────────────────────────────────────────────────────
-
-function renderStats(s) {
-  document.getElementById('topScore').textContent = s.topScore + '/100';
-  document.getElementById('topScoreTicker').innerHTML = `<span class="up">#1 ${s.topTicker}</span>`;
-  document.getElementById('avgScore').textContent = s.avgScore + '/100';
-  document.getElementById('tickersAnalyzed').textContent = s.tickers;
-  document.getElementById('analysisDuration').textContent = s.duration;
-  document.getElementById('marketRegime').textContent = s.regime;
-  document.getElementById('vixVal').textContent = 'VIX ' + s.vix;
-  document.getElementById('lastRunTime').textContent = new Date().toLocaleTimeString();
+function initScore(scores) {
+  const ctx=document.getElementById('scoreChart').getContext('2d');
+  const gemSet=new Set(GEMS.map(p=>p.ticker));
+  scoreChart=new Chart(ctx,{type:'bar',data:{
+    labels:scores.map(s=>s.ticker),
+    datasets:[{data:scores.map(s=>Math.round(s.composite_score)),
+      backgroundColor:scores.map(s=>gemSet.has(s.ticker)?'#c084fc55':'#4da6ff55'),
+      borderColor:scores.map(s=>gemSet.has(s.ticker)?'#c084fc':'#4da6ff'),
+      borderWidth:1,borderRadius:3}]
+  },options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.parsed.y}/100`}}},
+    scales:{x:{ticks:{color:'#4a5568',font:{size:8,family:'monospace'}},grid:{display:false}},
+      y:{min:0,max:100,ticks:{color:'#4a5568',font:{size:9},stepSize:25},grid:{color:'rgba(255,255,255,0.03)'}}}}});
 }
 
-// ── Chart: Score Distribution ─────────────────────────────────────────────
-
-let scoreChart, radarChart;
-
-function initScoreChart(scores) {
-  const ctx = document.getElementById('scoreChart').getContext('2d');
-  scoreChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: scores.map(s => s.ticker),
-      datasets: [{
-        data: scores.map(s => s.score),
-        backgroundColor: scores.map(s => getScoreColor(s.score) + '88'),
-        borderColor: scores.map(s => getScoreColor(s.score)),
-        borderWidth: 1,
-        borderRadius: 4,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: {
-        callbacks: { label: ctx => ' Score: ' + ctx.parsed.y + '/100' }
-      }},
-      scales: {
-        x: { ticks: { color: '#5a6377', font: { size: 10, family: 'monospace' } }, grid: { display: false } },
-        y: { min: 0, max: 100, ticks: { color: '#5a6377', font: { size: 10 }, stepSize: 20 },
-          grid: { color: 'rgba(255,255,255,0.04)' } }
-      }
-    }
-  });
-}
-
-function initRadarChart(pick) {
-  const ctx = document.getElementById('radarChart').getContext('2d');
-  const cats = ['Leadership', 'Product', 'Macro', 'Financial', 'Narrative', 'Technical', 'Governance'];
-  const vals = Object.values(pick.catScores).map(v => Math.round(v * 100));
-  radarChart = new Chart(ctx, {
-    type: 'radar',
-    data: {
-      labels: cats,
-      datasets: [{
-        label: pick.ticker,
-        data: vals,
-        backgroundColor: pick.color + '22',
-        borderColor: pick.color,
-        borderWidth: 1.5,
-        pointBackgroundColor: pick.color,
-        pointRadius: 3,
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: { r: {
-        min: 0, max: 100,
-        ticks: { display: false },
-        grid: { color: 'rgba(255,255,255,0.06)' },
-        angleLines: { color: 'rgba(255,255,255,0.06)' },
-        pointLabels: { color: '#8b93a7', font: { size: 10 } }
-      }}
-    }
-  });
+function initRadar(pick) {
+  const ctx=document.getElementById('radarChart').getContext('2d');
+  const cats=Object.keys(pick.catScores||{}).map(k=>k.replace(/_/g,' ').split(' ').map(w=>w[0].toUpperCase()+w.slice(1,4)).join(''));
+  const vals=Object.values(pick.catScores||{}).map(v=>Math.round(v*100));
+  radarChart=new Chart(ctx,{type:'radar',data:{
+    labels:cats.length ? cats : ['Lead','Product','Macro','Finance','Narr.','Tech','Gov.'],
+    datasets:[{data:vals.length ? vals : [50,50,50,50,50,50,50],
+      backgroundColor:pick.color+'22',borderColor:pick.color,borderWidth:1.5,
+      pointBackgroundColor:pick.color,pointRadius:3}]
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{r:{min:0,max:100,ticks:{display:false},
+      grid:{color:'rgba(255,255,255,0.05)'},angleLines:{color:'rgba(255,255,255,0.05)'},
+      pointLabels:{color:'#8b99b5',font:{size:8}}}}}});
 }
 
 function updateRadar(pick) {
-  if (!radarChart) return;
-  const vals = Object.values(pick.catScores).map(v => Math.round(v * 100));
-  radarChart.data.datasets[0].data = vals;
-  radarChart.data.datasets[0].label = pick.ticker;
-  radarChart.data.datasets[0].borderColor = pick.color;
-  radarChart.data.datasets[0].backgroundColor = pick.color + '22';
-  radarChart.data.datasets[0].pointBackgroundColor = pick.color;
+  if (!radarChart||!pick.catScores) return;
+  radarChart.data.datasets[0].data=Object.values(pick.catScores).map(v=>Math.round(v*100));
+  radarChart.data.datasets[0].borderColor=pick.color;
+  radarChart.data.datasets[0].backgroundColor=pick.color+'22';
+  radarChart.data.datasets[0].pointBackgroundColor=pick.color;
   radarChart.update();
 }
 
-// ── Log ───────────────────────────────────────────────────────────────────
-
-function addLog(level, msg) {
-  const panel = document.getElementById('logPanel');
-  const ts = new Date().toLocaleTimeString('en-US', { hour12: false });
-  const cls = { INFO: 'info', OK: 'ok', WARN: 'warn' }[level] || 'info';
-  const line = document.createElement('div');
-  line.className = 'log-line';
-  line.innerHTML = `<span class="ts">[${ts}]</span> <span class="${cls}">${level}</span> <span class="msg">${msg}</span>`;
-  panel.appendChild(line);
-  panel.scrollTop = panel.scrollHeight;
+function scColor(s){return s>=80?'#00e5a0':s>=65?'#4da6ff':s>=50?'#fbbf24':'#f87171'}
+function ratingBadge(r){
+  if(!r)return'b-watch';const u=r.toUpperCase();
+  return u.includes('STRONG')?'b-strong':u==='BUY'?'b-buy':u==='WATCH'?'b-watch':'b-spec';
+}
+function gradeClass(g){
+  if(!g)return'g-c';
+  return g.startsWith('A')?'g-a':g.startsWith('B')?'g-b':g.startsWith('C')?'g-c':'g-d';
 }
 
-// ── Countdown ─────────────────────────────────────────────────────────────
-
-function updateCountdown() {
-  const now = new Date();
-  const et = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
-  let next = new Date(et);
-  next.setHours(9, 30, 0, 0);
-  if (et >= next) {
-    next.setDate(next.getDate() + 1);
-    if (next.getDay() === 0) next.setDate(next.getDate() + 1);
-    if (next.getDay() === 6) next.setDate(next.getDate() + 2);
-  }
-  const diff = next - et;
-  const h = Math.floor(diff / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('countdown').textContent =
-    `in ${h}h ${m}m ${s}s`;
+function log(level,msg) {
+  const p=document.getElementById('logBox');
+  const ts=new Date().toLocaleTimeString('en-US',{hour12:false}).slice(0,5);
+  const cls={OK:'l-ok',INFO:'l-info',WARN:'l-warn'}[level]||'l-info';
+  p.innerHTML+=`\n<span class="l-ts">[${ts}]</span> <span class="${cls}">${level}</span> <span class="l-msg">${msg}</span>`;
+  p.scrollTop=p.scrollHeight;
 }
 
-// ── Trigger Run (calls GitHub Actions API or shows instructions) ─────────────
-function triggerRun() {
-  addLog('INFO', 'To trigger a manual run, go to your GitHub repo');
-  addLog('INFO', '→ Actions tab → "Daily Watchlist Bot" → "Run workflow"');
-  addLog('INFO', 'Or push any commit to the main branch to trigger it');
+function updateCountdown(){
+  const et=new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
+  let n=new Date(et);n.setHours(9,30,0,0);
+  if(et>=n)n.setDate(n.getDate()+1);
+  if(n.getDay()===0)n.setDate(n.getDate()+1);
+  if(n.getDay()===6)n.setDate(n.getDate()+2);
+  const d=n-et,h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000),s=Math.floor((d%60000)/1000);
+  const str=`${h}h ${m}m ${s}s`;
+  ['countdown','countdown2','countdownBot'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.textContent=str;
+  });
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
-loadData();
-setInterval(updateCountdown, 1000);
+load();
+setInterval(load,5*60*1000);
+setInterval(updateCountdown,1000);
 updateCountdown();
-// Reload data every 5 minutes in case a new run just finished
-setInterval(loadData, 5 * 60 * 1000);
 </script>
 </body>
 </html>
