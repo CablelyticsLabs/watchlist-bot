@@ -441,6 +441,7 @@ async function loadData() {
     rank: i + 1,
     color: PICK_COLORS[i] || '#8b93a7',
     // Normalise field names from bot output
+    score: Math.round(p.composite_score || p.score || 0),
     rating: (p.investment_rating || p.rating || 'WATCH').replace(/[🔥✅👀⚠️❌]\s*/g, '').trim(),
     techGrade: p.technical_grade || p.techGrade || 'B',
     sentGrade: p.sentiment_grade || p.sentGrade || 'Neutral',
