@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Dry run — analyze but skip Discord post"
+        description: "Dry run — analyze but SKIP Discord post (leave unchecked to post normally)"
         required: false
-        default: "false"
+        default: false
         type: boolean
 
 permissions:
@@ -63,12 +63,18 @@ jobs:
 
       - name: Run WatchlistBot
         env:
-          DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+          # On scheduled runs: github.event.inputs is empty so dry_run is always false
+          # On manual runs: dry_run is false by default — post to Discord unless user checks the box
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && 'true' || 'false' }}
           PYTHONPATH: ${{ github.workspace }}
         run: |
+          echo "Trigger: ${{ github.event_name }}"
+          echo "Dry run: $DRY_RUN"
           if [ "$DRY_RUN" = "true" ]; then
+            echo "→ Dry run mode — will NOT post to Discord"
             python bot.py --now --dry-run
           else
+            echo "→ Live mode — WILL post to Discord"
             python bot.py --now
           fi
 
