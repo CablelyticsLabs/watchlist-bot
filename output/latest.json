@@ -1,33 +1,91 @@
 {
   "run_date": "2026-03-19",
-  "generated_at": "2026-03-19T23:00:27.464437",
+  "generated_at": "2026-03-19T23:26:21.232168",
   "mainstream_picks": [
     {
-      "ticker": "RL",
-      "name": "Ralph Lauren Corporation",
-      "composite_score": 59.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
+      "ticker": "ANET",
+      "name": "Arista Networks, Inc.",
+      "composite_score": 74.5,
+      "investment_rating": "\u2705 BUY",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 340.2099914550781,
-      "sector": "Consumer Cyclical",
+      "price": 136.25999450683594,
+      "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$320-$330 on pullback to 200 EMA support or RSI reaching oversold 30 level",
-      "target_1y": "$380 - approaching 52-week highs as luxury spending normalizes and margin expansion continues",
-      "target_3y": "$420 - assuming successful brand modernization, international expansion, and sustained 10%+ earnings growth",
+      "entry_zone": "$130-$135 on any pullback to test 50 EMA support with strong volume",
+      "target_1y": "$175 - AI infrastructure spending acceleration drives 25%+ upside to analyst targets",
+      "target_3y": "$240 - Sustained 20%+ growth in AI/cloud networking TAM expansion justifies 35x multiple on 2027E earnings",
       "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Exceptional margins (69.6% gross, 20.1% operating) and stellar 33.8% ROE indicate strong brand pricing power",
-        "\ud83d\udd35 Growth: Solid 12.2% revenue growth and 24.9% earnings growth show momentum despite luxury headwinds",
-        "\ud83d\udd35 Valuation: Forward PE of 18.9x reasonable for premium brand, analyst target $405 implies 19% upside",
-        "\ud83d\udd35 Technical: RSI oversold at 37.3, above 200 EMA with golden cross intact suggesting dip-buying opportunity",
-        "\ud83d\udd35 Capital: Strong $570M free cash flow generation supports dividend sustainability and buyback capacity",
-        "\ud83d\udd35 Leadership: Management execution concerns reflected in low leadership score despite financial performance",
-        "\ud83d\udd35 Brand: Struggling product-market fit score suggests challenges in staying relevant with younger demographics"
+        "\ud83d\udd35 Financial Health: Exceptional margins (64.1% gross, 41.5% operating) with zero debt and $3.39B FCF generation",
+        "\ud83d\udd35 Growth Profile: Strong 28.9% revenue growth accelerating ahead of earnings growth, indicating market share expansion",
+        "\ud83d\udd35 AI Infrastructure: Positioned as critical enabler for AI/ML workloads with high-performance data center networking solutions",
+        "\ud83d\udd35 Technical Setup: Golden cross intact, above all EMAs with bullish MACD and attractive 2.7x risk/reward ratio",
+        "\ud83d\udd35 Valuation: Forward PE of 32x reasonable for growth profile, strong analyst conviction with $177 target",
+        "\ud83d\udd35 Market Position: Dominant in high-end data center switching with sticky EOS platform creating switching costs",
+        "\ud83d\udd35 Capital Efficiency: Outstanding 31.4% ROE demonstrates superior management execution and asset utilization"
       ],
       "risks": [
-        "\u26a0\ufe0f Consumer discretionary spending under pressure from persistent inflation and economic uncertainty",
-        "\u26a0\ufe0f Luxury brand relevance declining with Gen Z/millennials preferring streetwear and digital-native brands",
-        "\u26a0\ufe0f High debt-to-equity ratio of 0.99x limits financial flexibility during economic downturns"
+        "\u26a0\ufe0f Concentration risk in hyperscale cloud customers and potential spending cyclicality",
+        "\u26a0\ufe0f Intense competition from Cisco, Juniper, and emerging white-box solutions pressuring market share",
+        "\u26a0\ufe0f Current sideways price action and -15.9% from highs suggests institutional profit-taking"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.6
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 310.44000244140625,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$300-$315 range or on any pullback to 50 EMA support at $315.52",
+      "target_1y": "$380-$390 based on 25x forward PE multiple expansion as growth stabilizes and oversold conditions reverse",
+      "target_3y": "$450-$475 driven by secular analog content growth in EVs, industrial IoT, and 5G infrastructure buildout",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Strong fundamentals with 30.4% revenue growth, 116.7% earnings growth, and healthy 62.8% gross margins demonstrate operational excellence",
+        "\ud83d\udd35 Technicals: Oversold RSI at 21.2 presents attractive entry opportunity while maintaining uptrend above 200 EMA with golden cross intact",
+        "\ud83d\udd35 Valuation: Forward PE of 24.0x reasonable for semiconductor leader with strong growth profile; analyst consensus target of $384.53 implies 24% upside",
+        "\ud83d\udd35 Market Position: Dominant analog IC franchise with mission-critical products across industrial, automotive, and communications end markets",
+        "\ud83d\udd35 Balance Sheet: Conservative 0.26 D/E ratio and $4.14B free cash flow provide financial flexibility during cyclical downturns",
+        "\ud83d\udd35 Secular Tailwinds: Well-positioned for electrification, 5G infrastructure, and industrial automation mega-trends requiring analog interfaces",
+        "\ud83d\udd35 Entry Timing: Currently 13.7% below 52-week high with bearish MACD creating tactical buying opportunity for patient investors"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Cyclical semiconductor downturn could pressure margins and growth rates in 2024-2025",
+        "\u26a0\ufe0f China exposure creates geopolitical risk from potential export restrictions and trade tensions",
+        "\u26a0\ufe0f High valuation multiple leaves little room for execution missteps or guidance disappointments"
       ],
       "category_scores": [
         {
@@ -36,15 +94,15 @@
         },
         {
           "category": "product_market_fit",
-          "score": 0.286
+          "score": 0.571
         },
         {
           "category": "macro_environment",
-          "score": 0.25
+          "score": 0.5
         },
         {
           "category": "financial_health",
-          "score": 1.0
+          "score": 0.6
         },
         {
           "category": "narrative_adoption",
@@ -52,7 +110,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.8
+          "score": 0.6
         },
         {
           "category": "governance_stability",
@@ -61,31 +119,31 @@
       ]
     },
     {
-      "ticker": "SYY",
-      "name": "Sysco Corporation",
-      "composite_score": 55.4,
-      "investment_rating": "\ud83d\udc40 WATCH",
+      "ticker": "MRVL",
+      "name": "Marvell Technology, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 81.66999816894531,
-      "sector": "Consumer Defensive",
+      "price": 89.52999877929688,
+      "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$75-$78 on further RSI oversold bounce or test of 200 EMA support",
-      "target_1y": "$88-$92 as valuation normalizes and oversold condition reverses toward analyst targets",
-      "target_3y": "$95-$105 assuming modest margin expansion and deleveraging in stable macro environment",
+      "entry_zone": "$82-$86 on any pullback to 50 EMA support or current levels for long-term holders",
+      "target_1y": "$115 - benefiting from data center recovery and AI infrastructure buildout acceleration",
+      "target_3y": "$160 - compound growth from edge computing expansion and 5G infrastructure deployment globally",
       "rationale_bullets": [
-        "\ud83d\udd35 Technicals: Extremely oversold with RSI at 10.1, creating potential bounce opportunity despite bearish MACD",
-        "\ud83d\udd35 Valuation: Forward PE of 16.1x appears reasonable for defensive food distributor, but PEG ratio concerns with negative earnings growth",
-        "\ud83d\udd35 Capital Structure: Dangerous debt/equity ratio of 6.4x creates significant financial leverage risk in rising rate environment",
-        "\ud83d\udd35 Cash Generation: Solid $1.75B free cash flow provides defensive characteristics and dividend sustainability",
-        "\ud83d\udd35 Market Position: Dominant foodservice distribution franchise with recession-resistant demand profile",
-        "\ud83d\udd35 Growth Profile: Anemic 3.0% revenue growth and -1.2% earnings decline reflect mature, low-growth business model",
-        "\ud83d\udd35 Margins: 4.0% operating margin indicates thin profitability typical of distribution businesses, vulnerable to cost inflation"
+        "\ud83d\udd35 Financial Health: Exceptional metrics with 106% earnings growth, healthy 51% gross margins, and strong $1.44B FCF generation",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 16.5x for a high-growth semiconductor name with 22% revenue growth trajectory",
+        "\ud83d\udd35 Technical Setup: Clean uptrend above all EMAs with golden cross intact, though momentum cooling near resistance",
+        "\ud83d\udd35 Market Position: Well-positioned in data infrastructure semiconductors serving high-growth data center and edge computing markets",
+        "\ud83d\udd35 Balance Sheet: Conservative 0.33 D/E ratio and 19.3% ROE demonstrate efficient capital allocation and financial stability",
+        "\ud83d\udd35 Analyst Confidence: Strong buy consensus with $120.50 target implies 35% upside potential from current levels",
+        "\ud83d\udd35 Cyclical Headwinds: Semiconductor sector facing inventory digestion and China exposure concerns limiting near-term catalysts"
       ],
       "risks": [
-        "\u26a0\ufe0f Excessive leverage at 6.4x D/E ratio creates refinancing and interest rate sensitivity risks",
-        "\u26a0\ufe0f Negative earnings growth trajectory in inflationary environment pressures margin sustainability",
-        "\u26a0\ufe0f Cyclical exposure to restaurant industry downturn could compress volumes and pricing power"
+        "\u26a0\ufe0f Semiconductor cyclicality with potential inventory corrections impacting near-term demand",
+        "\u26a0\ufe0f Geopolitical tensions affecting China operations and supply chain disruptions",
+        "\u26a0\ufe0f Competition intensifying in data center chips from hyperscalers developing custom silicon"
       ],
       "category_scores": [
         {
@@ -93,8 +151,74 @@
           "score": 0.4
         },
         {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
           "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 319.8399963378906,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$310-$320 on any pullback toward 200 EMA support",
+      "target_1y": "$420-$450 driven by AI infrastructure demand and margin expansion",
+      "target_3y": "$550-$600 assuming sustained data center growth and market share gains in custom silicon",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional 188% earnings growth with robust 76.7% gross margins and $25.5B FCF generation",
+        "\ud83d\udd35 Valuation: Forward PE of 18.1x appears reasonable for a dominant semiconductor player with strong growth trajectory",
+        "\ud83d\udd35 Technical Setup: Strong foundation above 200 EMA with golden cross intact, though bearish MACD suggests near-term consolidation",
+        "\ud83d\udd35 Market Position: Leading position in networking silicon and infrastructure software with high switching costs",
+        "\ud83d\udd35 AI Tailwinds: Well-positioned for data center buildout and AI infrastructure demand through custom silicon solutions",
+        "\ud83d\udd35 Capital Returns: Strong ROE of 33.4% demonstrates efficient capital allocation despite elevated debt levels",
+        "\ud83d\udd35 Analyst Confidence: Strong buy consensus with $472 target implies 48% upside from current levels"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Cyclical semiconductor exposure vulnerable to inventory corrections and demand volatility",
+        "\u26a0\ufe0f Elevated debt-to-equity ratio of 1.66x increases financial leverage in potential downturn",
+        "\u26a0\ufe0f Trading 22% below 52-week highs suggests momentum concerns and potential for further consolidation"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
           "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.6
         },
         {
           "category": "narrative_adoption",
@@ -111,31 +235,31 @@
       ]
     },
     {
-      "ticker": "LSCC",
-      "name": "Lattice Semiconductor Corporation",
-      "composite_score": 52.3,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
-      "technical_grade": "B",
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "composite_score": 72.3,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 94.91999816894531,
+      "price": 245.99000549316406,
       "sector": "Technology",
       "pool": "mainstream",
-      "entry_zone": "$75-$82 on pullback below 50 EMA with margin stabilization signs",
-      "target_1y": "$85 - operational efficiency improvements needed to justify current valuation",
-      "target_3y": "$110 - assuming margin recovery and sustained FPGA market growth in edge AI applications",
+      "entry_zone": "$245-$260 current levels, or $220-$235 on further weakness to 2.618 Fibonacci extension",
+      "target_1y": "$320-$340 as AI integration drives user growth and multiple re-expansion to 15-16x forward earnings",
+      "target_3y": "$450-$500 assuming 12% revenue CAGR and return to historical 18-20x multiple as AI moat solidifies",
       "rationale_bullets": [
-        "\ud83d\udd35 Valuation: Forward P/E of 47.4x is excessive for 0% earnings growth, indicating overvaluation despite revenue growth",
-        "\ud83d\udd35 Profitability Crisis: Operating margin collapsed to 1.8% despite 68.2% gross margins - major operational efficiency issues",
-        "\ud83d\udd35 Technical Setup: Golden cross intact with price above 200 EMA, but bearish MACD and poor risk/reward (0.5x) signal caution",
-        "\ud83d\udd35 Financial Strength: Excellent balance sheet with 0.06 D/E ratio and positive FCF provides defensive characteristics",
-        "\ud83d\udd35 Growth Disconnect: 24.2% revenue growth with flat earnings suggests unsustainable margin compression in competitive FPGA market",
-        "\ud83d\udd35 Market Position: FPGA sector facing headwinds from Intel/AMD competition and AI chip commoditization pressures",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions and analyst coverage gaps indicate institutional disinterest"
+        "\ud83d\udd35 Valuation: Forward PE of 9.3 represents extreme undervaluation for a dominant SaaS platform with 89% gross margins",
+        "\ud83d\udd35 Financial Fortress: $9.3B free cash flow, 58.8% ROE, and moderate 0.58 D/E ratio demonstrate exceptional capital efficiency",
+        "\ud83d\udd35 Market Position: Near-monopolistic position in creative software with sticky subscription model and high switching costs",
+        "\ud83d\udd35 Technical Oversold: 41.5% decline from highs with RSI at 38.5 creates compelling risk/reward at 14.2x ratio",
+        "\ud83d\udd35 AI Catalyst: Generative AI integration across Creative Cloud positions Adobe to capture next growth wave in content creation",
+        "\ud83d\udd35 Secular Growth: Digital transformation and content creator economy provide long-term tailwinds for Creative Cloud expansion",
+        "\ud83d\udd35 Analyst Conviction: $328 average target implies 33% upside with strong buy ratings across Wall Street"
       ],
       "risks": [
-        "\u26a0\ufe0f Margin compression continuing as competition intensifies in programmable logic space",
-        "\u26a0\ufe0f High valuation multiple vulnerable to semiconductor cycle downturn",
-        "\u26a0\ufe0f FPGA market share erosion to integrated solutions from larger chipmakers"
+        "\u26a0\ufe0f AI disruption risk from OpenAI/Midjourney threatening traditional creative workflows and pricing power",
+        "\u26a0\ufe0f Macro headwinds impacting enterprise spending and SMB customer acquisition in recessionary environment",
+        "\u26a0\ufe0f Technical breakdown below $245 support could trigger capitulation selling toward $200-$220 zone"
       ],
       "category_scores": [
         {
@@ -160,115 +284,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "MUSA",
-      "name": "Murphy USA Inc.",
-      "composite_score": 42.2,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 480.2699890136719,
-      "sector": "Consumer Cyclical",
-      "pool": "mainstream",
-      "entry_zone": "$380-$400 on pullback to 50 EMA with RSI below 50",
-      "target_1y": "$420 - limited upside given industry headwinds and high leverage",
-      "target_3y": "$380 - structural decline in fuel demand outweighs operational improvements",
-      "rationale_bullets": [
-        "\ud83d\udd35 Technicals: Extreme RSI at 95.4 signals severe overbought condition despite golden cross - immediate pullback highly probable",
-        "\ud83d\udd35 Valuation: Trading 12% above analyst consensus target of $429, suggesting limited upside at current levels",
-        "\ud83d\udd35 Financial Health: Dangerous debt-to-equity ratio of 4.40 creates significant financial risk in economic downturn",
-        "\ud83d\udd35 Growth Profile: Anemic 0.2% revenue growth with modest 8.1% earnings growth insufficient for current premium valuation",
-        "\ud83d\udd35 Industry Dynamics: Low-margin fuel retail (7.7% gross margin) faces structural headwinds from EV adoption and consolidation",
-        "\ud83d\udd35 Capital Returns: Strong ROE of 64.3% inflated by excessive leverage rather than operational excellence",
-        "\ud83d\udd35 Sentiment: Zero market attention and neutral sentiment indicates lack of institutional interest or catalysts"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Extreme technical overbought condition with RSI at 95.4 signals imminent correction of 15-25%",
-        "\u26a0\ufe0f Debt-to-equity ratio of 4.40 creates vulnerability to margin compression and refinancing risk",
-        "\u26a0\ufe0f Structural industry decline as EV adoption accelerates, threatening core fuel retail business model"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "financial_health",
           "score": 0.4
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "AAON",
-      "name": "AAON, Inc.",
-      "composite_score": 39.5,
-      "investment_rating": "\u274c AVOID",
-      "technical_grade": "C",
-      "sentiment_grade": "Neutral",
-      "price": 80.05000305175781,
-      "sector": "Industrials",
-      "pool": "mainstream",
-      "entry_zone": "$68-$72 near 52-week lows with RSI below 20",
-      "target_1y": "$85-$90 assuming operational stabilization and margin recovery begins",
-      "target_3y": "$110-$120 if company successfully navigates cycle and returns to historical profitability metrics",
-      "rationale_bullets": [
-        "\ud83d\udd35 [Fundamentals]: Severe earnings contraction (-68.6%) despite 16.8% revenue growth indicates massive margin compression and operational inefficiency",
-        "\ud83d\udd35 [Financial Health]: Negative free cash flow of -$240M with razor-thin 4.0% operating margins signals poor capital allocation and execution",
-        "\ud83d\udd35 [Technicals]: Extremely oversold RSI at 22.8 with 6.6x risk/reward ratio suggests potential tactical bounce, but momentum remains bearish",
-        "\ud83d\udd35 [Valuation]: Forward PE of 27.0x appears expensive given deteriorating fundamentals and cyclical HVAC industry headwinds",
-        "\ud83d\udd35 [Market Position]: Low debt (0.09 D/E) provides financial flexibility, but 12.5% ROE is mediocre for a specialized industrial company",
-        "\ud83d\udd35 [Macro Environment]: Rising interest rates and commercial construction slowdown create sustained headwinds for building equipment demand",
-        "\ud83d\udd35 [Sentiment]: Zero social mentions and analyst coverage gaps indicate institutional neglect during critical operational transition"
-      ],
-      "risks": [
-        "\u26a0\ufe0f Commercial construction downturn could extend earnings recovery timeline beyond 2025",
-        "\u26a0\ufe0f Negative cash flow burn rate may force dilutive equity raises or compromise growth investments",
-        "\u26a0\ufe0f Margin compression trend suggests loss of competitive positioning in commoditizing HVAC market"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.6
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.143
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.25
-        },
-        {
-          "category": "financial_health",
-          "score": 0.4
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.6
         },
         {
           "category": "governance_stability",
@@ -277,34 +293,91 @@
       ]
     }
   ],
-  "hidden_gem_picks": [],
-  "picks": [
+  "hidden_gem_picks": [
     {
-      "ticker": "RL",
-      "name": "Ralph Lauren Corporation",
-      "composite_score": 59.5,
-      "investment_rating": "\ud83d\udc40 WATCH",
-      "technical_grade": "B",
+      "ticker": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 340.2099914550781,
-      "sector": "Consumer Cyclical",
-      "pool": "mainstream",
-      "entry_zone": "$320-$330 on pullback to 200 EMA support or RSI reaching oversold 30 level",
-      "target_1y": "$380 - approaching 52-week highs as luxury spending normalizes and margin expansion continues",
-      "target_3y": "$420 - assuming successful brand modernization, international expansion, and sustained 10%+ earnings growth",
+      "price": 126.16000366210938,
+      "sector": "Technology",
+      "pool": "hidden_gem",
+      "entry_zone": "$115-$125 on any weakness below current levels or reclaim of 50 EMA at $138",
+      "target_1y": "$180-$200 as AI infrastructure spending accelerates and margins stabilize",
+      "target_3y": "$250-$300 assuming continued AI adoption and market share expansion in connectivity solutions",
       "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Exceptional margins (69.6% gross, 20.1% operating) and stellar 33.8% ROE indicate strong brand pricing power",
-        "\ud83d\udd35 Growth: Solid 12.2% revenue growth and 24.9% earnings growth show momentum despite luxury headwinds",
-        "\ud83d\udd35 Valuation: Forward PE of 18.9x reasonable for premium brand, analyst target $405 implies 19% upside",
-        "\ud83d\udd35 Technical: RSI oversold at 37.3, above 200 EMA with golden cross intact suggesting dip-buying opportunity",
-        "\ud83d\udd35 Capital: Strong $570M free cash flow generation supports dividend sustainability and buyback capacity",
-        "\ud83d\udd35 Leadership: Management execution concerns reflected in low leadership score despite financial performance",
-        "\ud83d\udd35 Brand: Struggling product-market fit score suggests challenges in staying relevant with younger demographics"
+        "\ud83d\udd35 [Fundamentals]: Exceptional 91.8% revenue growth with 75.7% gross margins showcases strong AI infrastructure demand and pricing power",
+        "\ud83d\udd35 [Financial Health]: Perfect balance sheet with 0.02 D/E ratio and $210M free cash flow generation despite growth investments",
+        "\ud83d\udd35 [Valuation]: Forward PE of 35.8x appears reasonable given 83.6% earnings growth, creating attractive risk-adjusted entry after 50% decline",
+        "\ud83d\udd35 [Market Position]: Semiconductor connectivity solutions positioned at critical AI infrastructure chokepoint with high switching costs",
+        "\ud83d\udd35 [Technical Setup]: Trading below all EMAs but MACD turning bullish with 19.9x risk/reward ratio suggesting oversold conditions",
+        "\ud83d\udd35 [Macro Tailwinds]: AI infrastructure buildout in early innings, requiring specialized connectivity solutions ALAB provides",
+        "\ud83d\udd35 [Execution Risk]: Strong 18.8% ROE and 24.7% operating margins demonstrate management's ability to scale efficiently"
       ],
       "risks": [
-        "\u26a0\ufe0f Consumer discretionary spending under pressure from persistent inflation and economic uncertainty",
-        "\u26a0\ufe0f Luxury brand relevance declining with Gen Z/millennials preferring streetwear and digital-native brands",
-        "\u26a0\ufe0f High debt-to-equity ratio of 0.99x limits financial flexibility during economic downturns"
+        "\u26a0\ufe0f Semiconductor cyclicality could compress multiples despite AI growth story",
+        "\u26a0\ufe0f Heavy concentration risk if major cloud customers reduce capex or switch vendors",
+        "\u26a0\ufe0f Technical breakdown below $120 could trigger further institutional selling pressure"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.6
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "AU",
+      "name": "AngloGold Ashanti plc",
+      "composite_score": 70.2,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "A",
+      "sentiment_grade": "Neutral",
+      "price": 85.69000244140625,
+      "sector": "Basic Materials",
+      "pool": "hidden_gem",
+      "entry_zone": "$80-$90 current levels with RSI <20 presenting exceptional risk-adjusted entry",
+      "target_1y": "$120-125 as fundamentals normalize and oversold conditions reverse, supported by analyst consensus",
+      "target_3y": "$140-160 driven by continued operational excellence, potential gold price appreciation, and compound FCF growth",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 75% revenue growth, 63% earnings growth, and stellar 34.4% ROE indicating operational excellence",
+        "\ud83d\udd35 Valuation: Deeply oversold at 8.8x forward PE, trading 32% below 52-week high despite strong fundamentals - significant value opportunity",
+        "\ud83d\udd35 Technical Setup: Extremely oversold with RSI at 9.4, above 200 EMA with golden cross intact - prime contrarian entry point",
+        "\ud83d\udd35 Cash Generation: Strong $2.14B free cash flow with low 0.23 debt-to-equity ratio provides financial flexibility and dividend sustainability",
+        "\ud83d\udd35 Macro Tailwinds: Gold miners benefit from inflation hedging demand and potential Fed pivot, while 49% gross margins show operational efficiency",
+        "\ud83d\udd35 Analyst Confidence: $126.43 price target implies 48% upside with BUY rating, supported by strong operational metrics",
+        "\ud83d\udd35 Risk Management: Conservative balance sheet and diversified geographic footprint across Africa, Australia, and Americas reduces single-country exposure"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Commodity price volatility - gold price fluctuations directly impact margins and profitability",
+        "\u26a0\ufe0f Geopolitical exposure in African operations could face regulatory, political, or operational disruptions",
+        "\u26a0\ufe0f Current momentum breakdown with bearish MACD and oversold conditions may indicate further near-term weakness"
       ],
       "category_scores": [
         {
@@ -338,31 +411,31 @@
       ]
     },
     {
-      "ticker": "SYY",
-      "name": "Sysco Corporation",
-      "composite_score": 55.4,
-      "investment_rating": "\ud83d\udc40 WATCH",
+      "ticker": "AMG",
+      "name": "Affiliated Managers Group, Inc.",
+      "composite_score": 70.2,
+      "investment_rating": "\u2705 BUY",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 81.66999816894531,
-      "sector": "Consumer Defensive",
-      "pool": "mainstream",
-      "entry_zone": "$75-$78 on further RSI oversold bounce or test of 200 EMA support",
-      "target_1y": "$88-$92 as valuation normalizes and oversold condition reverses toward analyst targets",
-      "target_3y": "$95-$105 assuming modest margin expansion and deleveraging in stable macro environment",
+      "price": 278.6700134277344,
+      "sector": "Financial Services",
+      "pool": "hidden_gem",
+      "entry_zone": "$265-$275 on further RSI oversold bounce or test of 200 EMA support",
+      "target_1y": "$350 - Multiple expansion to 10x PE as earnings growth sustains and Fed pivot benefits financials",
+      "target_3y": "$425 - Compound growth at 15% annually driven by AUM growth and operational leverage in affiliate model",
       "rationale_bullets": [
-        "\ud83d\udd35 Technicals: Extremely oversold with RSI at 10.1, creating potential bounce opportunity despite bearish MACD",
-        "\ud83d\udd35 Valuation: Forward PE of 16.1x appears reasonable for defensive food distributor, but PEG ratio concerns with negative earnings growth",
-        "\ud83d\udd35 Capital Structure: Dangerous debt/equity ratio of 6.4x creates significant financial leverage risk in rising rate environment",
-        "\ud83d\udd35 Cash Generation: Solid $1.75B free cash flow provides defensive characteristics and dividend sustainability",
-        "\ud83d\udd35 Market Position: Dominant foodservice distribution franchise with recession-resistant demand profile",
-        "\ud83d\udd35 Growth Profile: Anemic 3.0% revenue growth and -1.2% earnings decline reflect mature, low-growth business model",
-        "\ud83d\udd35 Margins: 4.0% operating margin indicates thin profitability typical of distribution businesses, vulnerable to cost inflation"
+        "\ud83d\udd35 Valuation: Forward PE of 7.3x with 122% earnings growth represents exceptional value in asset management space",
+        "\ud83d\udd35 Financial Health: Strong ROE of 19.9%, healthy FCF of $450M, and conservative 0.65 D/E ratio indicate solid capital efficiency",
+        "\ud83d\udd35 Technical Setup: RSI at 29.3 signals oversold conditions while maintaining above 200 EMA with golden cross intact",
+        "\ud83d\udd35 Growth Trajectory: 6.2% revenue growth with explosive earnings acceleration suggests operational leverage kicking in",
+        "\ud83d\udd35 Analyst Conviction: $392 consensus target implies 40%+ upside with strong buy rating from coverage universe",
+        "\ud83d\udd35 Market Position: 50.8% gross margins demonstrate pricing power in competitive asset management landscape",
+        "\ud83d\udd35 Risk Management: Governance score of 1.0 and established affiliate model provides diversification across strategies"
       ],
       "risks": [
-        "\u26a0\ufe0f Excessive leverage at 6.4x D/E ratio creates refinancing and interest rate sensitivity risks",
-        "\u26a0\ufe0f Negative earnings growth trajectory in inflationary environment pressures margin sustainability",
-        "\u26a0\ufe0f Cyclical exposure to restaurant industry downturn could compress volumes and pricing power"
+        "\u26a0\ufe0f Fee compression pressure from passive investing trend threatens long-term revenue sustainability",
+        "\u26a0\ufe0f Market volatility could trigger AUM outflows and performance fee declines across affiliate partners",
+        "\u26a0\ufe0f Zero social sentiment and declining product-market-fit score suggest potential brand/relevance issues"
       ],
       "category_scores": [
         {
@@ -370,8 +443,16 @@
           "score": 0.4
         },
         {
+          "category": "product_market_fit",
+          "score": 0.143
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
           "category": "financial_health",
-          "score": 0.4
+          "score": 0.8
         },
         {
           "category": "narrative_adoption",
@@ -388,31 +469,377 @@
       ]
     },
     {
-      "ticker": "LSCC",
-      "name": "Lattice Semiconductor Corporation",
-      "composite_score": 52.3,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
+      "ticker": "LNG",
+      "name": "Cheniere Energy, Inc.",
+      "composite_score": 69.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 94.91999816894531,
-      "sector": "Technology",
-      "pool": "mainstream",
-      "entry_zone": "$75-$82 on pullback below 50 EMA with margin stabilization signs",
-      "target_1y": "$85 - operational efficiency improvements needed to justify current valuation",
-      "target_3y": "$110 - assuming margin recovery and sustained FPGA market growth in edge AI applications",
+      "price": 281.8699951171875,
+      "sector": "Energy",
+      "pool": "hidden_gem",
+      "entry_zone": "$230-$248 on pullback to 20 EMA or stronger support at 50 EMA",
+      "target_1y": "$310-$320 driven by continued LNG export growth and margin expansion",
+      "target_3y": "$380-$420 as additional train capacity comes online and long-term contracts mature",
       "rationale_bullets": [
-        "\ud83d\udd35 Valuation: Forward P/E of 47.4x is excessive for 0% earnings growth, indicating overvaluation despite revenue growth",
-        "\ud83d\udd35 Profitability Crisis: Operating margin collapsed to 1.8% despite 68.2% gross margins - major operational efficiency issues",
-        "\ud83d\udd35 Technical Setup: Golden cross intact with price above 200 EMA, but bearish MACD and poor risk/reward (0.5x) signal caution",
-        "\ud83d\udd35 Financial Strength: Excellent balance sheet with 0.06 D/E ratio and positive FCF provides defensive characteristics",
-        "\ud83d\udd35 Growth Disconnect: 24.2% revenue growth with flat earnings suggests unsustainable margin compression in competitive FPGA market",
-        "\ud83d\udd35 Market Position: FPGA sector facing headwinds from Intel/AMD competition and AI chip commoditization pressures",
-        "\ud83d\udd35 Sentiment Void: Zero social mentions and analyst coverage gaps indicate institutional disinterest"
+        "\ud83d\udd35 Fundamentals: Exceptional profitability with 75.8% operating margin and 58.7% ROE driven by long-term LNG contracts",
+        "\ud83d\udd35 Growth: 146.4% earnings growth YoY as global LNG demand accelerates, particularly from Europe and Asia",
+        "\ud83d\udd35 Technical: Strong momentum at 52-week highs with golden cross and bullish MACD, but RSI at 80.5 signals overbought",
+        "\ud83d\udd35 Valuation: Forward PE of 17.4x reasonable for energy infrastructure with contracted cash flows",
+        "\ud83d\udd35 Cash Flow: Robust $2.65B free cash flow supports dividend sustainability and debt reduction",
+        "\ud83d\udd35 Narrative: Energy security themes and LNG export capacity expansion align with multi-year demand tailwinds",
+        "\ud83d\udd35 Market Position: Dominant US LNG exporter with strategic terminal locations and pipeline infrastructure"
       ],
       "risks": [
-        "\u26a0\ufe0f Margin compression continuing as competition intensifies in programmable logic space",
-        "\u26a0\ufe0f High valuation multiple vulnerable to semiconductor cycle downturn",
-        "\u26a0\ufe0f FPGA market share erosion to integrated solutions from larger chipmakers"
+        "\u26a0\ufe0f High leverage with D/E ratio of 2.02 creates vulnerability to interest rate increases",
+        "\u26a0\ufe0f Commodity price volatility and potential demand destruction from economic slowdown",
+        "\u26a0\ufe0f Technical risk of sharp pullback given extreme overbought conditions and 0.0x risk/reward ratio"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "financial_health",
+          "score": 0.4
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "composite_score": 69.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 269.1700134277344,
+      "sector": "Industrials",
+      "pool": "hidden_gem",
+      "entry_zone": "$228-$240 on pullback to 50 EMA support with strong volume confirmation",
+      "target_1y": "$310-$320 assuming 15-20% upside on continued data center expansion and margin improvement",
+      "target_3y": "$420-$450 based on sustained 15%+ revenue CAGR and multiple expansion as recurring service revenue grows",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional ROE of 41.8% with strong FCF generation of $1.43B demonstrates excellent capital efficiency and cash conversion",
+        "\ud83d\udd35 Growth Trajectory: Revenue growth of 22.7% and explosive earnings growth of 199.5% reflect strong execution in data center infrastructure boom",
+        "\ud83d\udd35 Market Position: Operating in critical digital infrastructure with 36.3% gross margins, benefiting from AI/cloud expansion driving data center demand",
+        "\ud83d\udd35 Technical Setup: Trading near 52-week highs with golden cross intact, though RSI at 58 suggests room for further upside momentum",
+        "\ud83d\udd35 Valuation Concern: Forward PE of 33.7x appears stretched for industrials sector, limiting margin of safety despite strong fundamentals",
+        "\ud83d\udd35 Macro Tailwinds: Positioned to benefit from multi-year data center capex cycle driven by AI infrastructure buildout and edge computing expansion",
+        "\ud83d\udd35 Balance Sheet: Manageable D/E ratio of 0.82 provides financial flexibility while maintaining conservative leverage profile"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Valuation Risk: Trading at premium multiples near all-time highs with limited downside protection if growth momentum slows",
+        "\u26a0\ufe0f Cyclical Exposure: Industrial equipment sector vulnerable to economic downturns and potential slowdown in data center capex spending",
+        "\u26a0\ufe0f Competition Intensification: Large competitors like Schneider Electric and Eaton may pressure margins as market opportunity attracts new entrants"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    }
+  ],
+  "picks": [
+    {
+      "ticker": "ANET",
+      "name": "Arista Networks, Inc.",
+      "composite_score": 74.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 136.25999450683594,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$130-$135 on any pullback to test 50 EMA support with strong volume",
+      "target_1y": "$175 - AI infrastructure spending acceleration drives 25%+ upside to analyst targets",
+      "target_3y": "$240 - Sustained 20%+ growth in AI/cloud networking TAM expansion justifies 35x multiple on 2027E earnings",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional margins (64.1% gross, 41.5% operating) with zero debt and $3.39B FCF generation",
+        "\ud83d\udd35 Growth Profile: Strong 28.9% revenue growth accelerating ahead of earnings growth, indicating market share expansion",
+        "\ud83d\udd35 AI Infrastructure: Positioned as critical enabler for AI/ML workloads with high-performance data center networking solutions",
+        "\ud83d\udd35 Technical Setup: Golden cross intact, above all EMAs with bullish MACD and attractive 2.7x risk/reward ratio",
+        "\ud83d\udd35 Valuation: Forward PE of 32x reasonable for growth profile, strong analyst conviction with $177 target",
+        "\ud83d\udd35 Market Position: Dominant in high-end data center switching with sticky EOS platform creating switching costs",
+        "\ud83d\udd35 Capital Efficiency: Outstanding 31.4% ROE demonstrates superior management execution and asset utilization"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Concentration risk in hyperscale cloud customers and potential spending cyclicality",
+        "\u26a0\ufe0f Intense competition from Cisco, Juniper, and emerging white-box solutions pressuring market share",
+        "\u26a0\ufe0f Current sideways price action and -15.9% from highs suggests institutional profit-taking"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.6
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "ADI",
+      "name": "Analog Devices, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 310.44000244140625,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$300-$315 range or on any pullback to 50 EMA support at $315.52",
+      "target_1y": "$380-$390 based on 25x forward PE multiple expansion as growth stabilizes and oversold conditions reverse",
+      "target_3y": "$450-$475 driven by secular analog content growth in EVs, industrial IoT, and 5G infrastructure buildout",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Strong fundamentals with 30.4% revenue growth, 116.7% earnings growth, and healthy 62.8% gross margins demonstrate operational excellence",
+        "\ud83d\udd35 Technicals: Oversold RSI at 21.2 presents attractive entry opportunity while maintaining uptrend above 200 EMA with golden cross intact",
+        "\ud83d\udd35 Valuation: Forward PE of 24.0x reasonable for semiconductor leader with strong growth profile; analyst consensus target of $384.53 implies 24% upside",
+        "\ud83d\udd35 Market Position: Dominant analog IC franchise with mission-critical products across industrial, automotive, and communications end markets",
+        "\ud83d\udd35 Balance Sheet: Conservative 0.26 D/E ratio and $4.14B free cash flow provide financial flexibility during cyclical downturns",
+        "\ud83d\udd35 Secular Tailwinds: Well-positioned for electrification, 5G infrastructure, and industrial automation mega-trends requiring analog interfaces",
+        "\ud83d\udd35 Entry Timing: Currently 13.7% below 52-week high with bearish MACD creating tactical buying opportunity for patient investors"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Cyclical semiconductor downturn could pressure margins and growth rates in 2024-2025",
+        "\u26a0\ufe0f China exposure creates geopolitical risk from potential export restrictions and trade tensions",
+        "\u26a0\ufe0f High valuation multiple leaves little room for execution missteps or guidance disappointments"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "MRVL",
+      "name": "Marvell Technology, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 89.52999877929688,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$82-$86 on any pullback to 50 EMA support or current levels for long-term holders",
+      "target_1y": "$115 - benefiting from data center recovery and AI infrastructure buildout acceleration",
+      "target_3y": "$160 - compound growth from edge computing expansion and 5G infrastructure deployment globally",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional metrics with 106% earnings growth, healthy 51% gross margins, and strong $1.44B FCF generation",
+        "\ud83d\udd35 Valuation: Attractive forward PE of 16.5x for a high-growth semiconductor name with 22% revenue growth trajectory",
+        "\ud83d\udd35 Technical Setup: Clean uptrend above all EMAs with golden cross intact, though momentum cooling near resistance",
+        "\ud83d\udd35 Market Position: Well-positioned in data infrastructure semiconductors serving high-growth data center and edge computing markets",
+        "\ud83d\udd35 Balance Sheet: Conservative 0.33 D/E ratio and 19.3% ROE demonstrate efficient capital allocation and financial stability",
+        "\ud83d\udd35 Analyst Confidence: Strong buy consensus with $120.50 target implies 35% upside potential from current levels",
+        "\ud83d\udd35 Cyclical Headwinds: Semiconductor sector facing inventory digestion and China exposure concerns limiting near-term catalysts"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Semiconductor cyclicality with potential inventory corrections impacting near-term demand",
+        "\u26a0\ufe0f Geopolitical tensions affecting China operations and supply chain disruptions",
+        "\u26a0\ufe0f Competition intensifying in data center chips from hyperscalers developing custom silicon"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.6
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 319.8399963378906,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$310-$320 on any pullback toward 200 EMA support",
+      "target_1y": "$420-$450 driven by AI infrastructure demand and margin expansion",
+      "target_3y": "$550-$600 assuming sustained data center growth and market share gains in custom silicon",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional 188% earnings growth with robust 76.7% gross margins and $25.5B FCF generation",
+        "\ud83d\udd35 Valuation: Forward PE of 18.1x appears reasonable for a dominant semiconductor player with strong growth trajectory",
+        "\ud83d\udd35 Technical Setup: Strong foundation above 200 EMA with golden cross intact, though bearish MACD suggests near-term consolidation",
+        "\ud83d\udd35 Market Position: Leading position in networking silicon and infrastructure software with high switching costs",
+        "\ud83d\udd35 AI Tailwinds: Well-positioned for data center buildout and AI infrastructure demand through custom silicon solutions",
+        "\ud83d\udd35 Capital Returns: Strong ROE of 33.4% demonstrates efficient capital allocation despite elevated debt levels",
+        "\ud83d\udd35 Analyst Confidence: Strong buy consensus with $472 target implies 48% upside from current levels"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Cyclical semiconductor exposure vulnerable to inventory corrections and demand volatility",
+        "\u26a0\ufe0f Elevated debt-to-equity ratio of 1.66x increases financial leverage in potential downturn",
+        "\u26a0\ufe0f Trading 22% below 52-week highs suggests momentum concerns and potential for further consolidation"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 0.6
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "ADBE",
+      "name": "Adobe Inc.",
+      "composite_score": 72.3,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "D",
+      "sentiment_grade": "Neutral",
+      "price": 245.99000549316406,
+      "sector": "Technology",
+      "pool": "mainstream",
+      "entry_zone": "$245-$260 current levels, or $220-$235 on further weakness to 2.618 Fibonacci extension",
+      "target_1y": "$320-$340 as AI integration drives user growth and multiple re-expansion to 15-16x forward earnings",
+      "target_3y": "$450-$500 assuming 12% revenue CAGR and return to historical 18-20x multiple as AI moat solidifies",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Forward PE of 9.3 represents extreme undervaluation for a dominant SaaS platform with 89% gross margins",
+        "\ud83d\udd35 Financial Fortress: $9.3B free cash flow, 58.8% ROE, and moderate 0.58 D/E ratio demonstrate exceptional capital efficiency",
+        "\ud83d\udd35 Market Position: Near-monopolistic position in creative software with sticky subscription model and high switching costs",
+        "\ud83d\udd35 Technical Oversold: 41.5% decline from highs with RSI at 38.5 creates compelling risk/reward at 14.2x ratio",
+        "\ud83d\udd35 AI Catalyst: Generative AI integration across Creative Cloud positions Adobe to capture next growth wave in content creation",
+        "\ud83d\udd35 Secular Growth: Digital transformation and content creator economy provide long-term tailwinds for Creative Cloud expansion",
+        "\ud83d\udd35 Analyst Conviction: $328 average target implies 33% upside with strong buy ratings across Wall Street"
+      ],
+      "risks": [
+        "\u26a0\ufe0f AI disruption risk from OpenAI/Midjourney threatening traditional creative workflows and pricing power",
+        "\u26a0\ufe0f Macro headwinds impacting enterprise spending and SMB customer acquisition in recessionary environment",
+        "\u26a0\ufe0f Technical breakdown below $245 support could trigger capitulation selling toward $200-$220 zone"
       ],
       "category_scores": [
         {
@@ -437,7 +864,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "governance_stability",
@@ -446,31 +873,31 @@
       ]
     },
     {
-      "ticker": "MUSA",
-      "name": "Murphy USA Inc.",
-      "composite_score": 42.2,
-      "investment_rating": "\u26a0\ufe0f SPECULATIVE",
-      "technical_grade": "B",
+      "ticker": "ALAB",
+      "name": "Astera Labs, Inc.",
+      "composite_score": 72.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "D",
       "sentiment_grade": "Neutral",
-      "price": 480.2699890136719,
-      "sector": "Consumer Cyclical",
-      "pool": "mainstream",
-      "entry_zone": "$380-$400 on pullback to 50 EMA with RSI below 50",
-      "target_1y": "$420 - limited upside given industry headwinds and high leverage",
-      "target_3y": "$380 - structural decline in fuel demand outweighs operational improvements",
+      "price": 126.16000366210938,
+      "sector": "Technology",
+      "pool": "hidden_gem",
+      "entry_zone": "$115-$125 on any weakness below current levels or reclaim of 50 EMA at $138",
+      "target_1y": "$180-$200 as AI infrastructure spending accelerates and margins stabilize",
+      "target_3y": "$250-$300 assuming continued AI adoption and market share expansion in connectivity solutions",
       "rationale_bullets": [
-        "\ud83d\udd35 Technicals: Extreme RSI at 95.4 signals severe overbought condition despite golden cross - immediate pullback highly probable",
-        "\ud83d\udd35 Valuation: Trading 12% above analyst consensus target of $429, suggesting limited upside at current levels",
-        "\ud83d\udd35 Financial Health: Dangerous debt-to-equity ratio of 4.40 creates significant financial risk in economic downturn",
-        "\ud83d\udd35 Growth Profile: Anemic 0.2% revenue growth with modest 8.1% earnings growth insufficient for current premium valuation",
-        "\ud83d\udd35 Industry Dynamics: Low-margin fuel retail (7.7% gross margin) faces structural headwinds from EV adoption and consolidation",
-        "\ud83d\udd35 Capital Returns: Strong ROE of 64.3% inflated by excessive leverage rather than operational excellence",
-        "\ud83d\udd35 Sentiment: Zero market attention and neutral sentiment indicates lack of institutional interest or catalysts"
+        "\ud83d\udd35 [Fundamentals]: Exceptional 91.8% revenue growth with 75.7% gross margins showcases strong AI infrastructure demand and pricing power",
+        "\ud83d\udd35 [Financial Health]: Perfect balance sheet with 0.02 D/E ratio and $210M free cash flow generation despite growth investments",
+        "\ud83d\udd35 [Valuation]: Forward PE of 35.8x appears reasonable given 83.6% earnings growth, creating attractive risk-adjusted entry after 50% decline",
+        "\ud83d\udd35 [Market Position]: Semiconductor connectivity solutions positioned at critical AI infrastructure chokepoint with high switching costs",
+        "\ud83d\udd35 [Technical Setup]: Trading below all EMAs but MACD turning bullish with 19.9x risk/reward ratio suggesting oversold conditions",
+        "\ud83d\udd35 [Macro Tailwinds]: AI infrastructure buildout in early innings, requiring specialized connectivity solutions ALAB provides",
+        "\ud83d\udd35 [Execution Risk]: Strong 18.8% ROE and 24.7% operating margins demonstrate management's ability to scale efficiently"
       ],
       "risks": [
-        "\u26a0\ufe0f Extreme technical overbought condition with RSI at 95.4 signals imminent correction of 15-25%",
-        "\u26a0\ufe0f Debt-to-equity ratio of 4.40 creates vulnerability to margin compression and refinancing risk",
-        "\u26a0\ufe0f Structural industry decline as EV adoption accelerates, threatening core fuel retail business model"
+        "\u26a0\ufe0f Semiconductor cyclicality could compress multiples despite AI growth story",
+        "\u26a0\ufe0f Heavy concentration risk if major cloud customers reduce capex or switch vendors",
+        "\u26a0\ufe0f Technical breakdown below $120 could trigger further institutional selling pressure"
       ],
       "category_scores": [
         {
@@ -478,8 +905,16 @@
           "score": 0.6
         },
         {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
           "category": "financial_health",
-          "score": 0.4
+          "score": 1.0
         },
         {
           "category": "narrative_adoption",
@@ -487,7 +922,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.4
         },
         {
           "category": "governance_stability",
@@ -496,36 +931,94 @@
       ]
     },
     {
-      "ticker": "AAON",
-      "name": "AAON, Inc.",
-      "composite_score": 39.5,
-      "investment_rating": "\u274c AVOID",
-      "technical_grade": "C",
+      "ticker": "AU",
+      "name": "AngloGold Ashanti plc",
+      "composite_score": 70.2,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "A",
       "sentiment_grade": "Neutral",
-      "price": 80.05000305175781,
-      "sector": "Industrials",
-      "pool": "mainstream",
-      "entry_zone": "$68-$72 near 52-week lows with RSI below 20",
-      "target_1y": "$85-$90 assuming operational stabilization and margin recovery begins",
-      "target_3y": "$110-$120 if company successfully navigates cycle and returns to historical profitability metrics",
+      "price": 85.69000244140625,
+      "sector": "Basic Materials",
+      "pool": "hidden_gem",
+      "entry_zone": "$80-$90 current levels with RSI <20 presenting exceptional risk-adjusted entry",
+      "target_1y": "$120-125 as fundamentals normalize and oversold conditions reverse, supported by analyst consensus",
+      "target_3y": "$140-160 driven by continued operational excellence, potential gold price appreciation, and compound FCF growth",
       "rationale_bullets": [
-        "\ud83d\udd35 [Fundamentals]: Severe earnings contraction (-68.6%) despite 16.8% revenue growth indicates massive margin compression and operational inefficiency",
-        "\ud83d\udd35 [Financial Health]: Negative free cash flow of -$240M with razor-thin 4.0% operating margins signals poor capital allocation and execution",
-        "\ud83d\udd35 [Technicals]: Extremely oversold RSI at 22.8 with 6.6x risk/reward ratio suggests potential tactical bounce, but momentum remains bearish",
-        "\ud83d\udd35 [Valuation]: Forward PE of 27.0x appears expensive given deteriorating fundamentals and cyclical HVAC industry headwinds",
-        "\ud83d\udd35 [Market Position]: Low debt (0.09 D/E) provides financial flexibility, but 12.5% ROE is mediocre for a specialized industrial company",
-        "\ud83d\udd35 [Macro Environment]: Rising interest rates and commercial construction slowdown create sustained headwinds for building equipment demand",
-        "\ud83d\udd35 [Sentiment]: Zero social mentions and analyst coverage gaps indicate institutional neglect during critical operational transition"
+        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 75% revenue growth, 63% earnings growth, and stellar 34.4% ROE indicating operational excellence",
+        "\ud83d\udd35 Valuation: Deeply oversold at 8.8x forward PE, trading 32% below 52-week high despite strong fundamentals - significant value opportunity",
+        "\ud83d\udd35 Technical Setup: Extremely oversold with RSI at 9.4, above 200 EMA with golden cross intact - prime contrarian entry point",
+        "\ud83d\udd35 Cash Generation: Strong $2.14B free cash flow with low 0.23 debt-to-equity ratio provides financial flexibility and dividend sustainability",
+        "\ud83d\udd35 Macro Tailwinds: Gold miners benefit from inflation hedging demand and potential Fed pivot, while 49% gross margins show operational efficiency",
+        "\ud83d\udd35 Analyst Confidence: $126.43 price target implies 48% upside with BUY rating, supported by strong operational metrics",
+        "\ud83d\udd35 Risk Management: Conservative balance sheet and diversified geographic footprint across Africa, Australia, and Americas reduces single-country exposure"
       ],
       "risks": [
-        "\u26a0\ufe0f Commercial construction downturn could extend earnings recovery timeline beyond 2025",
-        "\u26a0\ufe0f Negative cash flow burn rate may force dilutive equity raises or compromise growth investments",
-        "\u26a0\ufe0f Margin compression trend suggests loss of competitive positioning in commoditizing HVAC market"
+        "\u26a0\ufe0f Commodity price volatility - gold price fluctuations directly impact margins and profitability",
+        "\u26a0\ufe0f Geopolitical exposure in African operations could face regulatory, political, or operational disruptions",
+        "\u26a0\ufe0f Current momentum breakdown with bearish MACD and oversold conditions may indicate further near-term weakness"
       ],
       "category_scores": [
         {
           "category": "leadership_team",
-          "score": 0.6
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "AMG",
+      "name": "Affiliated Managers Group, Inc.",
+      "composite_score": 70.2,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 278.6700134277344,
+      "sector": "Financial Services",
+      "pool": "hidden_gem",
+      "entry_zone": "$265-$275 on further RSI oversold bounce or test of 200 EMA support",
+      "target_1y": "$350 - Multiple expansion to 10x PE as earnings growth sustains and Fed pivot benefits financials",
+      "target_3y": "$425 - Compound growth at 15% annually driven by AUM growth and operational leverage in affiliate model",
+      "rationale_bullets": [
+        "\ud83d\udd35 Valuation: Forward PE of 7.3x with 122% earnings growth represents exceptional value in asset management space",
+        "\ud83d\udd35 Financial Health: Strong ROE of 19.9%, healthy FCF of $450M, and conservative 0.65 D/E ratio indicate solid capital efficiency",
+        "\ud83d\udd35 Technical Setup: RSI at 29.3 signals oversold conditions while maintaining above 200 EMA with golden cross intact",
+        "\ud83d\udd35 Growth Trajectory: 6.2% revenue growth with explosive earnings acceleration suggests operational leverage kicking in",
+        "\ud83d\udd35 Analyst Conviction: $392 consensus target implies 40%+ upside with strong buy rating from coverage universe",
+        "\ud83d\udd35 Market Position: 50.8% gross margins demonstrate pricing power in competitive asset management landscape",
+        "\ud83d\udd35 Risk Management: Governance score of 1.0 and established affiliate model provides diversification across strategies"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Fee compression pressure from passive investing trend threatens long-term revenue sustainability",
+        "\u26a0\ufe0f Market volatility could trigger AUM outflows and performance fee declines across affiliate partners",
+        "\u26a0\ufe0f Zero social sentiment and declining product-market-fit score suggest potential brand/relevance issues"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
         },
         {
           "category": "product_market_fit",
@@ -537,6 +1030,60 @@
         },
         {
           "category": "financial_health",
+          "score": 0.8
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "LNG",
+      "name": "Cheniere Energy, Inc.",
+      "composite_score": 69.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 281.8699951171875,
+      "sector": "Energy",
+      "pool": "hidden_gem",
+      "entry_zone": "$230-$248 on pullback to 20 EMA or stronger support at 50 EMA",
+      "target_1y": "$310-$320 driven by continued LNG export growth and margin expansion",
+      "target_3y": "$380-$420 as additional train capacity comes online and long-term contracts mature",
+      "rationale_bullets": [
+        "\ud83d\udd35 Fundamentals: Exceptional profitability with 75.8% operating margin and 58.7% ROE driven by long-term LNG contracts",
+        "\ud83d\udd35 Growth: 146.4% earnings growth YoY as global LNG demand accelerates, particularly from Europe and Asia",
+        "\ud83d\udd35 Technical: Strong momentum at 52-week highs with golden cross and bullish MACD, but RSI at 80.5 signals overbought",
+        "\ud83d\udd35 Valuation: Forward PE of 17.4x reasonable for energy infrastructure with contracted cash flows",
+        "\ud83d\udd35 Cash Flow: Robust $2.65B free cash flow supports dividend sustainability and debt reduction",
+        "\ud83d\udd35 Narrative: Energy security themes and LNG export capacity expansion align with multi-year demand tailwinds",
+        "\ud83d\udd35 Market Position: Dominant US LNG exporter with strategic terminal locations and pipeline infrastructure"
+      ],
+      "risks": [
+        "\u26a0\ufe0f High leverage with D/E ratio of 2.02 creates vulnerability to interest rate increases",
+        "\u26a0\ufe0f Commodity price volatility and potential demand destruction from economic slowdown",
+        "\u26a0\ufe0f Technical risk of sharp pullback given extreme overbought conditions and 0.0x risk/reward ratio"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "financial_health",
           "score": 0.4
         },
         {
@@ -545,7 +1092,65 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.4
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv Holdings Co",
+      "composite_score": 69.5,
+      "investment_rating": "\ud83d\udc40 WATCH",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 269.1700134277344,
+      "sector": "Industrials",
+      "pool": "hidden_gem",
+      "entry_zone": "$228-$240 on pullback to 50 EMA support with strong volume confirmation",
+      "target_1y": "$310-$320 assuming 15-20% upside on continued data center expansion and margin improvement",
+      "target_3y": "$420-$450 based on sustained 15%+ revenue CAGR and multiple expansion as recurring service revenue grows",
+      "rationale_bullets": [
+        "\ud83d\udd35 Financial Health: Exceptional ROE of 41.8% with strong FCF generation of $1.43B demonstrates excellent capital efficiency and cash conversion",
+        "\ud83d\udd35 Growth Trajectory: Revenue growth of 22.7% and explosive earnings growth of 199.5% reflect strong execution in data center infrastructure boom",
+        "\ud83d\udd35 Market Position: Operating in critical digital infrastructure with 36.3% gross margins, benefiting from AI/cloud expansion driving data center demand",
+        "\ud83d\udd35 Technical Setup: Trading near 52-week highs with golden cross intact, though RSI at 58 suggests room for further upside momentum",
+        "\ud83d\udd35 Valuation Concern: Forward PE of 33.7x appears stretched for industrials sector, limiting margin of safety despite strong fundamentals",
+        "\ud83d\udd35 Macro Tailwinds: Positioned to benefit from multi-year data center capex cycle driven by AI infrastructure buildout and edge computing expansion",
+        "\ud83d\udd35 Balance Sheet: Manageable D/E ratio of 0.82 provides financial flexibility while maintaining conservative leverage profile"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Valuation Risk: Trading at premium multiples near all-time highs with limited downside protection if growth momentum slows",
+        "\u26a0\ufe0f Cyclical Exposure: Industrial equipment sector vulnerable to economic downturns and potential slowdown in data center capex spending",
+        "\u26a0\ufe0f Competition Intensification: Large competitors like Schneider Electric and Eaton may pressure margins as market opportunity attracts new entrants"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.286
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.25
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.4
         },
         {
           "category": "governance_stability",
@@ -556,28 +1161,3838 @@
   ],
   "all_scores": [
     {
-      "ticker": "RL",
+      "ticker": "ANET",
+      "composite_score": 74.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ADI",
+      "composite_score": 72.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MRVL",
+      "composite_score": 72.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALAB",
+      "composite_score": 72.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "AVGO",
+      "composite_score": 72.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ADBE",
+      "composite_score": 72.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ETN",
+      "composite_score": 71.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AU",
+      "composite_score": 70.2,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "AMG",
+      "composite_score": 70.2,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "LNG",
+      "composite_score": 69.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "MA",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CME",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WM",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HBM",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GE",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALL",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KGC",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "V",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EME",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SPGI",
+      "composite_score": 69.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VRT",
+      "composite_score": 69.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "TT",
+      "composite_score": 69.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HIG",
+      "composite_score": 69.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NET",
+      "composite_score": 68.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMAT",
+      "composite_score": 68.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TER",
+      "composite_score": 68.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MEDP",
+      "composite_score": 68.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "NBIX",
+      "composite_score": 68.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "APH",
+      "composite_score": 68.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DLO",
+      "composite_score": 68.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BCRX",
+      "composite_score": 67.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KLAC",
+      "composite_score": 66.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ADSK",
+      "composite_score": 65.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FCN",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "SSD",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "DDS",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "JPM",
+      "composite_score": 65.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MS",
+      "composite_score": 65.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NEE",
+      "composite_score": 65.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NU",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "AIT",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "PBR",
+      "composite_score": 65.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CMI",
+      "composite_score": 65.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SCCO",
+      "composite_score": 65.5,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "DRS",
+      "composite_score": 65.2,
+      "pool": "hidden_gem"
+    },
+    {
+      "ticker": "DDOG",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HCA",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HPE",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GILD",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NTRA",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTSI",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VRSN",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FFIV",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UHS",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "REGN",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JNJ",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IDXX",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ABBV",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FLEX",
+      "composite_score": 62.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PEN",
+      "composite_score": 62.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SHOP",
+      "composite_score": 62.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CRWD",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "STE",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMKR",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ADP",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EPAM",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EHC",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "QCOM",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IOT",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PEGA",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HOLX",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SYK",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BMRN",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NOW",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FIS",
+      "composite_score": 62.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALSN",
+      "composite_score": 62.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GWRE",
+      "composite_score": 62.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GWW",
+      "composite_score": 61.88,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BPOP",
+      "composite_score": 61.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "THG",
+      "composite_score": 61.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MELI",
+      "composite_score": 61.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MNST",
+      "composite_score": 60.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMD",
+      "composite_score": 60.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SFD",
+      "composite_score": 59.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TJX",
       "composite_score": 59.5,
       "pool": "mainstream"
     },
     {
-      "ticker": "SYY",
+      "ticker": "FSM",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BKNG",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DE",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MPC",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FTI",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TTC",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KKR",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BURL",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DRI",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OMC",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NOC",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EOG",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NYT",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OKE",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GD",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GL",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GGG",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LUV",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XEL",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "USFD",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IDA",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SO",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CF",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BEN",
+      "composite_score": 59.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CTAS",
+      "composite_score": 59.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HUBB",
+      "composite_score": 59.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TIGO",
+      "composite_score": 59.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DVN",
+      "composite_score": 59.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LC",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BK",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NUE",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RSG",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TRV",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNQ",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WCC",
+      "composite_score": 59.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DLR",
+      "composite_score": 59.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EVRG",
+      "composite_score": 59.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MPWR",
+      "composite_score": 58.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KEYS",
+      "composite_score": 58.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GRMN",
+      "composite_score": 58.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PSTG",
+      "composite_score": 58.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ACAD",
+      "composite_score": 58.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ASML",
+      "composite_score": 58.65,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FROG",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "G",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GLW",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EWBC",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FTNT",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VKTX",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OLED",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAI",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IBM",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTD",
+      "composite_score": 58.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZS",
+      "composite_score": 58.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GLOB",
+      "composite_score": 58.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TXN",
+      "composite_score": 58.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PATH",
+      "composite_score": 58.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALNY",
+      "composite_score": 58.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXEL",
+      "composite_score": 56.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CRUS",
+      "composite_score": 56.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INDV",
+      "composite_score": 56.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALGN",
+      "composite_score": 56.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JLL",
+      "composite_score": 56.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PLD",
+      "composite_score": 56.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GLPI",
+      "composite_score": 56.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "O",
+      "composite_score": 56.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "R",
+      "composite_score": 56.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DG",
+      "composite_score": 56.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PLTR",
+      "composite_score": 55.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GOOG",
+      "composite_score": 55.97,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PDD",
+      "composite_score": 55.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OSK",
+      "composite_score": 55.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EGO",
+      "composite_score": 55.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PH",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RBC",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VIRT",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WTW",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NI",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PPL",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EVR",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BVN",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNP",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EBAY",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MSM",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ECL",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ULTA",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VIK",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CHWY",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IR",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AFG",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SPOT",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HXL",
+      "composite_score": 55.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SCHW",
       "composite_score": 55.4,
       "pool": "mainstream"
     },
     {
-      "ticker": "LSCC",
+      "ticker": "AOS",
+      "composite_score": 55.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MSA",
+      "composite_score": 55.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FIX",
+      "composite_score": 55.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IRDM",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ROK",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CFR",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PFG",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MDT",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXE",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BAH",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INGR",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FNB",
+      "composite_score": 55.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MMM",
+      "composite_score": 55.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TDC",
+      "composite_score": 54.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FLYW",
+      "composite_score": 54.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TEL",
+      "composite_score": 54.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BIIB",
+      "composite_score": 54.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GAP",
+      "composite_score": 53.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MLI",
+      "composite_score": 53.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LRCX",
+      "composite_score": 53.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZM",
+      "composite_score": 53.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GOOGL",
+      "composite_score": 53.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GME",
+      "composite_score": 52.86,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CFLT",
+      "composite_score": 52.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VICI",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CI",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RBRK",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXR",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LAMR",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OSIS",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SPG",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MCHP",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INGM",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SIG",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMTM",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KNX",
+      "composite_score": 52.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GTLB",
+      "composite_score": 52.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HSIC",
+      "composite_score": 52.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RPRX",
+      "composite_score": 52.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PAY",
       "composite_score": 52.3,
       "pool": "mainstream"
     },
     {
-      "ticker": "MUSA",
+      "ticker": "RGEN",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "Q",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "QGEN",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PAYX",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SRAD",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TRMB",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ELV",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SMTC",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SOLV",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AKAM",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DOCU",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NTNX",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RVTY",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "STX",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RNG",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DBX",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ST",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GEN",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TSEM",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DT",
+      "composite_score": 52.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COR",
+      "composite_score": 52.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GFS",
+      "composite_score": 52.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TXG",
+      "composite_score": 51.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CGNX",
+      "composite_score": 51.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NVST",
+      "composite_score": 51.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PODD",
+      "composite_score": 51.55,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IBKR",
+      "composite_score": 51.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TKO",
+      "composite_score": 51.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SYY",
+      "composite_score": 51.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ONTO",
+      "composite_score": 51.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UNP",
+      "composite_score": 51.11,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SAM",
+      "composite_score": 50.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BWA",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PKG",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DCI",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TKR",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JBHT",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AGCO",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "L",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AA",
+      "composite_score": 50.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UAA",
+      "composite_score": 50.53,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SOLS",
+      "composite_score": 50.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ARES",
+      "composite_score": 49.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TRGP",
+      "composite_score": 49.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAT",
+      "composite_score": 49.7,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LMT",
+      "composite_score": 49.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNM",
+      "composite_score": 49.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SGI",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RLI",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LYV",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MORN",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LHX",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RPM",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FDX",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BYD",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VST",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AXP",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HLNE",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TMUS",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UPS",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FTAI",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DAL",
+      "composite_score": 49.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ELF",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ROKU",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PM",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PG",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WMS",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AXON",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SSB",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AXS",
+      "composite_score": 49.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "M",
+      "composite_score": 49.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FIGR",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TIGR",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FHN",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TFC",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XYL",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WFC",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MKTX",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CHRD",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PNR",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CHD",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VNOM",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "APTV",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NSC",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FNF",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NRG",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CGAU",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DV",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FCNCA",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "C",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ECG",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BTG",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HAYW",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DPZ",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTG",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PRI",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "Z",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TXRH",
+      "composite_score": 49.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SHC",
+      "composite_score": 49.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GEHC",
+      "composite_score": 49.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TDY",
+      "composite_score": 49.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WMT",
+      "composite_score": 49.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DXCM",
+      "composite_score": 49.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AM",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CL",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LNC",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HAL",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XPO",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ESAB",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TROW",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BKR",
+      "composite_score": 49.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FAST",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FN",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CELH",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ODFL",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DECK",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MASI",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SNA",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CSCO",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NDSN",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CBOE",
+      "composite_score": 48.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RYTM",
+      "composite_score": 48.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IPGP",
+      "composite_score": 48.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XP",
+      "composite_score": 48.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OPEN",
+      "composite_score": 48.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RIVN",
+      "composite_score": 47.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ROST",
+      "composite_score": 47.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LYG",
+      "composite_score": 47.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GM",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RRX",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TTEK",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "APG",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ASTS",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RS",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DHI",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GNRC",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "THO",
+      "composite_score": 47.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IONS",
+      "composite_score": 47.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AVT",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ELAN",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INSM",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LDOS",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BMY",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LFUS",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JAZZ",
+      "composite_score": 46.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AES",
+      "composite_score": 46.73,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WAT",
+      "composite_score": 46.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ABT",
+      "composite_score": 46.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CHYM",
+      "composite_score": 46.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INSP",
+      "composite_score": 46.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DHR",
+      "composite_score": 46.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "STT",
+      "composite_score": 46.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "USB",
+      "composite_score": 46.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AME",
+      "composite_score": 46.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OHI",
+      "composite_score": 46.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CCI",
+      "composite_score": 46.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WELL",
+      "composite_score": 46.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CIEN",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HEI",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JHG",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TWLO",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RNR",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VIAV",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CINF",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WEX",
+      "composite_score": 46.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PAYC",
+      "composite_score": 46.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PCTY",
+      "composite_score": 46.13,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OMF",
+      "composite_score": 46.11,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LPX",
+      "composite_score": 45.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WSO",
+      "composite_score": 45.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GRAB",
+      "composite_score": 45.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PEG",
+      "composite_score": 44.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MCK",
+      "composite_score": 44.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ARW",
+      "composite_score": 44.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ESE",
+      "composite_score": 44.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EMN",
+      "composite_score": 44.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SWK",
+      "composite_score": 44.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FERG",
+      "composite_score": 44.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CASY",
+      "composite_score": 44.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "QRVO",
+      "composite_score": 44.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "YMM",
+      "composite_score": 44.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SMCI",
+      "composite_score": 44.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PNC",
+      "composite_score": 44.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IVZ",
+      "composite_score": 44.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HWM",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WDC",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ROL",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MAR",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CACI",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RGA",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CRH",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DOV",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ITT",
+      "composite_score": 43.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KSS",
+      "composite_score": 43.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BAM",
+      "composite_score": 43.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PANW",
+      "composite_score": 43.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LULU",
+      "composite_score": 43.71,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZG",
+      "composite_score": 43.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CCL",
+      "composite_score": 43.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CSL",
+      "composite_score": 43.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VVV",
+      "composite_score": 42.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BRKR",
+      "composite_score": 42.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BILL",
+      "composite_score": 42.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EEFT",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LITE",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UCTT",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VTRS",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VNT",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XNET",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SWKS",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UNH",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XYZ",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HUM",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BLSH",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MRNA",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SHW",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MHK",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNH",
+      "composite_score": 42.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "APLS",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PFE",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AAOI",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MSTR",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SSNC",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAH",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SMMT",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXAS",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CVS",
+      "composite_score": 42.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SON",
       "composite_score": 42.2,
       "pool": "mainstream"
     },
     {
-      "ticker": "AAON",
+      "ticker": "LSTR",
+      "composite_score": 42.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HBAN",
+      "composite_score": 42.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VSNT",
+      "composite_score": 42.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ONDS",
+      "composite_score": 42.14,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CRL",
+      "composite_score": 42.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TFX",
+      "composite_score": 42.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GTM",
+      "composite_score": 41.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZBH",
+      "composite_score": 41.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZTS",
+      "composite_score": 41.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CERT",
+      "composite_score": 41.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ATR",
+      "composite_score": 41.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FE",
+      "composite_score": 41.73,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WTRG",
+      "composite_score": 41.62,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AXTA",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CB",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SRRK",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INTC",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SYF",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AWI",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HLT",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CMCSA",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FRPT",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SF",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LLYVK",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OZK",
+      "composite_score": 41.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VLO",
+      "composite_score": 41.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CVX",
+      "composite_score": 41.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ADM",
+      "composite_score": 41.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NTR",
+      "composite_score": 41.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JKHY",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NFLX",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LOAR",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GNTX",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HIMS",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PCOR",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RJF",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CPRT",
+      "composite_score": 41.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IFF",
+      "composite_score": 41.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MCO",
+      "composite_score": 41.11,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FOXA",
+      "composite_score": 40.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TPL",
+      "composite_score": 40.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SEE",
+      "composite_score": 40.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VFC",
+      "composite_score": 40.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HON",
+      "composite_score": 40.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "URI",
+      "composite_score": 40.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RCL",
+      "composite_score": 40.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AL",
+      "composite_score": 40.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WHR",
+      "composite_score": 40.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HDB",
+      "composite_score": 39.8,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WDS",
+      "composite_score": 39.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PRMB",
+      "composite_score": 39.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MGM",
+      "composite_score": 39.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SAIA",
       "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CLX",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LKQ",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TSN",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DLTR",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PAG",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PL",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TGT",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WBD",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTCH",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EFX",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CR",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LLYVA",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AVY",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BRO",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LPLA",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VZ",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AZO",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JD",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MAS",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GPC",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LAZ",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PSLV",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BRBR",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BBY",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OVV",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AN",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EG",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SBUX",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "JHX",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MEOH",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OGE",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NEU",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UNM",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GPN",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IAC",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GSAT",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SW",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TREX",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EMR",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AEG",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VRSK",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BLD",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BP",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BFAM",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXC",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GTES",
+      "composite_score": 39.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PSN",
+      "composite_score": 39.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DOX",
+      "composite_score": 39.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GDDY",
+      "composite_score": 39.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNC",
+      "composite_score": 39.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HRL",
+      "composite_score": 39.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MAT",
+      "composite_score": 39.38,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VALE",
+      "composite_score": 39.35,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CFG",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ETSY",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FLUT",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MLM",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COLM",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LOW",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LBRDA",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CART",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMCR",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PHM",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EXP",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GXO",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PB",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HAS",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RF",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GLNG",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BIRK",
+      "composite_score": 39.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WLK",
+      "composite_score": 39.14,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HII",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SRE",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WAB",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ZION",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTB",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ES",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RKT",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LIN",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ALB",
+      "composite_score": 39.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COIN",
+      "composite_score": 39.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BLDR",
+      "composite_score": 39.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAVA",
+      "composite_score": 39.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "REYN",
+      "composite_score": 39.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "S",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LYFT",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WYNN",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NTAP",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OKTA",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BLK",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SNPS",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FDS",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ROP",
+      "composite_score": 38.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AEE",
+      "composite_score": 38.85,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SLGN",
+      "composite_score": 38.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TSCO",
+      "composite_score": 38.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LW",
+      "composite_score": 38.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KMB",
+      "composite_score": 38.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PFGC",
+      "composite_score": 38.75,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PLUG",
+      "composite_score": 38.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EQT",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NVT",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DTM",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTDR",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "STAG",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EA",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KRMN",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FR",
+      "composite_score": 38.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CACC",
+      "composite_score": 38.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UWMC",
+      "composite_score": 38.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CG",
+      "composite_score": 38.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PINS",
+      "composite_score": 38.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LOPE",
+      "composite_score": 38.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TTD",
+      "composite_score": 38.29,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XOM",
+      "composite_score": 38.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LYB",
+      "composite_score": 38.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ELS",
+      "composite_score": 37.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BWXT",
+      "composite_score": 37.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NSA",
+      "composite_score": 37.33,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IQV",
+      "composite_score": 37.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ACHC",
+      "composite_score": 36.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MSGS",
+      "composite_score": 36.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FITB",
+      "composite_score": 36.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AGNC",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CBRE",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PSA",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ORC",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MAA",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SBAC",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VTR",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CUZ",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SUI",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KIM",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NNN",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AMH",
+      "composite_score": 36.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BOKF",
+      "composite_score": 36.46,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TEAM",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PLNT",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ACGL",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SRPT",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HLI",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TDG",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "U",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CXT",
+      "composite_score": 36.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EPR",
+      "composite_score": 36.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WPC",
+      "composite_score": 36.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "IRM",
+      "composite_score": 36.3,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KMPR",
+      "composite_score": 36.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TAP",
+      "composite_score": 36.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MDLZ",
+      "composite_score": 36.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ACM",
+      "composite_score": 36.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KMI",
+      "composite_score": 36.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTZ",
+      "composite_score": 36.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DAR",
+      "composite_score": 36.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "REG",
+      "composite_score": 36.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UGI",
+      "composite_score": 36.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AEP",
+      "composite_score": 35.96,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "APO",
+      "composite_score": 35.87,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DTE",
+      "composite_score": 35.85,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DUK",
+      "composite_score": 35.85,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CHDN",
+      "composite_score": 35.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SCI",
+      "composite_score": 35.56,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RYAN",
+      "composite_score": 35.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TFSL",
+      "composite_score": 35.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CSGP",
+      "composite_score": 35.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BW",
+      "composite_score": 35.12,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NCLH",
+      "composite_score": 35.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LAD",
+      "composite_score": 35.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WMB",
+      "composite_score": 34.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "QSR",
+      "composite_score": 34.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BRX",
+      "composite_score": 34.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CDW",
+      "composite_score": 34.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BETA",
+      "composite_score": 34.46,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TLN",
+      "composite_score": 34.19,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SJM",
+      "composite_score": 34.19,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "TRU",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MCD",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WING",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COF",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CBSH",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ORLY",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HPQ",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OLLI",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CLVT",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AFL",
+      "composite_score": 34.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AWK",
+      "composite_score": 33.73,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PR",
+      "composite_score": 33.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FRT",
+      "composite_score": 33.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MDU",
+      "composite_score": 33.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COP",
+      "composite_score": 33.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CWEN",
+      "composite_score": 33.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "INVH",
+      "composite_score": 33.45,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SFM",
+      "composite_score": 33.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HRB",
+      "composite_score": 33.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BJ",
+      "composite_score": 33.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AAL",
+      "composite_score": 33.12,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAG",
+      "composite_score": 33.12,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CMS",
+      "composite_score": 32.96,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AON",
+      "composite_score": 32.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MET",
+      "composite_score": 32.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WH",
+      "composite_score": 32.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MAN",
+      "composite_score": 32.63,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AVTR",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "XRAY",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AUR",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FND",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KD",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MPT",
+      "composite_score": 32.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "KMX",
+      "composite_score": 32.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BBAR",
+      "composite_score": 32.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BAX",
+      "composite_score": 32.19,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "SAIC",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AJG",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OTIS",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LBRDK",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FWONA",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DKS",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PRU",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MRSH",
+      "composite_score": 31.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NWL",
+      "composite_score": 31.25,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VET",
+      "composite_score": 31.19,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EQR",
+      "composite_score": 31.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VOYA",
+      "composite_score": 31.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AVB",
+      "composite_score": 31.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "HIW",
+      "composite_score": 31.03,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NIO",
+      "composite_score": 30.68,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LINE",
+      "composite_score": 30.57,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WY",
+      "composite_score": 30.12,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "APD",
+      "composite_score": 30.08,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CLF",
+      "composite_score": 30.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MTN",
+      "composite_score": 29.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MARA",
+      "composite_score": 29.63,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RH",
+      "composite_score": 29.6,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AAON",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RBLX",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OC",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BHF",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WU",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GIS",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PENN",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CROX",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CNR",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LII",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "NIQ",
+      "composite_score": 29.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "MIDD",
+      "composite_score": 29.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "DJT",
+      "composite_score": 29.11,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AGRO",
+      "composite_score": 29.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "WSC",
+      "composite_score": 29.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RYN",
+      "composite_score": 28.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UDR",
+      "composite_score": 28.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "VNO",
+      "composite_score": 28.61,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "AXTI",
+      "composite_score": 28.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "ASH",
+      "composite_score": 28.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "CAR",
+      "composite_score": 27.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "STWD",
+      "composite_score": 26.78,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "UNIT",
+      "composite_score": 26.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "FISV",
+      "composite_score": 26.43,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "RITM",
+      "composite_score": 26.4,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "LCID",
+      "composite_score": 25.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "F",
+      "composite_score": 25.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "EQH",
+      "composite_score": 25.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "OLN",
+      "composite_score": 25.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "PSKY",
+      "composite_score": 25.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BXP",
+      "composite_score": 22.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "GPK",
+      "composite_score": 22.2,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "QS",
+      "composite_score": 22.0,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "COTY",
+      "composite_score": 19.5,
+      "pool": "mainstream"
+    },
+    {
+      "ticker": "BMNR",
+      "composite_score": 15.5,
       "pool": "mainstream"
     }
   ],
@@ -591,16 +5006,16 @@
     "regime": "\u2194\ufe0f Sideways market \u2014 stock-picking alpha matters most"
   },
   "scan_stats": {
-    "tickers_in_universe": "5",
-    "analyzed_last_24h": "5",
+    "tickers_in_universe": "767",
+    "analyzed_last_24h": "767",
     "current_cycle": "1",
-    "scan_duration_mins": "0.3"
+    "scan_duration_mins": "24.8"
   },
   "meta": {
-    "topScore": 60.0,
-    "topTicker": "RL",
-    "avgScore": 50.0,
-    "tickers": 5,
+    "topScore": 74.0,
+    "topTicker": "ANET",
+    "avgScore": 72.0,
+    "tickers": 767,
     "regime": "Elevated",
     "vix": "24.1",
     "runDate": "2026-03-19"
