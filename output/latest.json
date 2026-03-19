@@ -1,7 +1,64 @@
 {
   "run_date": "2026-03-19",
-  "generated_at": "2026-03-19T01:22:46.499939",
+  "generated_at": "2026-03-19T13:39:51.122263",
   "picks": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "composite_score": 78.5,
+      "investment_rating": "\u2705 BUY",
+      "technical_grade": "B",
+      "sentiment_grade": "Neutral",
+      "price": 176.36000061035156,
+      "sector": "Technology",
+      "entry_zone": "$165-$175 on any pullback to 200 EMA support or current levels given technical neutrality",
+      "target_1y": "$240-260 based on continued AI infrastructure spending and 20-25x forward earnings multiple",
+      "target_3y": "$350-400 driven by AI adoption maturation, new verticals (robotics, automotive), and sustained 25-30% revenue growth",
+      "rationale_bullets": [
+        "\ud83d\udd35 Fundamentals: Exceptional growth with 95.6% earnings growth and 101.5% ROE, trading at reasonable 15.9x forward PE despite AI dominance",
+        "\ud83d\udd35 Financial Health: Fortress balance sheet with 0.07 D/E ratio, $58B free cash flow, and 71% gross margins demonstrating pricing power",
+        "\ud83d\udd35 Market Position: Monopolistic position in AI/datacenter accelerators with CUDA moat creating sustained competitive advantages",
+        "\ud83d\udd35 Technicals: Golden cross intact, above 200 EMA, neutral RSI at 49 provides good entry positioning despite recent weakness",
+        "\ud83d\udd35 Valuation: PEG near 0 suggests growth significantly undervalued relative to earnings acceleration",
+        "\ud83d\udd35 Analyst Consensus: Strong buy rating with $268 target implies 52% upside from current levels",
+        "\ud83d\udd35 Macro Tailwinds: AI infrastructure buildout still early innings, sovereign AI spending, and enterprise adoption accelerating"
+      ],
+      "risks": [
+        "\u26a0\ufe0f Geopolitical exposure to China export restrictions and potential escalation of semiconductor trade tensions",
+        "\u26a0\ufe0f Customer concentration risk with hyperscalers representing majority of datacenter revenue",
+        "\u26a0\ufe0f Cyclical semiconductor nature could face inventory corrections or demand normalization after unprecedented growth"
+      ],
+      "category_scores": [
+        {
+          "category": "leadership_team",
+          "score": 0.4
+        },
+        {
+          "category": "product_market_fit",
+          "score": 0.571
+        },
+        {
+          "category": "macro_environment",
+          "score": 0.5
+        },
+        {
+          "category": "financial_health",
+          "score": 1.0
+        },
+        {
+          "category": "narrative_adoption",
+          "score": 0.333
+        },
+        {
+          "category": "technicals_entry",
+          "score": 0.8
+        },
+        {
+          "category": "governance_stability",
+          "score": 1.0
+        }
+      ]
+    },
     {
       "ticker": "TSM",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
@@ -9,24 +66,24 @@
       "investment_rating": "\u2705 BUY",
       "technical_grade": "B",
       "sentiment_grade": "Neutral",
-      "price": 339.57000732421875,
+      "price": 328.4668884277344,
       "sector": "Technology",
-      "entry_zone": "$320-$340 on any weakness to 50 EMA or below current levels",
-      "target_1y": "$420 (24x forward PE on recovering cycle and AI demand sustainability)",
-      "target_3y": "$550 (maintaining premium multiple on 15%+ earnings CAGR from AI/HPC secular growth)",
+      "entry_zone": "$315-$325 current levels or $300-$310 on further oversold bounce",
+      "target_1y": "$420-$450 driven by AI chip recovery and margin expansion",
+      "target_3y": "$550-$600 on sustained AI infrastructure buildout and geographic expansion",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 35% earnings growth, 53.9% operating margins, and $643B FCF - fortress balance sheet",
-        "\ud83d\udd35 Market Position: Dominant 60%+ global foundry market share with advanced node monopoly (3nm/5nm) creating massive moats",
-        "\ud83d\udd35 AI Tailwinds: Critical supplier for NVIDIA, AMD, Apple chips powering AI boom - structural demand growth for 3-5 years",
-        "\ud83d\udd35 Valuation: Forward PE of 18.9x reasonable for quality/growth profile - analyst consensus $430 target (+27% upside)",
-        "\ud83d\udd35 Technical Setup: Oversold RSI 31.8, holding 200 EMA support, golden cross intact - constructive for reversal",
-        "\ud83d\udd35 Capital Allocation: Massive $40B Arizona fabs investment reducing geopolitical risk while maintaining tech leadership",
-        "\ud83d\udd35 Cyclical Recovery: Inventory destocking cycle ending, PC/smartphone replacement cycles accelerating in 2024-2025"
+        "\ud83d\udd35 Fundamentals: Exceptional profitability with 59.9% gross margin, 35% earnings growth, and 35.1% ROE - financial fortress in cyclical sector",
+        "\ud83d\udd35 Market Position: Dominant 90%+ advanced chip manufacturing monopoly with NVDA, AAPL dependency creating structural competitive moat",
+        "\ud83d\udd35 Technicals: Oversold at RSI 29.2 but maintaining uptrend above 200 EMA with golden cross intact - correction within bull market",
+        "\ud83d\udd35 Valuation: Forward PE 18.3x reasonable for 35% earnings growth and monopolistic margins in AI/datacenter supercycle",
+        "\ud83d\udd35 Capital Allocation: Pristine balance sheet with 0.20 D/E ratio and $643B FCF providing flexibility for capex and shareholder returns",
+        "\ud83d\udd35 Macro Tailwinds: AI chip demand acceleration, 5G infrastructure buildout, and automotive electrification driving multi-year growth",
+        "\ud83d\udd35 Analyst Consensus: Strong buy rating with $430 target implies 31% upside from current levels"
       ],
       "risks": [
-        "\u26a0\ufe0f Geopolitical tensions - China invasion risk could devastate operations and global chip supply",
-        "\u26a0\ufe0f Cyclical downturn - semiconductor demand highly volatile, potential AI bubble burst risk",
-        "\u26a0\ufe0f Competition intensification - Intel foundry ambitions, Samsung catching up on advanced nodes"
+        "\u26a0\ufe0f Geopolitical risk from Taiwan-China tensions could disrupt operations or trigger supply chain diversification",
+        "\u26a0\ufe0f Customer concentration risk with Apple (~25% revenue) and NVIDIA creating earnings volatility from single client decisions",
+        "\u26a0\ufe0f Cyclical semiconductor downturn risk as inventory corrections and demand normalization could compress margins"
       ],
       "category_scores": [
         {
@@ -52,30 +109,30 @@
       ]
     },
     {
-      "ticker": "GOOGL",
-      "name": "Alphabet Inc.",
+      "ticker": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
       "composite_score": 73.2,
       "investment_rating": "\u2705 BUY",
-      "technical_grade": "C",
+      "technical_grade": "A",
       "sentiment_grade": "Neutral",
-      "price": 307.69000244140625,
-      "sector": "Communication Services",
-      "entry_zone": "$300-$310 current levels acceptable, or $285-$295 on pullback to 50 EMA support",
-      "target_1y": "$375 - driven by AI monetization, cloud growth acceleration, and multiple expansion",
-      "target_3y": "$485 - assumes successful AI integration, cloud market share gains, and 12-15% annual earnings growth",
+      "price": 193.2899932861328,
+      "sector": "Technology",
+      "entry_zone": "$185-$195 current levels or $175-$185 on any pullback to 200 EMA support",
+      "target_1y": "$250-$270 as AI datacenter momentum accelerates and market share gains materialize",
+      "target_3y": "$350-$400 assuming sustained AI infrastructure growth and successful expansion in emerging compute markets",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 31% earnings growth, 35.7% ROE, and $38B free cash flow generation",
-        "\ud83d\udd35 Valuation: Forward PE of 22.9x reasonable for quality, though PEG ratio data incomplete - trading 10% below 52w high creates opportunity",
-        "\ud83d\udd35 Market Position: Dominant search/advertising moat with diversification into cloud (growing 35%+ annually) and AI leadership",
-        "\ud83d\udd35 Technical Setup: Above all EMAs with golden cross intact, RSI neutral at 50.6 allows for upward movement",
-        "\ud83d\udd35 Capital Structure: Conservative 0.16 D/E ratio provides financial flexibility for AI investments and acquisitions",
-        "\ud83d\udd35 AI Narrative: Bard/Gemini positioning and AI integration across products creates long-term competitive advantages",
-        "\ud83d\udd35 Analyst Consensus: Strong buy rating with $376.75 target implies 22% upside from current levels"
+        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 34% revenue growth, 217% earnings growth, and minimal debt (0.06 D/E)",
+        "\ud83d\udd35 Technicals: Strong position above 200 EMA with golden cross, bullish MACD, and attractive 7.4x risk/reward ratio despite 27% pullback from highs",
+        "\ud83d\udd35 Valuation: Forward PE of 18x appears reasonable for growth profile in AI/datacenter markets, significantly below peak semiconductor multiples",
+        "\ud83d\udd35 Market Position: Well-positioned in AI accelerators and datacenter GPUs, competing effectively against NVIDIA in key growth segments",
+        "\ud83d\udd35 Margins: Healthy 52.5% gross margins and improving 17.1% operating margins demonstrate pricing power and operational efficiency",
+        "\ud83d\udd35 Cash Generation: Strong $4.59B free cash flow provides flexibility for R&D investment and market share gains",
+        "\ud83d\udd35 Macro Tailwinds: AI infrastructure buildout and datacenter expansion should drive multi-year demand for high-performance computing"
       ],
       "risks": [
-        "\u26a0\ufe0f Regulatory pressure intensifying globally on search monopoly and data privacy practices",
-        "\u26a0\ufe0f AI disruption threat to core search business from ChatGPT and emerging competitors",
-        "\u26a0\ufe0f Macro headwinds could pressure digital advertising spend, impacting 80%+ of revenue"
+        "\u26a0\ufe0f Intense competition from NVIDIA in AI/GPU markets and potential Intel resurgence in CPUs",
+        "\u26a0\ufe0f Cyclical semiconductor downturn could pressure margins and growth rates",
+        "\u26a0\ufe0f High R&D requirements to stay competitive may impact profitability if execution falters"
       ],
       "category_scores": [
         {
@@ -88,11 +145,11 @@
         },
         {
           "category": "macro_environment",
-          "score": 0.25
+          "score": 0.5
         },
         {
           "category": "financial_health",
-          "score": 1.0
+          "score": 0.8
         },
         {
           "category": "narrative_adoption",
@@ -100,7 +157,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.6
+          "score": 0.8
         },
         {
           "category": "governance_stability",
@@ -111,28 +168,28 @@
     {
       "ticker": "MSFT",
       "name": "Microsoft Corporation",
-      "composite_score": 72.3,
+      "composite_score": 72.5,
       "investment_rating": "\u2705 BUY",
       "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 391.7900085449219,
+      "price": 389.3399963378906,
       "sector": "Technology",
-      "entry_zone": "$380-$395 range on any further weakness, or above $430 on confirmed trend reversal",
-      "target_1y": "$525 - driven by AI monetization acceleration and cloud growth normalization",
-      "target_3y": "$750 - compound growth from AI transformation, expanding margins, and market share gains",
+      "entry_zone": "$350-$370 on test of 52-week lows or reclaim of $420 (50 EMA) with volume confirmation",
+      "target_1y": "$520 - Multiple expansion as AI revenue materializes and cloud growth stabilizes",
+      "target_3y": "$680 - Compound growth from AI integration driving 12-15% annual revenue growth with margin expansion",
       "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 68.6% gross margin, $53.6B FCF, and 34.4% ROE - fortress balance sheet",
-        "\ud83d\udd35 Growth Trajectory: Strong 16.7% revenue growth and explosive 59.8% earnings growth driven by cloud and AI initiatives",
-        "\ud83d\udd35 Valuation: Forward PE of 20.8x reasonable for quality, trading 27% below 52w high creates compelling entry opportunity",
-        "\ud83d\udd35 Market Position: Dominant in enterprise software with Azure, Office 365, and emerging AI leadership via OpenAI partnership",
-        "\ud83d\udd35 Technical Setup: Oversold RSI 41.1, bullish MACD signal, 7.6x risk/reward ratio favors patient accumulation",
-        "\ud83d\udd35 AI Monetization: Copilot integration across Office suite creating new revenue streams and competitive moats",
-        "\ud83d\udd35 Analyst Conviction: Strong buy consensus with $594 target implies 52% upside from current levels"
+        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 59.8% earnings growth, 68.6% gross margins, and $53.6B free cash flow demonstrate operational excellence",
+        "\ud83d\udd35 Valuation: Forward PE of 20.7x appears reasonable for quality, especially with strong growth trajectory and defensive characteristics",
+        "\ud83d\udd35 Market Position: Dominant in cloud (Azure), productivity software, and AI integration creates durable competitive moats",
+        "\ud83d\udd35 Technical Setup: -27.9% decline from highs has created attractive entry opportunity, though momentum remains weak below all EMAs",
+        "\ud83d\udd35 AI Catalyst: Copilot integration across Office suite and Azure AI services positions MSFT as primary beneficiary of enterprise AI adoption",
+        "\ud83d\udd35 Balance Sheet: Low 0.32 D/E ratio and massive cash generation provide financial fortress during economic uncertainty",
+        "\ud83d\udd35 Analyst Consensus: $594.62 target (+52.7% upside) with strong buy rating reflects Wall Street confidence in recovery"
       ],
       "risks": [
-        "\u26a0\ufe0f Trading below 200 EMA in confirmed downtrend - momentum remains negative near-term",
-        "\u26a0\ufe0f High exposure to enterprise spending cycles and potential recession impact on IT budgets",
-        "\u26a0\ufe0f Intense competition in cloud (AWS, Google) and AI space could pressure margins and growth rates"
+        "\u26a0\ufe0f Macro headwinds from higher rates pressuring enterprise IT spending and cloud migration budgets",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA suggests institutional distribution and potential further downside",
+        "\u26a0\ufe0f Azure growth deceleration risk as cloud market matures and competition intensifies from AWS/Google"
       ],
       "category_scores": [
         {
@@ -166,30 +223,30 @@
       ]
     },
     {
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "composite_score": 72.3,
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "composite_score": 72.5,
       "investment_rating": "\u2705 BUY",
-      "technical_grade": "B",
+      "technical_grade": "C",
       "sentiment_grade": "Neutral",
-      "price": 315.92999267578125,
+      "price": 248.6699981689453,
       "sector": "Technology",
-      "entry_zone": "$310-$320 near current levels or $290-$300 on pullback to 50 EMA support",
-      "target_1y": "$420-$450 driven by AI infrastructure spending and margin expansion",
-      "target_3y": "$550-$600 as datacenter modernization cycle matures and software revenues scale",
+      "entry_zone": "$235-$245 on break above 50 EMA with volume confirmation or oversold bounce from current levels",
+      "target_1y": "$285-$300 as services growth accelerates and AI features drive iPhone upgrade cycle",
+      "target_3y": "$350-$380 driven by Vision Pro adoption, expanding services ecosystem, and emerging market penetration",
       "rationale_bullets": [
-        "\ud83d\udd35 Fundamentals: Exceptional profitability with 76.7% gross margins and 188.1% earnings growth, trading at reasonable 17.9x forward PE",
-        "\ud83d\udd35 Financial Health: Strong FCF generation of $25.5B and 33.4% ROE, though elevated 1.66 D/E requires monitoring",
-        "\ud83d\udd35 Technicals: Constructive setup with golden cross intact, trading above 200 EMA with 6.1x risk/reward ratio",
-        "\ud83d\udd35 Market Position: Dominant semiconductor player with critical AI/datacenter exposure and infrastructure software moat",
-        "\ud83d\udd35 Valuation: 23.4% discount from highs creates compelling entry despite premium to sector averages",
-        "\ud83d\udd35 Catalysts: AI infrastructure buildout and datacenter upgrade cycle should drive multi-year growth",
-        "\ud83d\udd35 Analyst Consensus: Strong buy rating with $472 target implies 49% upside potential"
+        "\ud83d\udd35 Financials: Exceptional fundamentals with $106B FCF, 152% ROE, and 35.4% operating margin demonstrating world-class capital efficiency",
+        "\ud83d\udd35 Growth: Strong momentum with 15.7% revenue growth and 18.3% earnings growth despite mature market positioning",
+        "\ud83d\udd35 Technicals: Oversold RSI at 25.4 and 13% discount from 52w high creates attractive entry opportunity despite bearish trend",
+        "\ud83d\udd35 Valuation: Forward PE of 26.7x reasonable for quality, though analyst target of $295 suggests 19% upside potential",
+        "\ud83d\udd35 Market Position: Dominant ecosystem with unmatched brand loyalty and pricing power in premium consumer electronics",
+        "\ud83d\udd35 Capital Structure: Balanced D/E ratio of 1.03 with massive cash generation capability provides financial flexibility",
+        "\ud83d\udd35 Innovation: Apple Intelligence and Vision Pro positioning company for next growth cycle in AI and spatial computing"
       ],
       "risks": [
-        "\u26a0\ufe0f Cyclical semiconductor exposure vulnerable to demand fluctuations and inventory corrections",
-        "\u26a0\ufe0f High debt levels (1.66 D/E) limit financial flexibility in downturn scenarios",
-        "\u26a0\ufe0f Concentration risk in AI/datacenter markets creates vulnerability to spending slowdowns"
+        "\u26a0\ufe0f China exposure creates geopolitical and demand risks in key market representing ~20% of revenue",
+        "\u26a0\ufe0f iPhone dependency (~50% of revenue) makes company vulnerable to smartphone market saturation and upgrade cycle delays",
+        "\u26a0\ufe0f Technical breakdown below 200 EMA with bearish MACD suggests potential for further downside momentum"
       ],
       "category_scores": [
         {
@@ -198,11 +255,11 @@
         },
         {
           "category": "product_market_fit",
-          "score": 0.571
+          "score": 0.429
         },
         {
           "category": "macro_environment",
-          "score": 0.25
+          "score": 0.5
         },
         {
           "category": "financial_health",
@@ -214,64 +271,7 @@
         },
         {
           "category": "technicals_entry",
-          "score": 0.8
-        },
-        {
-          "category": "governance_stability",
-          "score": 1.0
-        }
-      ]
-    },
-    {
-      "ticker": "NVDA",
-      "name": "NVIDIA Corporation",
-      "composite_score": 71.3,
-      "investment_rating": "\u2705 BUY",
-      "technical_grade": "B",
-      "sentiment_grade": "Neutral",
-      "price": 180.39999389648438,
-      "sector": "Technology",
-      "entry_zone": "$175-$185 current levels or $165-$175 on pullback to 50 EMA support",
-      "target_1y": "$240-$260 based on 15x forward earnings assuming 40% growth deceleration",
-      "target_3y": "$320-$380 assuming AI infrastructure buildout continues with margin expansion",
-      "rationale_bullets": [
-        "\ud83d\udd35 Financial Health: Exceptional fundamentals with 73% revenue growth, 96% earnings growth, and pristine balance sheet (0.07 D/E)",
-        "\ud83d\udd35 Valuation: Forward PE of 16.4x appears reasonable for a company growing earnings at 96% annually",
-        "\ud83d\udd35 Technicals: Consolidating above 200 EMA with golden cross intact, RSI at 44.9 suggests oversold conditions",
-        "\ud83d\udd35 Market Position: Dominant AI infrastructure provider with 71% gross margins indicating pricing power",
-        "\ud83d\udd35 Leadership Concerns: Score of 0.4 suggests execution or strategic risks despite strong financial performance",
-        "\ud83d\udd35 Narrative Headwinds: Low adoption score (0.33) indicates market skepticism about sustained AI demand",
-        "\ud83d\udd35 Entry Timing: 13% below 52-week high with 3.0x risk/reward ratio provides attractive entry opportunity"
-      ],
-      "risks": [
-        "\u26a0\ufe0f AI demand cycle maturation could compress growth rates and multiple expansion",
-        "\u26a0\ufe0f Geopolitical tensions with China threaten significant revenue exposure in key markets",
-        "\u26a0\ufe0f Competition from custom AI chips (Google TPU, Amazon Trainium) could erode market share"
-      ],
-      "category_scores": [
-        {
-          "category": "leadership_team",
-          "score": 0.4
-        },
-        {
-          "category": "product_market_fit",
-          "score": 0.571
-        },
-        {
-          "category": "macro_environment",
-          "score": 0.5
-        },
-        {
-          "category": "financial_health",
-          "score": 1.0
-        },
-        {
-          "category": "narrative_adoption",
-          "score": 0.333
-        },
-        {
-          "category": "technicals_entry",
-          "score": 0.8
+          "score": 0.6
         },
         {
           "category": "governance_stability",
@@ -282,47 +282,51 @@
   ],
   "all_scores": [
     {
+      "ticker": "NVDA",
+      "composite_score": 78.5
+    },
+    {
       "ticker": "TSM",
       "composite_score": 78.5
     },
     {
-      "ticker": "GOOGL",
+      "ticker": "AMD",
       "composite_score": 73.2
     },
     {
       "ticker": "MSFT",
-      "composite_score": 72.3
-    },
-    {
-      "ticker": "AVGO",
-      "composite_score": 72.3
-    },
-    {
-      "ticker": "NVDA",
-      "composite_score": 71.3
-    },
-    {
-      "ticker": "AMZN",
-      "composite_score": 69.5
+      "composite_score": 72.5
     },
     {
       "ticker": "AAPL",
-      "composite_score": 68.5
+      "composite_score": 72.5
     },
     {
-      "ticker": "AMD",
-      "composite_score": 68.5
+      "ticker": "MU",
+      "composite_score": 72.5
     },
     {
-      "ticker": "NET",
-      "composite_score": 67.5
-    },
-    {
-      "ticker": "META",
-      "composite_score": 65.5
+      "ticker": "GOOGL",
+      "composite_score": 70.5
     },
     {
       "ticker": "PLTR",
+      "composite_score": 68.5
+    },
+    {
+      "ticker": "DDOG",
+      "composite_score": 68.5
+    },
+    {
+      "ticker": "AVGO",
+      "composite_score": 68.2
+    },
+    {
+      "ticker": "AMZN",
+      "composite_score": 65.5
+    },
+    {
+      "ticker": "META",
       "composite_score": 64.5
     },
     {
@@ -330,70 +334,66 @@
       "composite_score": 62.5
     },
     {
-      "ticker": "SNOW",
-      "composite_score": 62.5
-    },
-    {
-      "ticker": "DDOG",
-      "composite_score": 62.5
-    },
-    {
       "ticker": "ARM",
-      "composite_score": 62.5
+      "composite_score": 62.3
+    },
+    {
+      "ticker": "SNOW",
+      "composite_score": 58.5
+    },
+    {
+      "ticker": "NET",
+      "composite_score": 58.5
     },
     {
       "ticker": "ASTS",
-      "composite_score": 42.5
+      "composite_score": 52.5
+    },
+    {
+      "ticker": "CFLT",
+      "composite_score": 52.3
     },
     {
       "ticker": "SMCI",
-      "composite_score": 42.3
+      "composite_score": 45.2
+    },
+    {
+      "ticker": "RXRX",
+      "composite_score": 42.5
+    },
+    {
+      "ticker": "ONDS",
+      "composite_score": 42.5
     },
     {
       "ticker": "IONQ",
       "composite_score": 42.3
     },
     {
-      "ticker": "RXRX",
-      "composite_score": 42.3
-    },
-    {
-      "ticker": "ONDS",
-      "composite_score": 42.0
-    },
-    {
-      "ticker": "VG",
-      "composite_score": 39.5
-    },
-    {
       "ticker": "RKLB",
       "composite_score": 39.3
     },
     {
-      "ticker": "SOFI",
-      "composite_score": 39.3
-    },
-    {
-      "ticker": "PLUG",
-      "composite_score": 25.5
+      "ticker": "VG",
+      "composite_score": 39.0
     }
   ],
   "macro": {
     "yield10": 0.43,
-    "yieldCurve": "Flat (+0.06)",
-    "vix": 25.1,
+    "yieldCurve": "Flat (+0.07)",
+    "vix": 26.8,
     "vixRegime": "Elevated",
-    "dxy": 100.1,
+    "dxy": 100.0,
     "dxyTrend": "Strong",
-    "regime": "\u26a1 High volatility \u2014 be selective, wait for confirmation | \ud83d\ude30 VIX 25 \u2014 elevated fear, dips may be buying ops"
+    "regime": "\u26a1 High volatility \u2014 be selective, wait for confirmation | \ud83d\ude30 VIX 27 \u2014 elevated fear, dips may be buying ops"
   },
   "meta": {
     "topScore": 78.0,
-    "topTicker": "TSM",
-    "avgScore": 74.0,
+    "topTicker": "NVDA",
+    "avgScore": 75.0,
     "tickers": 24,
     "regime": "VOLATILE",
-    "vix": "25.1",
+    "vix": "26.8",
     "runDate": "2026-03-19"
   }
 }
